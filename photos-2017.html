@@ -2458,7 +2458,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 function openViewer(i){current=i;zoom=1;updateViewer();document.getElementById("viewer").classList.add("show")}
 function closeViewer(){document.getElementById("viewer").classList.remove("show")}
 function updateViewer(){
-  document.getElementById("viewerImg").src=photos[current].src;
+  document.getElementById("viewerImg").src=photos[current].src.replace("assets/thumbs2017/","assets/photos2017/");
   document.getElementById("viewerImg").style.transform="scale("+zoom+")";
   document.getElementById("counter").textContent="Photo "+(current+1)+" of "+photos.length;
 }
