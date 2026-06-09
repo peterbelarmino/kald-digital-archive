@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KALD Reports Center</title>
 <style>
-body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
+body{margin:0;font-family:Segoe UI,Arial;background:#f4f7fb;color:#1b2a3a}
 nav{background:white;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001}
 nav img{height:55px}
 nav a{margin-left:20px;text-decoration:none;color:#0b4f8a;font-weight:700}
 .hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;padding:60px 25px;text-align:center}
-.hero h1{font-size:42px}
 .section{max-width:1100px;margin:auto;padding:40px 25px}
-.card{background:white;border-radius:18px;padding:30px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{background:white;border-radius:18px;padding:28px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
 .card h2{color:#0b4f8a}
 .card a{display:inline-block;margin-top:15px;background:#0b4f8a;color:white;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700}
 footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:40px}
 </style>
 </head>
 <body>
+
 <nav>
 <div><img src="assets/logo.jpg"></div>
 <div>
@@ -32,19 +32,42 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 
 <section class="hero">
 <h1>KALD Reports Center</h1>
-<p>Access archive reports, project records, summaries, and organizational documentation.</p>
+<p>Archive reports, recovery records, inventory files, and website backup documentation.</p>
 </section>
 
 <section class="section">
+<div class="grid">
+
 <div class="card">
-<h2>Archive Reports</h2>
-<p>Reports and project documentation related to the KALD Digital Archive recovery and organization project.</p>
-<a href="https://docs.google.com/folderview?id=1ackoilyuC1LpVd8P2DQwFTL_R-nYhCPb" target="_blank">Open Reports</a>
+<h2>Archive Summary</h2>
+<p>Summary report for the KALD Digital Archive project, including file totals and project status.</p>
+<a href="https://docs.google.com/folderview?id=1ackoilyuC1LpVd8P2DQwFTL_R-nYhCPb" target="_blank">Open Report Folder</a>
+</div>
+
+<div class="card">
+<h2>Master Inventory</h2>
+<p>CSV inventory record listing archive items and recovered digital materials.</p>
+<a href="https://docs.google.com/folderview?id=1ackoilyuC1LpVd8P2DQwFTL_R-nYhCPb" target="_blank">Open Inventory</a>
+</div>
+
+<div class="card">
+<h2>Recovery Report</h2>
+<p>Documentation of the archive recovery and conversion process.</p>
+<a href="https://docs.google.com/folderview?id=1ackoilyuC1LpVd8P2DQwFTL_R-nYhCPb" target="_blank">Open Recovery Records</a>
+</div>
+
+<div class="card">
+<h2>Portal Backup</h2>
+<p>Backup copy of the KALD Digital Archive Portal files stored in Google Drive.</p>
+<a href="https://docs.google.com/folderview?id=1ackoilyuC1LpVd8P2DQwFTL_R-nYhCPb" target="_blank">Open Backup</a>
+</div>
+
 </div>
 </section>
 
 <footer>
 <p>KALD Digital Archive Center | Reports Center</p>
 </footer>
+
 </body>
 </html>
