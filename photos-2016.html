@@ -4,27 +4,59 @@
 <meta charset="UTF-8">
 <title>KALD 2016 Event Gallery</title>
 <style>
-body{font-family:Segoe UI,Arial;background:#f4f7fb;margin:0;padding:25px}
-h1{text-align:center;color:#0b4f8a;margin-bottom:25px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.gallery a{display:block}
+body{font-family:Segoe UI,Arial;background:#f4f7fb;margin:0;color:#1b2a3a}
+nav{background:white;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001}
+nav img{height:55px}
+nav a{margin-left:18px;text-decoration:none;color:#0b4f8a;font-weight:700}
+.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:45px 20px}
+.hero h1{margin:0;font-size:38px}
+.actions{max-width:1150px;margin:25px auto;padding:0 25px}
+.btn{display:inline-block;background:#0b4f8a;color:white;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;margin-right:10px}
+.gallery{max-width:1150px;margin:auto;padding:10px 25px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
 .gallery img{width:100%;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+footer{text-align:center;background:#102a43;color:white;padding:22px;margin-top:30px}
 </style>
 </head>
 <body>
+
+<nav>
+<div><img src="assets/logo.jpg"></div>
+<div>
+<a href="index.html">Home</a>
+<a href="photos.html">Photos</a>
+<a href="videos.html">Videos</a>
+<a href="documents.html">Documents</a>
+<a href="reports.html">Reports</a>
+</div>
+</nav>
+
+<section class="hero">
 <h1>KALD 2016 Event Gallery</h1>
+<p>Selected photo preview gallery from the 2016 KALD event archive.</p>
+</section>
+
+<div class="actions">
+<a class="btn" href="photos.html">? Back to Photos</a>
+<a class="btn" href="index.html">Home</a>
+<a class="btn" href="https://docs.google.com/folderview?id=1f93xRkLj2EI9ARoSYnYuoWoXbsvCEnAl" target="_blank">Open Full Collection</a>
+</div>
 
 <div class="gallery">
-<a href="./assets/photos2016/B-100.jpg"><img src="./assets/photos2016/B-100.jpg"></a>
-<a href="./assets/photos2016/B-101.jpg"><img src="./assets/photos2016/B-101.jpg"></a>
-<a href="./assets/photos2016/B-102.jpg"><img src="./assets/photos2016/B-102.jpg"></a>
-<a href="./assets/photos2016/B-103.jpg"><img src="./assets/photos2016/B-103.jpg"></a>
-<a href="./assets/photos2016/B-104.jpg"><img src="./assets/photos2016/B-104.jpg"></a>
-<a href="./assets/photos2016/B-105.jpg"><img src="./assets/photos2016/B-105.jpg"></a>
-<a href="./assets/photos2016/B-106.jpg"><img src="./assets/photos2016/B-106.jpg"></a>
-<a href="./assets/photos2016/B-107.jpg"><img src="./assets/photos2016/B-107.jpg"></a>
-<a href="./assets/photos2016/B-108.jpg"><img src="./assets/photos2016/B-108.jpg"></a>
-<a href="./assets/photos2016/B-109.jpg"><img src="./assets/photos2016/B-109.jpg"></a>
+<a href="assets/photos2016/B-100.jpg"><img src="assets/photos2016/B-100.jpg"></a>
+<a href="assets/photos2016/B-101.jpg"><img src="assets/photos2016/B-101.jpg"></a>
+<a href="assets/photos2016/B-102.jpg"><img src="assets/photos2016/B-102.jpg"></a>
+<a href="assets/photos2016/B-103.jpg"><img src="assets/photos2016/B-103.jpg"></a>
+<a href="assets/photos2016/B-104.jpg"><img src="assets/photos2016/B-104.jpg"></a>
+<a href="assets/photos2016/B-105.jpg"><img src="assets/photos2016/B-105.jpg"></a>
+<a href="assets/photos2016/B-106.jpg"><img src="assets/photos2016/B-106.jpg"></a>
+<a href="assets/photos2016/B-107.jpg"><img src="assets/photos2016/B-107.jpg"></a>
+<a href="assets/photos2016/B-108.jpg"><img src="assets/photos2016/B-108.jpg"></a>
+<a href="assets/photos2016/B-109.jpg"><img src="assets/photos2016/B-109.jpg"></a>
 </div>
+
+<footer>
+<p>KALD Digital Archive Center | 2016 Event Gallery</p>
+</footer>
+
 </body>
 </html>
