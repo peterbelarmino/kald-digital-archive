@@ -2,325 +2,88 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KALD Digital Archive Center</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body{
-  font-family:'Segoe UI',Arial,sans-serif;
-  background:#f4f7fb;
-  color:#1b2a3a;
-  line-height:1.6;
-}
-
-nav{
-  background:#ffffff;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 2px 12px rgba(0,0,0,.08);
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-.logo-wrap{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.logo-wrap img{
-  height:58px;
-  max-width:150px;
-  object-fit:contain;
-}
-
-.logo-wrap span{
-  font-weight:700;
-  font-size:20px;
-  color:#0b4f8a;
-}
-
-.nav-links a{
-  text-decoration:none;
-  color:#1b2a3a;
-  margin-left:22px;
-  font-weight:600;
-}
-
-.nav-links a:hover{
-  color:#0b4f8a;
-}
-
-.hero{
-  background:linear-gradient(135deg,#083d6b,#0b6fae);
-  color:white;
-  padding:80px 30px;
-  text-align:center;
-}
-
-.hero img{
-  width:190px;
-  background:white;
-  padding:12px;
-  border-radius:14px;
-  margin-bottom:25px;
-}
-
-.hero h1{
-  font-size:46px;
-  margin-bottom:12px;
-}
-
-.hero p{
-  font-size:20px;
-  max-width:760px;
-  margin:auto;
-  opacity:.95;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:22px;
-  max-width:1100px;
-  margin:-45px auto 40px;
-  padding:0 25px;
-}
-
-.stat-card{
-  background:white;
-  border-radius:18px;
-  padding:28px 20px;
-  text-align:center;
-  box-shadow:0 8px 25px rgba(0,0,0,.12);
-}
-
-.stat-card h2{
-  color:#0b4f8a;
-  font-size:36px;
-  margin-bottom:6px;
-}
-
-.stat-card p{
-  font-weight:600;
-  color:#475569;
-}
-
-.section{
-  max-width:1150px;
-  margin:auto;
-  padding:35px 25px;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.section-title h2{
-  font-size:34px;
-  color:#0b4f8a;
-}
-
-.section-title p{
-  max-width:760px;
-  margin:10px auto;
-  color:#526173;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:24px;
-}
-
-.archive-card{
-  background:white;
-  border-radius:18px;
-  padding:28px;
-  box-shadow:0 6px 20px rgba(0,0,0,.09);
-  border-top:5px solid #0b6fae;
-  transition:.25s;
-}
-
-.archive-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 12px 28px rgba(0,0,0,.15);
-}
-
-.archive-card h3{
-  color:#0b4f8a;
-  font-size:24px;
-  margin-bottom:12px;
-}
-
-.archive-card p{
-  color:#526173;
-  min-height:95px;
-}
-
-.archive-card a{
-  display:inline-block;
-  margin-top:18px;
-  background:#0b4f8a;
-  color:white;
-  text-decoration:none;
-  padding:12px 18px;
-  border-radius:10px;
-  font-weight:700;
-}
-
-.archive-card a:hover{
-  background:#083d6b;
-}
-
-.about{
-  background:white;
-  border-radius:20px;
-  padding:35px;
-  box-shadow:0 6px 20px rgba(0,0,0,.08);
-}
-
-.about h2{
-  color:#0b4f8a;
-  margin-bottom:12px;
-}
-
-.footer{
-  margin-top:40px;
-  background:#102a43;
-  color:white;
-  text-align:center;
-  padding:30px 20px;
-}
-
-.footer p{
-  opacity:.9;
-}
-
-@media(max-width:700px){
-  nav{
-    flex-direction:column;
-    gap:12px;
-  }
-
-  .nav-links a{
-    margin:0 8px;
-    font-size:14px;
-  }
-
-  .hero h1{
-    font-size:32px;
-  }
-
-  .hero p{
-    font-size:17px;
-  }
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
+nav{background:#fff;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a}
+.brand img{height:52px}
+nav a{text-decoration:none;color:#0b4f8a;font-weight:700;margin-left:18px}
+.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:75px 25px}
+.hero img{width:160px;background:white;padding:10px;border-radius:14px;margin-bottom:18px}
+.hero h1{font-size:44px;margin:0 0 10px}
+.hero p{font-size:19px;max-width:780px;margin:auto}
+.stats,.grid{max-width:1150px;margin:35px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;padding:0 25px}
+.card{background:white;border-radius:18px;padding:28px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
+.card h2{color:#0b4f8a;margin-top:0}
+.stat{text-align:center}
+.stat h2{font-size:36px}
+.btn{display:inline-block;background:#0b4f8a;color:white!important;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;margin-top:14px}
+.section-title{text-align:center;margin-top:45px}
+footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
 </style>
 </head>
-
 <body>
 
 <nav>
-  <div class="logo-wrap">
-    <img src="assets/logo.jpg" alt="KALD Logo">
-    <span>KALD Digital Archive</span>
-  </div>
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#archive">Archive</a>
-    <a href="#about">About</a>
-  </div>
+<div class="brand"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></div>
+<div>
+<a href="index.html">Home</a>
+<a href="photos.html">Photos</a>
+<a href="videos.html">Videos</a>
+<a href="documents.html">Documents</a>
+<a href="reports.html">Reports</a>
+</div>
 </nav>
 
-<section class="hero" id="home">
-  <img src="assets/logo.jpg" alt="KALD Logo">
-  <h1>KALD Digital Archive Center</h1>
-  <p>Preserving the history, media, documents, conferences, and educational initiatives of learning differences in Kuwait.</p>
+<section class="hero">
+<img src="assets/logo.jpg">
+<h1>KALD Digital Archive Center</h1>
+<p>Professional digital archive portal for preserved photographs, videos, documents, reports, and historical records of KALD.</p>
 </section>
 
 <section class="stats">
-  <div class="stat-card">
-    <h2>805</h2>
-    <p>Archived Files</p>
-  </div>
-  <div class="stat-card">
-    <h2>56.75GB</h2>
-    <p>Digital Archive</p>
-  </div>
-  <div class="stat-card">
-    <h2>789</h2>
-    <p>Verified Photos</p>
-  </div>
-  <div class="stat-card">
-    <h2>11+</h2>
-    <p>Video Archives</p>
-  </div>
+<div class="card stat"><h2>805</h2><p>Archived Files</p></div>
+<div class="card stat"><h2>56.75GB</h2><p>Total Archive</p></div>
+<div class="card stat"><h2>789</h2><p>Verified Photos</p></div>
+<div class="card stat"><h2>11</h2><p>Video Records</p></div>
 </section>
 
-<section class="section" id="archive">
-  <div class="section-title">
-    <h2>Archive Sections</h2>
-    <p>Access KALD's preserved digital resources through organized archive categories.</p>
-  </div>
+<div class="section-title">
+<h2>Archive Sections</h2>
+<p>Select a section below to browse the archive.</p>
+</div>
 
-  <div class="grid">
+<section class="grid">
+<div class="card">
+<h2>Photo Archive</h2>
+<p>Browse event photographs, conferences, awareness campaigns, and educational activities.</p>
+<a class="btn" href="photos.html">Open Photos</a>
+</div>
 
-    <div class="archive-card">
-      <h3>Photo Archive</h3>
-      <p>Access archived photographs, conferences, awareness campaigns, educational programs, and community events.</p>
-      <a href="https://docs.google.com/folderview?id=1f93xRkLj2EI9ARoSYnYuoWoXbsvCEnAl" target="_blank">Open Photos</a>
-    </div>
+<div class="card">
+<h2>Video Library</h2>
+<p>Access archived conferences, lectures, workshops, and historical video records.</p>
+<a class="btn" href="videos.html">Open Videos</a>
+</div>
 
-    <div class="archive-card">
-      <h3>Video Library</h3>
-      <p>Access archived conferences, lectures, workshops, educational programs, and special events preserved in the archive.</p>
-      <a href="https://docs.google.com/folderview?id=1zW-wb7bk2yRwMN22hoco4O9FW8IwrgER" target="_blank">Open Videos</a>
-    </div>
+<div class="card">
+<h2>Document Archive</h2>
+<p>Access publications, educational materials, organizational records, and archive documents.</p>
+<a class="btn" href="documents.html">Open Documents</a>
+</div>
 
-    <div class="archive-card">
-      <h3>Document Archive</h3>
-      <p>Access archived documents, publications, educational materials, organizational records, and historical files.</p>
-      <a href="https://drive.google.com/drive/u/0/folders/1rr-5IHTR1Vhg5ieXegdkQsqiIh836Are" target="_blank">Open Documents</a>
-    </div>
-
-    <div class="archive-card">
-      <h3>Reports Center</h3>
-      <p>Access archive reports, project records, annual summaries, and organizational documentation.</p>
-      <a href="https://docs.google.com/folderview?id=1ackoilyuC1LpVd8P2DQwFTL_R-nYhCPb" target="_blank">Open Reports</a>
-    </div>
-
-  </div>
+<div class="card">
+<h2>Reports Center</h2>
+<p>Access archive reports, inventory files, recovery reports, and portal backup records.</p>
+<a class="btn" href="reports.html">Open Reports</a>
+</div>
 </section>
 
-<section class="section" id="about">
-  <div class="about">
-    <h2>About the Digital Archive</h2>
-    <p>
-      The KALD Digital Archive Center was developed to preserve and organize historical media, documents, photographs,
-      videos, and reports related to the Kuwaiti Association for Learning Differences.
-    </p>
-    <br>
-    <p>
-      This portal provides a professional access point for reviewing archived materials, supporting presentation,
-      documentation, institutional memory, and future digital preservation.
-    </p>
-  </div>
-</section>
-
-<footer class="footer">
-  <p>KALD Digital Archive Center</p>
-  <p>Prepared by Peter Belarmino</p>
+<footer>
+<p>KALD Digital Archive Center | Prepared by Peter Belarmino</p>
 </footer>
 
 </body>

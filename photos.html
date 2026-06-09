@@ -2,61 +2,59 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KALD Photo Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+*{box-sizing:border-box}
 body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
-nav{background:white;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001}
-nav img{height:55px}
-nav a{margin-left:20px;text-decoration:none;color:#0b4f8a;font-weight:700}
-.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;padding:60px 25px;text-align:center}
-.hero h1{font-size:42px}
-.section{max-width:1100px;margin:auto;padding:40px 25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+nav{background:#fff;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a}
+.brand img{height:52px}
+nav a{text-decoration:none;color:#0b4f8a;font-weight:700;margin-left:18px}
+.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:58px 25px}
+.hero h1{font-size:40px;margin:0}
+.grid{max-width:1100px;margin:40px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;padding:0 25px}
 .card{background:white;border-radius:18px;padding:28px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
-.card h2{color:#0b4f8a}
-.card a{display:inline-block;margin-top:15px;background:#0b4f8a;color:white;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700}
-footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:40px}
+.card h2{color:#0b4f8a;margin-top:0}
+.btn{display:inline-block;background:#0b4f8a;color:white;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;margin-top:14px}
+footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
 </style>
 </head>
 <body>
 
 <nav>
-<div><img src="assets/logo.jpg"></div>
+<div class="brand"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></div>
 <div>
 <a href="index.html">Home</a>
 <a href="photos.html">Photos</a>
 <a href="videos.html">Videos</a>
 <a href="documents.html">Documents</a>
+<a href="reports.html">Reports</a>
 </div>
 </nav>
 
 <section class="hero">
-<h1>KALD Photo Archive</h1>
-<p>Browse historical photographs preserved in the KALD Digital Archive.</p>
+<h1>Photo Archive</h1>
+<p>Browse historical photograph collections preserved in the KALD Digital Archive.</p>
 </section>
 
-<section class="section">
-<div class="grid">
-
+<section class="grid">
 <div class="card">
 <h2>2016 Events</h2>
 <p>191 archived photographs from KALD events and activities in 2016.</p>
-<a href="photos-2016.html">Open Gallery</a>
+<a class="btn" href="photos-2016.html">Open Gallery</a>
 </div>
 
 <div class="card">
 <h2>2017 International Conference</h2>
 <p>597 archived photographs from the KALD International Conference collection.</p>
-<a href="photos-2016.html">Open Gallery</a>
+<a class="btn" href="https://docs.google.com/folderview?id=1f93xRkLj2EI9ARoSYnYuoWoXbsvCEnAl" target="_blank">Open Collection</a>
 </div>
 
 <div class="card">
 <h2>2019 Conference</h2>
 <p>1 archived file from the 2019 KALD conference collection.</p>
-<a href="photos-2016.html">Open Gallery</a>
-</div>
-
+<a class="btn" href="https://docs.google.com/folderview?id=1f93xRkLj2EI9ARoSYnYuoWoXbsvCEnAl" target="_blank">Open Collection</a>
 </div>
 </section>
 
