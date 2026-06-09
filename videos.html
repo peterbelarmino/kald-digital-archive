@@ -2,67 +2,36 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KALD Video Library</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
-nav{background:white;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001}
-nav img{height:55px}
-nav a{margin-left:20px;text-decoration:none;color:#0b4f8a;font-weight:700}
-.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;padding:60px 25px;text-align:center}
-.hero h1{font-size:42px}
-.section{max-width:1100px;margin:auto;padding:40px 25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-.card{background:white;border-radius:18px;padding:28px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
-.card h2{color:#0b4f8a}
-.card a{display:inline-block;margin-top:15px;background:#0b4f8a;color:white;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700}
-footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:40px}
+nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a}.brand img{height:52px}
+nav a{text-decoration:none;color:#0b4f8a;font-weight:700;margin-left:18px}
+.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:55px 25px}
+.grid{max-width:1150px;margin:40px auto;padding:0 25px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:white;border-radius:18px;padding:24px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
+.card h3{color:#0b4f8a;margin-top:0}.tag{font-weight:700;color:#526173}
+footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
 </style>
 </head>
 <body>
-
-<nav>
-<div><img src="assets/logo.jpg"></div>
-<div>
-<a href="index.html">Home</a>
-<a href="photos.html">Photos</a>
-<a href="videos.html">Videos</a>
-<a href="documents.html">Documents</a>
-</div>
-</nav>
-
-<section class="hero">
-<h1>KALD Video Library</h1>
-<p>Access archived conferences, lectures, workshops, educational programs, and special events.</p>
+<nav><div class="brand"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></div><div><a href="index.html">Home</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
+<section class="hero"><h1>Video Library</h1><p>Internal catalog of 11 verified archived video records. Full media is preserved in secure archive storage.</p></section>
+<section class="grid">
+<div class="card"><h3>KALD 2008 Event</h3><p class="tag">8.06 GB</p><p>Preserved historical event video record.</p></div>
+<div class="card"><h3>KALD 2014 Event</h3><p class="tag">3.35 GB</p><p>Archived lecture or event video material.</p></div>
+<div class="card"><h3>KALD CD113V</h3><p class="tag">26.4 MB</p><p>Converted video archive item.</p></div>
+<div class="card"><h3>KALD CD118V</h3><p class="tag">9.24 GB</p><p>Large preserved video archive record.</p></div>
+<div class="card"><h3>KALD CD119V</h3><p class="tag">1.47 GB</p><p>Converted archive video item.</p></div>
+<div class="card"><h3>KALD CD122V 2019</h3><p class="tag">4.02 GB</p><p>2019-related video archive record.</p></div>
+<div class="card"><h3>KALD CD123V</h3><p class="tag">3.98 GB</p><p>Converted video archive item.</p></div>
+<div class="card"><h3>KALD CD124V</h3><p class="tag">4.21 GB</p><p>Converted video archive item.</p></div>
+<div class="card"><h3>KALD CD125V</h3><p class="tag">4.73 GB</p><p>Converted video archive item.</p></div>
+<div class="card"><h3>KALD CD136V Version 2</h3><p class="tag">1.58 GB</p><p>Final cleaned video version.</p></div>
+<div class="card"><h3>KALD CD139 2014</h3><p class="tag">7.60 GB</p><p>2014 archived video record.</p></div>
 </section>
-
-<section class="section">
-<div class="grid">
-
-<div class="card">
-<h2>Video Archive</h2>
-<p>11 verified MP4 videos preserved from KALD historical media collections.</p>
-<a href="videos.html">Preview Catalog</a>
-</div>
-
-<div class="card">
-<h2>Archive Size</h2>
-<p>Total video library size: 51.83 GB.</p>
-<a href="videos.html">Preview Catalog</a>
-</div>
-
-<div class="card">
-<h2>Featured Records</h2>
-<p>Includes 2008 event, 2014 lecture materials, 2019 conference, and historical video records.</p>
-<a href="videos.html">Preview Catalog</a>
-</div>
-
-</div>
-</section>
-
-<footer>
-<p>KALD Digital Archive Center | Video Library</p>
-</footer>
-
+<footer><p>KALD Digital Archive Center | Video Library</p></footer>
 </body>
 </html>
