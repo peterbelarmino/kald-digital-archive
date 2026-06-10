@@ -2541,9 +2541,36 @@ function filterDay(day){
   const photoCount=document.getElementById("photoCount");
   if(photoCount) photoCount.textContent="Showing "+visible+" of "+cards.length+" photos";
 }
+
+let touchStartX=0;
+let touchEndX=0;
+
+const viewerBox=document.getElementById("viewer");
+if(viewerBox){
+  viewerBox.addEventListener("touchstart", function(e){
+    touchStartX = e.changedTouches[0].screenX;
+  }, false);
+
+  viewerBox.addEventListener("touchend", function(e){
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, false);
+}
+
+function handleSwipe(){
+  const diff = touchEndX - touchStartX;
+  if(Math.abs(diff) < 50) return;
+
+  if(diff < 0){
+    nextPhoto();
+  } else {
+    prevPhoto();
+  }
+}
 </script>
 </body>
 </html>
+
 
 
 
