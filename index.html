@@ -34,6 +34,13 @@ nav{padding:12px 14px;flex-wrap:wrap}
 .nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:12px}
 .nav-links a{font-size:14px}
 }
+
+.searchBox{max-width:900px;margin:30px auto 0;padding:0 25px}
+.searchBox input{width:100%;padding:16px;border:0;border-radius:14px;font-size:17px;box-shadow:0 8px 25px #0003}
+.results{max-width:900px;margin:18px auto 0;padding:0 25px;display:none}
+.resultItem{background:white;color:#1b2a3a;border-radius:14px;padding:18px;margin-bottom:12px;box-shadow:0 5px 18px #0002}
+.resultItem a{color:#0b4f8a;font-weight:800;text-decoration:none}
+.resultItem small{display:block;color:#526173;margin-top:5px}
 </style>
 </head>
 <body>
@@ -44,7 +51,10 @@ nav{padding:12px 14px;flex-wrap:wrap}
 <h1>KALD Digital Archive Center</h1>
 <p>Professional digital archive portal for preserved photographs, videos, documents, reports, and historical records of KALD.</p>
 </section>
-
+<div class="searchBox">
+<input id="globalSearch" type="text" placeholder="Search archive: 2017, 2019, video, reports, documents, CD118V">
+</div>
+<div class="results" id="searchResults"></div>
 <section class="stats">
 <div class="card stat"><h2>805</h2><p>Archived Files</p></div>
 <div class="card stat"><h2>56.75GB</h2><p>Total Archive</p></div>
@@ -87,8 +97,52 @@ nav{padding:12px 14px;flex-wrap:wrap}
 <p>KALD Digital Archive Center | Prepared by Peter Belarmino</p>
 </footer>
 
+<script>
+const archiveIndex=[
+ {title:"2016 Event Gallery",type:"Photos",url:"photos-2016.html",tags:"2016 photos event gallery archive"},
+ {title:"2017 International Conference Gallery",type:"Photos",url:"photos-2017.html",tags:"2017 international conference 597 photos day 1 day 2"},
+ {title:"2019 Conference Gallery",type:"Photos",url:"photos-2019.html",tags:"2019 conference 476 photos november 27"},
+ {title:"Video Library",type:"Videos",url:"videos.html",tags:"video videos CD118V CD119V CD122V 2019 CD139 2014"},
+ {title:"KALD 2008 Event Video",type:"Videos",url:"videos.html",tags:"2008 video event"},
+ {title:"KALD 2014 Event Video",type:"Videos",url:"videos.html",tags:"2014 video event CD139"},
+ {title:"Reports Center",type:"Reports",url:"reports.html",tags:"archive summary master inventory recovery report csv txt"},
+ {title:"Archive Summary Report",type:"Reports",url:"assets/reports/ARCHIVE_SUMMARY.txt",tags:"archive summary report"},
+ {title:"Master Inventory",type:"Reports",url:"assets/reports/MASTER_INVENTORY.csv",tags:"master inventory csv archive"},
+ {title:"Recovery Report",type:"Reports",url:"assets/reports/RECOVERY_REPORT.txt",tags:"recovery report conversion"},
+ {title:"Document Archive",type:"Documents",url:"documents.html",tags:"documents educational records look to the future iso"},
+ {title:"Dashboard",type:"Dashboard",url:"dashboard.html",tags:"dashboard statistics archive size files photos videos"}
+];
+
+const box=document.getElementById("globalSearch");
+const results=document.getElementById("searchResults");
+
+if(box){
+ box.addEventListener("input",()=>{
+   const q=box.value.toLowerCase().trim();
+   results.innerHTML="";
+   if(!q){results.style.display="none";return;}
+   const matches=archiveIndex.filter(item=>
+     item.title.toLowerCase().includes(q) ||
+     item.type.toLowerCase().includes(q) ||
+     item.tags.toLowerCase().includes(q)
+   ).slice(0,8);
+
+   if(!matches.length){
+     results.style.display="block";
+     results.innerHTML="<div class='resultItem'>No matching archive record found.</div>";
+     return;
+   }
+
+   results.style.display="block";
+   matches.forEach(item=>{
+     results.innerHTML += `<div class="resultItem"><a href="${item.url}">${item.title}</a><small>${item.type}</small></div>`;
+   });
+ });
+}
+</script>
 </body>
 </html>
+
 
 
 
