@@ -11,8 +11,8 @@ nav a{text-decoration:none;color:#0b4f8a;font-weight:700;margin-left:18px}
 .card h2{color:#0b4f8a;font-size:32px}
 footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
 </style></head>
-<body>
-<nav><strong>KALD Owner</strong><div><a href="index.html">Public Portal</a><a href="login.html">Logout</a></div></nav>
+<body data-role="owner">
+<nav><strong>KALD Owner</strong><div><a href="index.html">Public Portal</a><a href="#" onclick="logout()">Logout</a></div></nav>
 <section class="hero"><h1>Owner Dashboard</h1><p>Executive overview of KALD Digital Archive status.</p></section>
 <section class="grid">
 <div class="card"><h2>805</h2><p>Total Archived Files</p></div>
@@ -21,4 +21,19 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 <div class="card"><h2>56.75GB</h2><p>Archive Size</p></div>
 </section>
 <footer>KALD Digital Archive | Owner Dashboard</footer>
+<script>
+const requiredRole = document.body.dataset.role;
+const currentRole = localStorage.getItem("kaldRole");
+
+if(requiredRole && currentRole !== requiredRole){
+  alert("Please login first.");
+  window.location.href = "login.html";
+}
+
+function logout(){
+  localStorage.removeItem("kaldRole");
+  window.location.href = "login.html";
+}
+</script>
 </body></html>
+

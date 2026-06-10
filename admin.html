@@ -11,8 +11,8 @@ nav a{text-decoration:none;color:#0b4f8a;font-weight:700;margin-left:18px}
 .card h2{color:#0b4f8a}
 footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
 </style></head>
-<body>
-<nav><strong>KALD Admin</strong><div><a href="index.html">Public Portal</a><a href="login.html">Logout</a></div></nav>
+<body data-role="admin">
+<nav><strong>KALD Admin</strong><div><a href="index.html">Public Portal</a><a href="#" onclick="logout()">Logout</a></div></nav>
 <section class="hero"><h1>Admin Dashboard</h1><p>Archive management control panel.</p></section>
 <section class="grid">
 <div class="card"><h2>Photo Archive</h2><p>Manage photo collections, event titles, and gallery records.</p></div>
@@ -21,4 +21,19 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 <div class="card"><h2>Reports</h2><p>Review archive summary, recovery reports, and inventory status.</p></div>
 </section>
 <footer>KALD Digital Archive | Admin Panel</footer>
+<script>
+const requiredRole = document.body.dataset.role;
+const currentRole = localStorage.getItem("kaldRole");
+
+if(requiredRole && currentRole !== requiredRole){
+  alert("Please login first.");
+  window.location.href = "login.html";
+}
+
+function logout(){
+  localStorage.removeItem("kaldRole");
+  window.location.href = "login.html";
+}
+</script>
 </body></html>
+

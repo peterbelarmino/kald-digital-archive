@@ -10,9 +10,24 @@ nav a{text-decoration:none;color:#0b4f8a;font-weight:700;margin-left:18px}
 .card{background:white;border-radius:18px;padding:28px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
 footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
 </style></head>
-<body>
-<nav><strong>KALD Staff</strong><div><a href="index.html">Public Portal</a><a href="login.html">Logout</a></div></nav>
+<body data-role="staff">
+<nav><strong>KALD Staff</strong><div><a href="index.html">Public Portal</a><a href="#" onclick="logout()">Logout</a></div></nav>
 <section class="hero"><h1>Staff Portal</h1><p>Staff access for archive review and content requests.</p></section>
 <section class="section"><div class="card"><h2>Staff Access</h2><p>Use this area to review archive sections, request updates, and prepare materials for archive submission.</p></div></section>
 <footer>KALD Digital Archive | Staff Portal</footer>
+<script>
+const requiredRole = document.body.dataset.role;
+const currentRole = localStorage.getItem("kaldRole");
+
+if(requiredRole && currentRole !== requiredRole){
+  alert("Please login first.");
+  window.location.href = "login.html";
+}
+
+function logout(){
+  localStorage.removeItem("kaldRole");
+  window.location.href = "login.html";
+}
+</script>
 </body></html>
+
