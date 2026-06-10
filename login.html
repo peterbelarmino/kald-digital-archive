@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KALD Archive Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#083d6b,#0b6fae);min-height:100vh;display:flex;align-items:center;justify-content:center;color:#1b2a3a}
+.login{background:white;width:100%;max-width:420px;border-radius:22px;padding:35px;box-shadow:0 12px 35px #0004;text-align:center}
+.login img{height:80px;margin-bottom:15px}
+h1{color:#0b4f8a;margin:5px 0}
+p{color:#526173}
+input,select{width:100%;padding:14px;margin:10px 0;border:1px solid #ccd6e0;border-radius:12px;font-size:15px}
+button{width:100%;background:#0b4f8a;color:white;border:0;border-radius:12px;padding:14px;font-weight:800;font-size:16px;margin-top:12px;cursor:pointer}
+.back{display:block;margin-top:18px;color:#0b4f8a;text-decoration:none;font-weight:700}
+.note{font-size:12px;margin-top:15px;color:#777}
+</style>
+</head>
+<body>
+<div class="login">
+<img src="assets/logo.jpg">
+<h1>KALD Archive Login</h1>
+<p>Authorized access for archive management and review.</p>
+
+<select id="role">
+<option value="admin.html">Admin</option>
+<option value="staff.html">Staff</option>
+<option value="owner.html">Owner</option>
+</select>
+
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<a class="back" href="index.html">Back to Public Portal</a>
+<div class="note">Demo interface only. Secure authentication will be connected later.</div>
+</div>
+
+<script>
+function login(){
+  const page=document.getElementById("role").value;
+  window.location.href=page;
+}
+</script>
+</body>
+</html>
