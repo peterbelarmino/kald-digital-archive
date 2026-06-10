@@ -70,7 +70,7 @@ nav{padding:12px 14px;flex-wrap:wrap}
 <div class="card"><h2>Day 2</h2><p><strong>29 April 2017</strong></p><p>398 archived photos from the second day of the 5th International Conference.</p></div>
 <div class="card"><h2>Full Gallery</h2><p><strong>597 Photos</strong></p><p>Complete optimized gallery for the 2017 International Conference archive.</p></div>
 </section>
-<div class='actions'><a class='btn' href='photos.html'>Back to Photos</a></div><div class="searchPanel"><input id="searchBox" type="text" placeholder="Search photo name, example: DSC_4500"><span class="count" id="photoCount">Showing 597 photos</span></div>
+<div class='actions'><a class='btn' href='photos.html'>Back to Photos</a></div><div class="searchPanel"><button onclick="filterDay('all')">All 597</button><button onclick="filterDay('day1')">Day 1 - 28 April</button><button onclick="filterDay('day2')">Day 2 - 29 April</button><input id="searchBox" type="text" placeholder="Search photo name, example: DSC_4500"><span class="count" id="photoCount">Showing 597 photos</span></div>
 <div class="gallery">
 
 <div class="photo">
@@ -2521,9 +2521,30 @@ if(searchBox){
     photoCount.textContent="Showing "+visible+" of "+cards.length+" photos";
   });
 }
+
+function filterDay(day){
+  const cards=[...document.querySelectorAll(".photo")];
+  let visible=0;
+
+  cards.forEach(card=>{
+    const name=card.innerText.trim();
+    const num=parseInt(name.replace(/\D/g,""),10);
+
+    let show=true;
+    if(day==="day1") show = num < 4328;
+    if(day==="day2") show = num >= 4328;
+
+    card.style.display = show ? "" : "none";
+    if(show) visible++;
+  });
+
+  const photoCount=document.getElementById("photoCount");
+  if(photoCount) photoCount.textContent="Showing "+visible+" of "+cards.length+" photos";
+}
 </script>
 </body>
 </html>
+
 
 
 
