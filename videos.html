@@ -25,25 +25,73 @@ nav{padding:12px 14px;flex-wrap:wrap}
 .nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:12px}
 .nav-links a{font-size:14px}
 }
+
+.searchPanel{max-width:1150px;margin:28px auto 0;padding:0 25px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.searchPanel input{flex:1;min-width:240px;padding:14px;border:1px solid #ccd6e0;border-radius:12px;font-size:16px}
+.searchPanel .count{font-weight:800;color:#0b4f8a}
+.badge{display:inline-block;background:#e8f3fb;color:#0b4f8a;padding:7px 10px;border-radius:20px;font-weight:800;font-size:12px;margin-top:8px}
+.card button{margin-top:12px;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.modalBox{background:white;max-width:520px;width:100%;border-radius:18px;padding:28px;box-shadow:0 10px 35px #0005}
+.modalBox h2{color:#0b4f8a;margin-top:0}
+.modalBox button{background:#0b4f8a;color:white;border:0;border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer}
 </style>
 </head>
 <body>
 <nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
 <section class="hero"><h1>Video Library</h1><p>Internal catalog of 11 verified archived video records. Full media is preserved in secure archive storage.</p></section>
-<section class="grid">
-<div class="card"><h3>KALD 2008 Event</h3><p class="tag">8.06 GB</p><p>Preserved historical event video record.</p></div>
-<div class="card"><h3>KALD 2014 Event</h3><p class="tag">3.35 GB</p><p>Archived lecture or event video material.</p></div>
-<div class="card"><h3>KALD CD113V</h3><p class="tag">26.4 MB</p><p>Converted video archive item.</p></div>
-<div class="card"><h3>KALD CD118V</h3><p class="tag">9.24 GB</p><p>Large preserved video archive record.</p></div>
-<div class="card"><h3>KALD CD119V</h3><p class="tag">1.47 GB</p><p>Converted archive video item.</p></div>
-<div class="card"><h3>KALD CD122V 2019</h3><p class="tag">4.02 GB</p><p>2019-related video archive record.</p></div>
-<div class="card"><h3>KALD CD123V</h3><p class="tag">3.98 GB</p><p>Converted video archive item.</p></div>
-<div class="card"><h3>KALD CD124V</h3><p class="tag">4.21 GB</p><p>Converted video archive item.</p></div>
-<div class="card"><h3>KALD CD125V</h3><p class="tag">4.73 GB</p><p>Converted video archive item.</p></div>
-<div class="card"><h3>KALD CD136V Version 2</h3><p class="tag">1.58 GB</p><p>Final cleaned video version.</p></div>
-<div class="card"><h3>KALD CD139 2014</h3><p class="tag">7.60 GB</p><p>2014 archived video record.</p></div>
+<div class="searchPanel"><input id="videoSearch" type="text" placeholder="Search video title, example: 2014 or CD118V"><span class="count" id="videoCount">Showing 11 videos</span></div><section class="grid">
+<div class="card"><h3>KALD 2008 Event</h3><p class="tag">8.06 GB</p><p>Preserved historical event video record.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
+<div class="card"><h3>KALD 2014 Event</h3><p class="tag">3.35 GB</p><p>Archived lecture or event video material.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
+<div class="card"><h3>KALD CD113V</h3><p class="tag">26.4 MB</p><p>Converted video archive item.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
+<div class="card"><h3>KALD CD118V</h3><p class="tag">9.24 GB</p><p>Large preserved video archive record.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
+<div class="card"><h3>KALD CD119V</h3><p class="tag">1.47 GB</p><p>Converted archive video item.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
+<div class="card"><h3>KALD CD122V 2019</h3><p class="tag">4.02 GB</p><p>2019-related video archive record.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
+<div class="card"><h3>KALD CD123V</h3><p class="tag">3.98 GB</p><p>Converted video archive item.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
+<div class="card"><h3>KALD CD124V</h3><p class="tag">4.21 GB</p><p>Converted video archive item.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
+<div class="card"><h3>KALD CD125V</h3><p class="tag">4.73 GB</p><p>Converted video archive item.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
+<div class="card"><h3>KALD CD136V Version 2</h3><p class="tag">1.58 GB</p><p>Final cleaned video version.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
+<div class="card"><h3>KALD CD139 2014</h3><p class="tag">7.60 GB</p><p>2014 archived video record.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
 </section>
 <footer><p>KALD Digital Archive Center | Video Library</p></footer>
+<div class="modal" id="videoModal">
+  <div class="modalBox">
+    <h2 id="modalTitle">Video Details</h2>
+    <p id="modalText">This archived video record is preserved in secure storage. Online streaming will be enabled after compressed viewing copies are prepared.</p>
+    <p><strong>Status:</strong> Catalog available. Full video preserved offline / secure archive.</p>
+    <button onclick="closeVideoInfo()">Close</button>
+  </div>
+</div>
+
+<script>
+const cards=[...document.querySelectorAll(".card")];
+const videoSearch=document.getElementById("videoSearch");
+const videoCount=document.getElementById("videoCount");
+
+if(videoSearch){
+  videoSearch.addEventListener("input",function(){
+    const q=this.value.toLowerCase().trim();
+    let visible=0;
+    cards.forEach(card=>{
+      const show=card.innerText.toLowerCase().includes(q);
+      card.style.display=show?"":"none";
+      if(show)visible++;
+    });
+    videoCount.textContent="Showing "+visible+" of "+cards.length+" videos";
+  });
+}
+
+function openVideoInfo(btn){
+  const card=btn.closest(".card");
+  document.getElementById("modalTitle").textContent=card.querySelector("h3").textContent;
+  document.getElementById("modalText").textContent=card.querySelector("p").textContent + " - Preserved video record. No automatic download.";
+  document.getElementById("videoModal").classList.add("show");
+}
+function closeVideoInfo(){
+  document.getElementById("videoModal").classList.remove("show");
+}
+</script>
 </body>
 </html>
 
