@@ -15,7 +15,7 @@ nav a{text-decoration:none;color:#0b4f8a;font-weight:700}
 .btn{display:inline-block;background:#0b4f8a;color:white;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700}
 .gallery{max-width:1150px;margin:auto;padding:10px 25px 45px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
 .photo{background:white;border-radius:14px;box-shadow:0 4px 12px #0003;overflow:hidden}
-.photo img{width:100%;height:180px;object-fit:cover;display:block}
+.photo{cursor:pointer}.photo:hover{transform:translateY(-3px);box-shadow:0 8px 24px #0004}.photo{transition:.2s}.photo img{cursor:pointer;width:100%;height:180px;object-fit:cover;display:block}
 .photo p{margin:0;padding:8px;text-align:center;font-size:13px;font-weight:700;color:#0b4f8a}
 footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:35px}
 @media(max-width:760px){}nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
@@ -35,7 +35,7 @@ nav{padding:12px 14px;flex-wrap:wrap}
 .viewer img{max-width:90%;max-height:75vh;transform:scale(1);transition:.2s}
 .viewer.show{display:flex}
 .viewer .topbar{position:absolute;top:15px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:center;color:white;font-weight:700}
-.viewer button{background:#0b6fae;color:white;border:0;border-radius:10px;padding:10px 14px;font-weight:700;margin:4px}
+.viewer button{cursor:pointer;background:#0b6fae;color:white;border:0;border-radius:10px;padding:10px 14px;font-weight:700;margin:4px}
 .viewer .navbtn{position:absolute;top:50%;transform:translateY(-50%);font-size:28px}
 .viewer .prev{left:20px}
 .viewer .next{right:20px}
