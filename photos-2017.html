@@ -29,6 +29,10 @@ nav{padding:12px 14px;flex-wrap:wrap}
 .nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:12px}
 .nav-links a{font-size:14px}
 }
+
+.searchPanel{max-width:1150px;margin:25px auto 0;padding:0 25px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.searchPanel input{flex:1;min-width:240px;padding:14px;border:1px solid #ccd6e0;border-radius:12px;font-size:16px}
+.searchPanel .count{font-weight:800;color:#0b4f8a}
 </style>
 <style>
 .viewer{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
@@ -52,12 +56,16 @@ nav{padding:12px 14px;flex-wrap:wrap}
 .nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:12px}
 .nav-links a{font-size:14px}
 }
+
+.searchPanel{max-width:1150px;margin:25px auto 0;padding:0 25px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.searchPanel input{flex:1;min-width:240px;padding:14px;border:1px solid #ccd6e0;border-radius:12px;font-size:16px}
+.searchPanel .count{font-weight:800;color:#0b4f8a}
 </style>
 </head>
 <body>
 <nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
 <section class="hero"><h1>2017 International Conference Gallery</h1><p>597 optimized thumbnail previews from the KALD International Conference archive.</p></section>
-<div class="actions"><a class="btn" href="photos.html">Back to Photos</a></div>
+<div class="actions"><a class="btn" href="photos.html">Back to Photos</a></div><div class="searchPanel"><input id="searchBox" type="text" placeholder="Search photo name, example: DSC_4500"><span class="count" id="photoCount">Showing 597 photos</span></div>
 <div class="gallery">
 
 <div class="photo">
@@ -2488,9 +2496,30 @@ function prevPhoto(){if(!photos.length)return;current=(current-1+photos.length)%
 function nextPhoto(){if(!photos.length)return;current=(current+1)%photos.length;zoom=1;updateViewer()}
 function zoomIn(){zoom=Math.min(3,zoom+.25);updateViewer()}
 function zoomOut(){zoom=Math.max(.6,zoom-.25);updateViewer()}
+
+const searchBox=document.getElementById("searchBox");
+const photoCount=document.getElementById("photoCount");
+if(searchBox){
+  searchBox.addEventListener("input",function(){
+    const q=this.value.toLowerCase().trim();
+    const cards=[...document.querySelectorAll(".photo")];
+    let visible=0;
+    cards.forEach(card=>{
+      const text=card.innerText.toLowerCase();
+      if(text.includes(q)){
+        card.style.display="";
+        visible++;
+      }else{
+        card.style.display="none";
+      }
+    });
+    photoCount.textContent="Showing "+visible+" of "+cards.length+" photos";
+  });
+}
 </script>
 </body>
 </html>
+
 
 
 
