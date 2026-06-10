@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Owner Dashboard</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head><meta charset="UTF-8"><title>Chair Dashboard</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{margin:0;font-family:Segoe UI,Arial;background:#f4f7fb;color:#1b2a3a}
 nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001}
@@ -12,15 +12,15 @@ nav a{text-decoration:none;color:#0b4f8a;font-weight:700;margin-left:18px}
 footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
 </style></head>
 <body data-role="owner">
-<nav><strong>KALD Owner</strong><div><a href="index.html">Public Portal</a><a href="#" onclick="logout()">Logout</a></div></nav>
-<section class="hero"><h1>Owner Dashboard</h1><p>Executive overview of KALD Digital Archive status.</p></section>
+<nav><strong>KALD Chair</strong><div><a href="index.html">Public Portal</a><a href="#" onclick="logout()">Logout</a></div></nav>
+<section class="hero"><h1>Chair Dashboard</h1><p>Executive overview of KALD Digital Archive status.</p></section>
 <section class="grid">
 <div class="card"><h2>805</h2><p>Total Archived Files</p></div>
 <div class="card"><h2>789</h2><p>Photo Records</p></div>
 <div class="card"><h2>11</h2><p>Video Records</p></div>
 <div class="card"><h2>56.75GB</h2><p>Archive Size</p></div>
 </section>
-<footer>KALD Digital Archive | Owner Dashboard</footer>
+<footer>KALD Digital Archive | Chair Dashboard</footer>
 <script>
 const requiredRole = document.body.dataset.role;
 const currentRole = localStorage.getItem("kaldRole");
