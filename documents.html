@@ -6,15 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
-
-
 nav a{text-decoration:none;color:#0b4f8a;font-weight:700}
 .hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:55px 25px}
-.section{max-width:1000px;margin:40px auto;padding:0 25px}
+.section{max-width:1100px;margin:40px auto;padding:0 25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
 .card{background:white;border-radius:18px;padding:28px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
-.card h2{color:#0b4f8a}.tag{font-weight:700;color:#526173}
+.card h2{color:#0b4f8a;margin-top:0}
+.tag{font-weight:800;color:#526173}
+.badge{display:inline-block;background:#e8f3fb;color:#0b4f8a;padding:7px 10px;border-radius:20px;font-weight:800;font-size:12px;margin:6px 6px 0 0}
 footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
-@media(max-width:760px){}nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
+nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
 .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}
 .brand img{height:52px}
 .nav-links{display:flex;align-items:center;gap:18px;margin-left:auto}
@@ -29,13 +30,60 @@ nav{padding:12px 14px;flex-wrap:wrap}
 </head>
 <body>
 <nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
-<section class="hero"><h1>Document Archive</h1><p>Internal catalog of preserved documents and educational records.</p></section>
-<section class="section">
-<div class="card"><h2>Document Archive Status</h2><p class="tag">Current Public Document Files: 0</p><p>No PDF, Word, PowerPoint, or Excel documents were found in the current KALD archive scan. This section is reserved for future public documents, publications, educational materials, and approved organizational records.</p><p class="tag">Status: Pending future document uploads or extraction.</p></div>|<div class="card"><h2>Document Archive Status</h2><p class="tag">Current Public Document Files: 0</p><p>No PDF, Word, PowerPoint, or Excel documents were found in the current KALD archive scan. This section is reserved for future public documents, publications, educational materials, and approved organizational records.</p><p class="tag">Status: Pending future document uploads or extraction.</p></div>
+
+<section class="hero">
+<h1>Document Archive</h1>
+<p>Recovered documents, publications, educational materials, and preserved archive records.</p>
 </section>
+
+<section class="section">
+<div class="grid">
+
+<div class="card">
+<h2>A Look to the Future</h2>
+<p class="tag">2 PDF files | English and Arabic</p>
+<p>Recovered from CD108PDF. Includes KALD presentation documents in English and Arabic.</p>
+<span class="badge">PDF</span><span class="badge">Recovered</span>
+</div>
+
+<div class="card">
+<h2>Kuwait Martyrs Collection</h2>
+<p class="tag">14 PDF files</p>
+<p>Arabic PDF collection recovered from CD88PDF, containing parts 1 to 14.</p>
+<span class="badge">PDF</span><span class="badge">Arabic</span>
+</div>
+
+<div class="card">
+<h2>Language Skills Competition</h2>
+<p class="tag">11 Word files + 5 design files</p>
+<p>Educational competition documents and design materials recovered from CD22 WORD FILE.</p>
+<span class="badge">Word</span><span class="badge">Design</span>
+</div>
+
+<div class="card">
+<h2>Najwa Document</h2>
+<p class="tag">1 Word document</p>
+<p>Recovered from CD20 WORD FILE.</p>
+<span class="badge">DOCX</span><span class="badge">Recovered</span>
+</div>
+
+<div class="card">
+<h2>KALD Talent Show 2016</h2>
+<p class="tag">2 Word documents</p>
+<p>English and Arabic press release documents recovered from CD93 WORD FILE.</p>
+<span class="badge">DOCX</span><span class="badge">Press Release</span>
+</div>
+
+<div class="card">
+<h2>Archive Status</h2>
+<p class="tag">35+ recovered document/design files</p>
+<p>More files may be added after final ISO extraction and management approval.</p>
+<span class="badge">Pending Review</span>
+</div>
+
+</div>
+</section>
+
 <footer><p>KALD Digital Archive Center | Document Archive</p></footer>
 </body>
 </html>
-
-
-
