@@ -21,7 +21,7 @@ for p in files:
 <td>{html.escape(p.name)}</td>
 <td>{t}</td>
 <td>{size_mb} MB</td>
-<td><a class="btn" href="{p.as_posix()}" target="_blank">Open / Download</a></td>
+<td><a class="btn viewbtn" href="{p.as_posix()}" target="_blank">View</a><a class="btn downloadbtn" href="{p.as_posix()}" download>Download</a></td>
 </tr>
 """)
 
@@ -44,7 +44,7 @@ input{{flex:1;min-width:250px}}
 table{{width:100%;border-collapse:collapse;background:white;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px #0002}}
 th,td{{padding:13px;border-bottom:1px solid #e5eaf0;text-align:left;font-size:14px}}
 th{{background:#0b4f8a;color:white}}
-.btn{{display:inline-block;background:#0b4f8a;color:white;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:700}}
+.btn{{display:inline-block;color:white;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:700}} .viewbtn{{background:#0b4f8a;margin-right:6px}} .downloadbtn{{background:#198754}}
 .stats{{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:22px}}
 .card{{background:white;border-radius:16px;padding:18px;box-shadow:0 5px 16px #0002;border-top:5px solid #0b6fae}}
 .card h2{{margin:0;color:#0b4f8a}}
@@ -110,3 +110,4 @@ typeFilter.addEventListener('change',filterDocs);
 
 Path("documents.html").write_text(page, encoding="utf-8")
 print(f"Generated documents.html with {len(files)} documents")
+
