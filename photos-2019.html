@@ -131,19 +131,70 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 </style>
 
 
-<style id="hamburger-menu-css">
-.menu-btn{display:none;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}
+
+
+
+<style id="pro-mobile-header">
+.menu-btn{
+  display:none;
+  background:#0b4f8a;
+  color:white;
+  border:0;
+  border-radius:10px;
+  padding:10px 14px;
+  font-weight:800;
+  cursor:pointer;
+  margin-left:auto;
+}
 @media(max-width:768px){
-  .menu-btn{display:block!important;width:100%;margin-top:8px}
-  .nav-links{display:none!important;width:100%!important;flex-direction:column!important;margin-left:0!important}
-  .nav-links.show{display:flex!important}
-  .nav-links a{width:100%!important;box-sizing:border-box!important;text-align:center!important}
+  nav{
+    padding:12px 14px!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    flex-wrap:wrap!important;
+  }
+  .brand{
+    width:auto!important;
+    max-width:78%!important;
+    font-size:16px!important;
+    line-height:1.15!important;
+  }
+  .brand img{
+    height:42px!important;
+  }
+  .menu-btn{
+    display:block!important;
+    width:auto!important;
+    margin:0!important;
+    font-size:14px!important;
+  }
+  .nav-links{
+    display:none!important;
+    width:100%!important;
+    flex-direction:column!important;
+    gap:8px!important;
+    margin-left:0!important;
+    margin-top:12px!important;
+  }
+  .nav-links.show{
+    display:flex!important;
+  }
+  .nav-links a{
+    width:100%!important;
+    box-sizing:border-box!important;
+    text-align:center!important;
+    background:#eef6fc!important;
+    padding:10px!important;
+    border-radius:10px!important;
+    font-size:14px!important;
+  }
 }
 </style>
 
 </head>
 <body>
-<nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><button class="menu-btn" onclick="toggleMenu()">? Menu</button><div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
+<nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><button class="menu-btn" onclick="toggleMenu()">MENU</button><div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
 <section class="hero"><h1>2019 Conference Gallery</h1><p>476 optimized photo records from KALD event archive dated 27 November 2019.</p></section>
 <div class="actions"><a class="btn" href="photos.html">Back to Photos</a></div>
 <div class="searchPanel"><input id="searchBox" type="text" placeholder="Search photo name"><span class="count" id="photoCount">Showing 476 photos</span></div>
@@ -2095,10 +2146,13 @@ function handleSwipe(){const diff=touchEndX-touchStartX;if(Math.abs(diff)<50)ret
 </script>
 <footer><p>KALD Digital Archive Center | 2019 Conference Gallery</p></footer>
 
-<script id="menu-script">
+
+
+
+<script id="pro-menu-script">
 function toggleMenu(){
-  const nav = document.getElementById("navLinks");
-  if(nav){ nav.classList.toggle("show"); }
+  const nav=document.getElementById("navLinks");
+  if(nav){nav.classList.toggle("show");}
 }
 </script>
 
