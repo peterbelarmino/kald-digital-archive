@@ -153,6 +153,51 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 }
 </style>
 
+
+<style id="documents-mobile-cards">
+@media(max-width:768px){
+  .section{padding:14px!important;margin:18px auto!important}
+  .stats{grid-template-columns:1fr 1fr!important;gap:10px!important}
+  .card{padding:14px!important}
+  .card h2{font-size:28px!important}
+  table, thead, tbody, th, td, tr{display:block!important}
+  thead{display:none!important}
+  table{box-shadow:none!important;background:transparent!important;white-space:normal!important;overflow:visible!important}
+  tbody tr{
+    background:white!important;
+    margin:12px 0!important;
+    padding:14px!important;
+    border-radius:16px!important;
+    box-shadow:0 5px 14px #0002!important;
+  }
+  tbody td{
+    border:0!important;
+    padding:6px 0!important;
+    white-space:normal!important;
+    word-break:break-word!important;
+    font-size:14px!important;
+  }
+  tbody td:nth-child(1){
+    font-weight:800!important;
+    color:#0b4f8a!important;
+    font-size:15px!important;
+  }
+  tbody td:nth-child(2)::before{content:"Type: ";font-weight:800;color:#526173}
+  tbody td:nth-child(3)::before{content:"Size: ";font-weight:800;color:#526173}
+  tbody td:nth-child(4){
+    display:flex!important;
+    gap:8px!important;
+    flex-wrap:wrap!important;
+    margin-top:8px!important;
+  }
+  tbody td:nth-child(4) .btn{
+    flex:1!important;
+    text-align:center!important;
+    min-width:110px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><button class="menu-btn" onclick="toggleMenu()">MENU</button><div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a><a href="archive-status.html">Status</a></div></nav>
@@ -261,10 +306,8 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 </tr>
 
 <tr data-type="Other">
-<td>desktop.ini</td>
 <td>Other</td>
 <td>0.0 MB</td>
-<td><span style="color:#777;font-weight:700">Preview not available</span> <a class="btn" href="assets/documents/desktop.ini" download>Download</a></td>
 </tr>
 
 <tr data-type="Excel">
