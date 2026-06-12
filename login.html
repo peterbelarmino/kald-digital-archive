@@ -111,6 +111,17 @@ button{width:100%;background:#0b4f8a;color:white;border:0;border-radius:12px;pad
 }
 </style>
 
+
+<style id="hamburger-menu-css">
+.menu-btn{display:none;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}
+@media(max-width:768px){
+  .menu-btn{display:block!important;width:100%;margin-top:8px}
+  .nav-links{display:none!important;width:100%!important;flex-direction:column!important;margin-left:0!important}
+  .nav-links.show{display:flex!important}
+  .nav-links a{width:100%!important;box-sizing:border-box!important;text-align:center!important}
+}
+</style>
+
 </head>
 <body>
 <div class="login">
@@ -139,5 +150,13 @@ function login(){
   window.location.href=page;
 }
 </script>
+
+<script id="menu-script">
+function toggleMenu(){
+  const nav = document.getElementById("navLinks");
+  if(nav){ nav.classList.toggle("show"); }
+}
+</script>
+
 </body>
 </html>

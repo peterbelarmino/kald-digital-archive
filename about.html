@@ -122,9 +122,20 @@ nav{padding:12px 14px;flex-wrap:wrap}
 }
 </style>
 
+
+<style id="hamburger-menu-css">
+.menu-btn{display:none;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}
+@media(max-width:768px){
+  .menu-btn{display:block!important;width:100%;margin-top:8px}
+  .nav-links{display:none!important;width:100%!important;flex-direction:column!important;margin-left:0!important}
+  .nav-links.show{display:flex!important}
+  .nav-links a{width:100%!important;box-sizing:border-box!important;text-align:center!important}
+}
+</style>
+
 </head>
 <body>
-<nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
+<nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><button class="menu-btn" onclick="toggleMenu()">? Menu</button><div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
 <section class="hero"><h1>About the Digital Archive</h1><p>Preserving KALD's institutional memory, historical media, and educational records.</p></section>
 <section class="section">
 <div class="card"><h2>Purpose</h2><p>The KALD Digital Archive Center was developed to organize and preserve photographs, videos, documents, reports, and historical materials related to learning differences awareness and education in Kuwait.</p></div>
@@ -133,6 +144,14 @@ nav{padding:12px 14px;flex-wrap:wrap}
 <div class="card"><h2>Prepared By</h2><p>Prepared and organized by Peter Belarmino for professional archive access, review, and presentation.</p></div>
 </section>
 <footer><p>KALD Digital Archive Center | About</p></footer>
+
+<script id="menu-script">
+function toggleMenu(){
+  const nav = document.getElementById("navLinks");
+  if(nav){ nav.classList.toggle("show"); }
+}
+</script>
+
 </body>
 </html>
 
