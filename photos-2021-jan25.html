@@ -11,116 +11,222 @@ nav{background:white;padding:14px 38px;display:flex;justify-content:space-betwee
 .photo img{width:100%;height:145px;object-fit:cover;display:block}
 .photo p{font-size:12px;font-weight:700;color:#0b4f8a;padding:7px;margin:0}
 footer{text-align:center;background:#102a43;color:white;padding:22px;margin-top:35px}
+
+.searchPanel{max-width:1150px;margin:auto;padding:10px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.searchPanel input{flex:1;min-width:240px;padding:13px;border:1px solid #ccd6e0;border-radius:12px;font-size:16px}
+.count{font-weight:800;color:#0b4f8a}
+.viewer{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
+.viewer.show{display:flex}
+.viewer img{max-width:90%;max-height:75vh;transition:.2s}
+.viewer .topbar{position:absolute;top:15px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:center;color:white;font-weight:700}
+.viewer button{background:#0b6fae;color:white;border:0;border-radius:10px;padding:10px 14px;font-weight:700;margin:4px;cursor:pointer}
+.viewer .navbtn{position:absolute;top:50%;transform:translateY(-50%);font-size:28px}
+.viewer .prev{left:20px}.viewer .next{right:20px}
+#backTop{position:fixed;right:18px;bottom:18px;background:#0b4f8a;color:white;border:0;border-radius:50px;padding:12px 16px;font-weight:700;display:none;z-index:999;cursor:pointer}
+
 </style></head><body>
 <nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
-<section class="hero"><h1>2021 Jan 25</h1><p>110 recovered photos</p></section><div class="actions"><a class="btn" href="photos.html">Back to Photos</a></div><section class="gallery">
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0001.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0001.jpg"></a><p> DSC_ (1)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0002.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0002.jpg"></a><p> DSC_ (10)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0003.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0003.jpg"></a><p> DSC_ (11)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0004.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0004.jpg"></a><p> DSC_ (12)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0005.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0005.jpg"></a><p> DSC_ (13)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0006.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0006.jpg"></a><p> DSC_ (14)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0007.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0007.jpg"></a><p> DSC_ (15)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0008.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0008.jpg"></a><p> DSC_ (16)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0009.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0009.jpg"></a><p> DSC_ (17)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0010.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0010.jpg"></a><p> DSC_ (18)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0011.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0011.jpg"></a><p> DSC_ (19)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0012.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0012.jpg"></a><p> DSC_ (2)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0013.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0013.jpg"></a><p> DSC_ (20)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0014.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0014.jpg"></a><p> DSC_ (21)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0015.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0015.jpg"></a><p> DSC_ (22)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0016.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0016.jpg"></a><p> DSC_ (23)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0017.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0017.jpg"></a><p> DSC_ (24)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0018.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0018.jpg"></a><p> DSC_ (25)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0019.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0019.jpg"></a><p> DSC_ (26)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0020.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0020.jpg"></a><p> DSC_ (27)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0021.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0021.jpg"></a><p> DSC_ (28)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0022.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0022.jpg"></a><p> DSC_ (29)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0023.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0023.jpg"></a><p> DSC_ (3)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0024.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0024.jpg"></a><p> DSC_ (30)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0025.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0025.jpg"></a><p> DSC_ (31)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0026.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0026.jpg"></a><p> DSC_ (32)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0027.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0027.jpg"></a><p> DSC_ (33)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0028.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0028.jpg"></a><p> DSC_ (34)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0029.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0029.jpg"></a><p> DSC_ (35)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0030.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0030.jpg"></a><p> DSC_ (36)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0031.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0031.jpg"></a><p> DSC_ (37)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0032.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0032.jpg"></a><p> DSC_ (38)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0033.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0033.jpg"></a><p> DSC_ (39)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0034.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0034.jpg"></a><p> DSC_ (4)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0035.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0035.jpg"></a><p> DSC_ (40)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0036.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0036.jpg"></a><p> DSC_ (41)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0037.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0037.jpg"></a><p> DSC_ (42)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0038.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0038.jpg"></a><p> DSC_ (43)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0039.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0039.jpg"></a><p> DSC_ (44)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0040.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0040.jpg"></a><p> DSC_ (45)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0041.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0041.jpg"></a><p> DSC_ (46)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0042.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0042.jpg"></a><p> DSC_ (47)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0043.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0043.jpg"></a><p> DSC_ (48)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0044.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0044.jpg"></a><p> DSC_ (49)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0045.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0045.jpg"></a><p> DSC_ (5)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0046.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0046.jpg"></a><p> DSC_ (50)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0047.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0047.jpg"></a><p> DSC_ (51)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0048.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0048.jpg"></a><p> DSC_ (52)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0049.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0049.jpg"></a><p> DSC_ (53)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0050.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0050.jpg"></a><p> DSC_ (54)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0051.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0051.jpg"></a><p> DSC_ (55)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0052.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0052.jpg"></a><p> DSC_ (6)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0053.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0053.jpg"></a><p> DSC_ (7)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0054.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0054.jpg"></a><p> DSC_ (8)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0055.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0055.jpg"></a><p> DSC_ (9)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0056.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0056.jpg"></a><p> DSC_ (1)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0057.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0057.jpg"></a><p> DSC_ (10)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0058.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0058.jpg"></a><p> DSC_ (11)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0059.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0059.jpg"></a><p> DSC_ (12)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0060.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0060.jpg"></a><p> DSC_ (13)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0061.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0061.jpg"></a><p> DSC_ (14)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0062.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0062.jpg"></a><p> DSC_ (15)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0063.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0063.jpg"></a><p> DSC_ (16)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0064.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0064.jpg"></a><p> DSC_ (17)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0065.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0065.jpg"></a><p> DSC_ (18)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0066.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0066.jpg"></a><p> DSC_ (19)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0067.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0067.jpg"></a><p> DSC_ (2)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0068.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0068.jpg"></a><p> DSC_ (20)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0069.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0069.jpg"></a><p> DSC_ (21)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0070.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0070.jpg"></a><p> DSC_ (22)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0071.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0071.jpg"></a><p> DSC_ (23)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0072.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0072.jpg"></a><p> DSC_ (24)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0073.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0073.jpg"></a><p> DSC_ (25)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0074.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0074.jpg"></a><p> DSC_ (26)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0075.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0075.jpg"></a><p> DSC_ (27)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0076.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0076.jpg"></a><p> DSC_ (28)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0077.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0077.jpg"></a><p> DSC_ (29)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0078.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0078.jpg"></a><p> DSC_ (3)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0079.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0079.jpg"></a><p> DSC_ (30)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0080.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0080.jpg"></a><p> DSC_ (31)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0081.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0081.jpg"></a><p> DSC_ (32)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0082.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0082.jpg"></a><p> DSC_ (33)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0083.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0083.jpg"></a><p> DSC_ (34)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0084.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0084.jpg"></a><p> DSC_ (35)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0085.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0085.jpg"></a><p> DSC_ (36)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0086.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0086.jpg"></a><p> DSC_ (37)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0087.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0087.jpg"></a><p> DSC_ (38)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0088.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0088.jpg"></a><p> DSC_ (39)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0089.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0089.jpg"></a><p> DSC_ (4)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0090.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0090.jpg"></a><p> DSC_ (40)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0091.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0091.jpg"></a><p> DSC_ (41)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0092.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0092.jpg"></a><p> DSC_ (42)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0093.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0093.jpg"></a><p> DSC_ (43)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0094.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0094.jpg"></a><p> DSC_ (44)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0095.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0095.jpg"></a><p> DSC_ (45)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0096.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0096.jpg"></a><p> DSC_ (46)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0097.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0097.jpg"></a><p> DSC_ (47)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0098.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0098.jpg"></a><p> DSC_ (48)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0099.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0099.jpg"></a><p> DSC_ (49)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0100.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0100.jpg"></a><p> DSC_ (5)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0101.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0101.jpg"></a><p> DSC_ (50)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0102.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0102.jpg"></a><p> DSC_ (51)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0103.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0103.jpg"></a><p> DSC_ (52)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0104.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0104.jpg"></a><p> DSC_ (53)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0105.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0105.jpg"></a><p> DSC_ (54)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0106.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0106.jpg"></a><p> DSC_ (55)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0107.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0107.jpg"></a><p> DSC_ (6)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0108.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0108.jpg"></a><p> DSC_ (7)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0109.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0109.jpg"></a><p> DSC_ (8)</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0110.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0110.jpg"></a><p> DSC_ (9)</p></div></section><footer><p>KALD Digital Archive Center</p></footer></body></html>
+<section class="hero"><h1>2021 Jan 25</h1><p>110 recovered photos</p></section><div class="actions"><a class="btn" href="photos.html">Back to Photos</a></div><div class="searchPanel"><input id="searchBox" type="text" placeholder="Search photo name"><span class="count" id="photoCount">Showing 110 photos</span></div><section class="gallery">
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0001.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0001.jpg" alt="Photo"></a><p> DSC_ (1)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0002.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0002.jpg" alt="Photo"></a><p> DSC_ (10)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0003.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0003.jpg" alt="Photo"></a><p> DSC_ (11)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0004.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0004.jpg" alt="Photo"></a><p> DSC_ (12)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0005.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0005.jpg" alt="Photo"></a><p> DSC_ (13)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0006.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0006.jpg" alt="Photo"></a><p> DSC_ (14)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0007.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0007.jpg" alt="Photo"></a><p> DSC_ (15)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0008.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0008.jpg" alt="Photo"></a><p> DSC_ (16)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0009.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0009.jpg" alt="Photo"></a><p> DSC_ (17)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0010.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0010.jpg" alt="Photo"></a><p> DSC_ (18)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0011.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0011.jpg" alt="Photo"></a><p> DSC_ (19)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0012.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0012.jpg" alt="Photo"></a><p> DSC_ (2)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0013.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0013.jpg" alt="Photo"></a><p> DSC_ (20)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0014.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0014.jpg" alt="Photo"></a><p> DSC_ (21)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0015.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0015.jpg" alt="Photo"></a><p> DSC_ (22)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0016.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0016.jpg" alt="Photo"></a><p> DSC_ (23)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0017.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0017.jpg" alt="Photo"></a><p> DSC_ (24)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0018.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0018.jpg" alt="Photo"></a><p> DSC_ (25)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0019.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0019.jpg" alt="Photo"></a><p> DSC_ (26)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0020.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0020.jpg" alt="Photo"></a><p> DSC_ (27)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0021.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0021.jpg" alt="Photo"></a><p> DSC_ (28)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0022.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0022.jpg" alt="Photo"></a><p> DSC_ (29)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0023.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0023.jpg" alt="Photo"></a><p> DSC_ (3)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0024.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0024.jpg" alt="Photo"></a><p> DSC_ (30)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0025.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0025.jpg" alt="Photo"></a><p> DSC_ (31)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0026.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0026.jpg" alt="Photo"></a><p> DSC_ (32)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0027.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0027.jpg" alt="Photo"></a><p> DSC_ (33)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0028.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0028.jpg" alt="Photo"></a><p> DSC_ (34)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0029.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0029.jpg" alt="Photo"></a><p> DSC_ (35)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0030.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0030.jpg" alt="Photo"></a><p> DSC_ (36)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0031.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0031.jpg" alt="Photo"></a><p> DSC_ (37)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0032.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0032.jpg" alt="Photo"></a><p> DSC_ (38)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0033.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0033.jpg" alt="Photo"></a><p> DSC_ (39)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0034.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0034.jpg" alt="Photo"></a><p> DSC_ (4)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0035.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0035.jpg" alt="Photo"></a><p> DSC_ (40)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0036.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0036.jpg" alt="Photo"></a><p> DSC_ (41)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0037.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0037.jpg" alt="Photo"></a><p> DSC_ (42)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0038.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0038.jpg" alt="Photo"></a><p> DSC_ (43)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0039.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0039.jpg" alt="Photo"></a><p> DSC_ (44)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0040.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0040.jpg" alt="Photo"></a><p> DSC_ (45)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0041.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0041.jpg" alt="Photo"></a><p> DSC_ (46)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0042.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0042.jpg" alt="Photo"></a><p> DSC_ (47)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0043.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0043.jpg" alt="Photo"></a><p> DSC_ (48)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0044.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0044.jpg" alt="Photo"></a><p> DSC_ (49)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0045.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0045.jpg" alt="Photo"></a><p> DSC_ (5)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0046.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0046.jpg" alt="Photo"></a><p> DSC_ (50)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0047.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0047.jpg" alt="Photo"></a><p> DSC_ (51)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0048.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0048.jpg" alt="Photo"></a><p> DSC_ (52)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0049.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0049.jpg" alt="Photo"></a><p> DSC_ (53)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0050.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0050.jpg" alt="Photo"></a><p> DSC_ (54)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0051.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0051.jpg" alt="Photo"></a><p> DSC_ (55)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0052.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0052.jpg" alt="Photo"></a><p> DSC_ (6)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0053.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0053.jpg" alt="Photo"></a><p> DSC_ (7)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0054.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0054.jpg" alt="Photo"></a><p> DSC_ (8)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0055.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0055.jpg" alt="Photo"></a><p> DSC_ (9)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0056.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0056.jpg" alt="Photo"></a><p> DSC_ (1)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0057.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0057.jpg" alt="Photo"></a><p> DSC_ (10)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0058.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0058.jpg" alt="Photo"></a><p> DSC_ (11)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0059.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0059.jpg" alt="Photo"></a><p> DSC_ (12)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0060.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0060.jpg" alt="Photo"></a><p> DSC_ (13)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0061.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0061.jpg" alt="Photo"></a><p> DSC_ (14)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0062.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0062.jpg" alt="Photo"></a><p> DSC_ (15)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0063.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0063.jpg" alt="Photo"></a><p> DSC_ (16)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0064.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0064.jpg" alt="Photo"></a><p> DSC_ (17)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0065.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0065.jpg" alt="Photo"></a><p> DSC_ (18)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0066.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0066.jpg" alt="Photo"></a><p> DSC_ (19)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0067.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0067.jpg" alt="Photo"></a><p> DSC_ (2)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0068.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0068.jpg" alt="Photo"></a><p> DSC_ (20)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0069.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0069.jpg" alt="Photo"></a><p> DSC_ (21)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0070.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0070.jpg" alt="Photo"></a><p> DSC_ (22)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0071.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0071.jpg" alt="Photo"></a><p> DSC_ (23)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0072.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0072.jpg" alt="Photo"></a><p> DSC_ (24)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0073.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0073.jpg" alt="Photo"></a><p> DSC_ (25)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0074.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0074.jpg" alt="Photo"></a><p> DSC_ (26)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0075.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0075.jpg" alt="Photo"></a><p> DSC_ (27)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0076.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0076.jpg" alt="Photo"></a><p> DSC_ (28)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0077.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0077.jpg" alt="Photo"></a><p> DSC_ (29)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0078.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0078.jpg" alt="Photo"></a><p> DSC_ (3)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0079.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0079.jpg" alt="Photo"></a><p> DSC_ (30)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0080.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0080.jpg" alt="Photo"></a><p> DSC_ (31)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0081.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0081.jpg" alt="Photo"></a><p> DSC_ (32)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0082.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0082.jpg" alt="Photo"></a><p> DSC_ (33)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0083.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0083.jpg" alt="Photo"></a><p> DSC_ (34)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0084.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0084.jpg" alt="Photo"></a><p> DSC_ (35)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0085.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0085.jpg" alt="Photo"></a><p> DSC_ (36)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0086.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0086.jpg" alt="Photo"></a><p> DSC_ (37)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0087.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0087.jpg" alt="Photo"></a><p> DSC_ (38)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0088.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0088.jpg" alt="Photo"></a><p> DSC_ (39)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0089.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0089.jpg" alt="Photo"></a><p> DSC_ (4)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0090.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0090.jpg" alt="Photo"></a><p> DSC_ (40)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0091.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0091.jpg" alt="Photo"></a><p> DSC_ (41)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0092.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0092.jpg" alt="Photo"></a><p> DSC_ (42)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0093.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0093.jpg" alt="Photo"></a><p> DSC_ (43)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0094.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0094.jpg" alt="Photo"></a><p> DSC_ (44)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0095.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0095.jpg" alt="Photo"></a><p> DSC_ (45)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0096.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0096.jpg" alt="Photo"></a><p> DSC_ (46)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0097.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0097.jpg" alt="Photo"></a><p> DSC_ (47)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0098.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0098.jpg" alt="Photo"></a><p> DSC_ (48)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0099.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0099.jpg" alt="Photo"></a><p> DSC_ (49)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0100.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0100.jpg" alt="Photo"></a><p> DSC_ (5)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0101.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0101.jpg" alt="Photo"></a><p> DSC_ (50)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0102.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0102.jpg" alt="Photo"></a><p> DSC_ (51)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0103.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0103.jpg" alt="Photo"></a><p> DSC_ (52)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0104.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0104.jpg" alt="Photo"></a><p> DSC_ (53)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0105.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0105.jpg" alt="Photo"></a><p> DSC_ (54)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0106.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0106.jpg" alt="Photo"></a><p> DSC_ (55)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0107.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0107.jpg" alt="Photo"></a><p> DSC_ (6)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0108.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0108.jpg" alt="Photo"></a><p> DSC_ (7)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0109.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0109.jpg" alt="Photo"></a><p> DSC_ (8)</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2021-jan25/medium/photos-2021-jan25_0110.jpg"><img loading="lazy" src="assets/event_galleries/photos-2021-jan25/thumbs/photos-2021-jan25_0110.jpg" alt="Photo"></a><p> DSC_ (9)</p></div></section>
+<div class="viewer" id="viewer">
+  <div class="topbar">
+    <span id="counter">Photo 1 of 1</span>
+    <div>
+      <button onclick="zoomIn()">Zoom +</button>
+      <button onclick="zoomOut()">Zoom -</button>
+      <button onclick="closeViewer()">X Close</button>
+    </div>
+  </div>
+  <button class="navbtn prev" onclick="prevPhoto()">&#10094;</button>
+  <img id="viewerImg" src="">
+  <button class="navbtn next" onclick="nextPhoto()">&#10095;</button>
+</div>
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
+
+<footer><p>KALD Digital Archive Center</p></footer>
+<script>
+let photos=[],visiblePhotos=[],current=0,zoom=1,touchStartX=0,touchEndX=0;
+document.addEventListener("DOMContentLoaded",()=>{
+  photos=[...document.querySelectorAll(".photo")];
+  visiblePhotos=[...photos];
+
+  photos.forEach(card=>{
+    const a=card.querySelector("a");
+    if(a){
+      a.addEventListener("click",(e)=>{
+        e.preventDefault();
+        openViewerByCard(card);
+      });
+    }
+  });
+
+  const search=document.getElementById("searchBox");
+  if(search){
+    search.addEventListener("input",function(){
+      const q=this.value.toLowerCase().trim();
+      let visible=0;
+      photos.forEach(card=>{
+        const show=card.innerText.toLowerCase().includes(q);
+        card.style.display=show?"":"none";
+        if(show)visible++;
+      });
+      visiblePhotos=photos.filter(c=>c.style.display!=="none");
+      document.getElementById("photoCount").textContent="Showing "+visible+" of "+photos.length+" photos";
+    });
+  }
+
+  window.addEventListener("scroll",()=>{
+    document.getElementById("backTop").style.display=scrollY>400?"block":"none";
+  });
+
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape")closeViewer();
+    if(e.key==="ArrowLeft")prevPhoto();
+    if(e.key==="ArrowRight")nextPhoto();
+  });
+
+  const viewerBox=document.getElementById("viewer");
+  viewerBox.addEventListener("touchstart",e=>touchStartX=e.changedTouches[0].screenX,false);
+  viewerBox.addEventListener("touchend",e=>{
+    touchEndX=e.changedTouches[0].screenX;
+    handleSwipe();
+  },false);
+});
+
+function openViewerByCard(card){
+  visiblePhotos=photos.filter(c=>c.style.display!=="none");
+  current=visiblePhotos.indexOf(card);
+  zoom=1;
+  updateViewer();
+  document.getElementById("viewer").classList.add("show");
+}
+function closeViewer(){document.getElementById("viewer").classList.remove("show")}
+function updateViewer(){
+  if(!visiblePhotos.length)return;
+  const a=visiblePhotos[current].querySelector("a");
+  const img=visiblePhotos[current].querySelector("img");
+  document.getElementById("viewerImg").src=a.href;
+  document.getElementById("viewerImg").style.transform="scale("+zoom+")";
+  document.getElementById("counter").textContent="Photo "+(current+1)+" of "+visiblePhotos.length+" - "+(img.alt || "");
+}
+function prevPhoto(){if(!visiblePhotos.length)return;current=(current-1+visiblePhotos.length)%visiblePhotos.length;zoom=1;updateViewer()}
+function nextPhoto(){if(!visiblePhotos.length)return;current=(current+1)%visiblePhotos.length;zoom=1;updateViewer()}
+function zoomIn(){zoom=Math.min(3,zoom+.25);updateViewer()}
+function zoomOut(){zoom=Math.max(.6,zoom-.25);updateViewer()}
+function handleSwipe(){
+  const diff=touchEndX-touchStartX;
+  if(Math.abs(diff)<50)return;
+  if(diff<0)nextPhoto();else prevPhoto();
+}
+</script>
+
+</body></html>

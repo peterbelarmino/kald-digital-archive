@@ -11,158 +11,264 @@ nav{background:white;padding:14px 38px;display:flex;justify-content:space-betwee
 .photo img{width:100%;height:145px;object-fit:cover;display:block}
 .photo p{font-size:12px;font-weight:700;color:#0b4f8a;padding:7px;margin:0}
 footer{text-align:center;background:#102a43;color:white;padding:22px;margin-top:35px}
+
+.searchPanel{max-width:1150px;margin:auto;padding:10px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.searchPanel input{flex:1;min-width:240px;padding:13px;border:1px solid #ccd6e0;border-radius:12px;font-size:16px}
+.count{font-weight:800;color:#0b4f8a}
+.viewer{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
+.viewer.show{display:flex}
+.viewer img{max-width:90%;max-height:75vh;transition:.2s}
+.viewer .topbar{position:absolute;top:15px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:center;color:white;font-weight:700}
+.viewer button{background:#0b6fae;color:white;border:0;border-radius:10px;padding:10px 14px;font-weight:700;margin:4px;cursor:pointer}
+.viewer .navbtn{position:absolute;top:50%;transform:translateY(-50%);font-size:28px}
+.viewer .prev{left:20px}.viewer .next{right:20px}
+#backTop{position:fixed;right:18px;bottom:18px;background:#0b4f8a;color:white;border:0;border-radius:50px;padding:12px 16px;font-weight:700;display:none;z-index:999;cursor:pointer}
+
 </style></head><body>
 <nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
-<section class="hero"><h1>2016 Sep 21</h1><p>152 recovered photos</p></section><div class="actions"><a class="btn" href="photos.html">Back to Photos</a></div><section class="gallery">
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0001.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0001.jpg"></a><p>IMG_0001</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0002.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0002.jpg"></a><p>IMG_0002</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0003.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0003.jpg"></a><p>IMG_0003</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0004.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0004.jpg"></a><p>IMG_0004</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0005.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0005.jpg"></a><p>IMG_0005</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0006.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0006.jpg"></a><p>IMG_0006</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0007.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0007.jpg"></a><p>IMG_0007</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0008.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0008.jpg"></a><p>IMG_0008</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0009.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0009.jpg"></a><p>IMG_0009</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0010.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0010.jpg"></a><p>IMG_0010</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0011.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0011.jpg"></a><p>IMG_0011</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0012.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0012.jpg"></a><p>IMG_0012</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0013.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0013.jpg"></a><p>IMG_0013</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0014.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0014.jpg"></a><p>IMG_0014</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0015.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0015.jpg"></a><p>IMG_0015</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0016.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0016.jpg"></a><p>IMG_0016</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0017.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0017.jpg"></a><p>IMG_0017</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0018.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0018.jpg"></a><p>IMG_0018</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0019.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0019.jpg"></a><p>IMG_0019</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0020.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0020.jpg"></a><p>IMG_0020</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0021.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0021.jpg"></a><p>IMG_0021</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0022.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0022.jpg"></a><p>IMG_0022</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0023.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0023.jpg"></a><p>IMG_0023</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0024.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0024.jpg"></a><p>IMG_0024</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0025.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0025.jpg"></a><p>IMG_0025</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0026.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0026.jpg"></a><p>IMG_0026</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0027.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0027.jpg"></a><p>IMG_0027</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0028.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0028.jpg"></a><p>IMG_0028</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0029.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0029.jpg"></a><p>IMG_0029</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0030.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0030.jpg"></a><p>IMG_0030</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0031.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0031.jpg"></a><p>IMG_0031</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0032.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0032.jpg"></a><p>IMG_0032</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0033.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0033.jpg"></a><p>IMG_0033</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0034.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0034.jpg"></a><p>IMG_0034</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0035.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0035.jpg"></a><p>IMG_0035</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0036.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0036.jpg"></a><p>IMG_0036</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0037.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0037.jpg"></a><p>IMG_0037</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0038.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0038.jpg"></a><p>IMG_0038</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0039.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0039.jpg"></a><p>IMG_0039</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0040.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0040.jpg"></a><p>IMG_0040</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0041.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0041.jpg"></a><p>IMG_0041</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0042.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0042.jpg"></a><p>IMG_0042</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0043.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0043.jpg"></a><p>IMG_0043</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0044.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0044.jpg"></a><p>IMG_0044</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0045.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0045.jpg"></a><p>IMG_0045</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0046.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0046.jpg"></a><p>IMG_0046</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0047.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0047.jpg"></a><p>IMG_0047</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0048.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0048.jpg"></a><p>IMG_0048</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0049.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0049.jpg"></a><p>IMG_0049</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0050.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0050.jpg"></a><p>IMG_0050</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0051.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0051.jpg"></a><p>IMG_0051</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0052.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0052.jpg"></a><p>IMG_0052</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0053.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0053.jpg"></a><p>IMG_0053</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0054.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0054.jpg"></a><p>IMG_0054</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0055.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0055.jpg"></a><p>IMG_0055</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0056.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0056.jpg"></a><p>IMG_0056</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0057.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0057.jpg"></a><p>IMG_0057</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0058.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0058.jpg"></a><p>IMG_0058</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0059.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0059.jpg"></a><p>IMG_0059</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0060.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0060.jpg"></a><p>IMG_0060</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0061.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0061.jpg"></a><p>IMG_0061</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0062.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0062.jpg"></a><p>IMG_0062</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0063.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0063.jpg"></a><p>IMG_0063</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0064.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0064.jpg"></a><p>IMG_0064</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0065.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0065.jpg"></a><p>IMG_0065</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0066.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0066.jpg"></a><p>IMG_0066</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0067.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0067.jpg"></a><p>IMG_0067</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0068.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0068.jpg"></a><p>IMG_0068</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0069.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0069.jpg"></a><p>IMG_0069</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0070.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0070.jpg"></a><p>IMG_0070</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0071.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0071.jpg"></a><p>IMG_0071</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0072.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0072.jpg"></a><p>IMG_0072</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0073.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0073.jpg"></a><p>IMG_0073</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0074.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0074.jpg"></a><p>IMG_0074</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0075.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0075.jpg"></a><p>IMG_0075</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0076.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0076.jpg"></a><p>IMG_0076</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0077.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0077.jpg"></a><p>IMG_0077</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0078.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0078.jpg"></a><p>IMG_0078</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0079.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0079.jpg"></a><p>IMG_0079</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0080.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0080.jpg"></a><p>IMG_0080</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0081.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0081.jpg"></a><p>IMG_0081</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0082.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0082.jpg"></a><p>IMG_0082</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0083.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0083.jpg"></a><p>IMG_0083</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0084.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0084.jpg"></a><p>IMG_0084</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0085.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0085.jpg"></a><p>IMG_0085</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0086.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0086.jpg"></a><p>IMG_0086</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0087.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0087.jpg"></a><p>IMG_0087</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0088.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0088.jpg"></a><p>IMG_0088</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0089.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0089.jpg"></a><p>IMG_0089</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0090.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0090.jpg"></a><p>IMG_0090</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0091.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0091.jpg"></a><p>IMG_0091</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0092.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0092.jpg"></a><p>IMG_0092</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0093.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0093.jpg"></a><p>IMG_0093</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0094.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0094.jpg"></a><p>IMG_0094</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0095.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0095.jpg"></a><p>IMG_0095</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0096.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0096.jpg"></a><p>IMG_0096</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0097.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0097.jpg"></a><p>IMG_0097</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0098.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0098.jpg"></a><p>IMG_0098</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0099.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0099.jpg"></a><p>IMG_0099</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0100.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0100.jpg"></a><p>IMG_0100</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0101.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0101.jpg"></a><p>IMG_0101</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0102.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0102.jpg"></a><p>IMG_0102</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0103.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0103.jpg"></a><p>IMG_0103</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0104.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0104.jpg"></a><p>IMG_0104</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0105.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0105.jpg"></a><p>IMG_0105</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0106.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0106.jpg"></a><p>IMG_0106</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0107.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0107.jpg"></a><p>IMG_0107</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0108.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0108.jpg"></a><p>IMG_0108</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0109.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0109.jpg"></a><p>IMG_0109</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0110.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0110.jpg"></a><p>IMG_0110</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0111.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0111.jpg"></a><p>IMG_0111</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0112.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0112.jpg"></a><p>IMG_0112</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0113.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0113.jpg"></a><p>IMG_0113</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0114.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0114.jpg"></a><p>IMG_0114</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0115.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0115.jpg"></a><p>IMG_0115</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0116.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0116.jpg"></a><p>IMG_0116</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0117.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0117.jpg"></a><p>IMG_0117</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0118.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0118.jpg"></a><p>IMG_0118</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0119.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0119.jpg"></a><p>IMG_0119</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0120.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0120.jpg"></a><p>IMG_0120</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0121.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0121.jpg"></a><p>IMG_0121</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0122.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0122.jpg"></a><p>IMG_0122</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0123.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0123.jpg"></a><p>IMG_0123</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0124.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0124.jpg"></a><p>IMG_0124</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0125.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0125.jpg"></a><p>IMG_0125</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0126.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0126.jpg"></a><p>IMG_0126</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0127.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0127.jpg"></a><p>IMG_0127</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0128.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0128.jpg"></a><p>IMG_0128</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0129.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0129.jpg"></a><p>IMG_0129</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0130.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0130.jpg"></a><p>IMG_0130</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0131.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0131.jpg"></a><p>IMG_0131</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0132.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0132.jpg"></a><p>IMG_0132</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0133.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0133.jpg"></a><p>IMG_0133</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0134.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0134.jpg"></a><p>IMG_0134</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0135.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0135.jpg"></a><p>IMG_0135</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0136.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0136.jpg"></a><p>IMG_0136</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0137.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0137.jpg"></a><p>IMG_0137</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0138.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0138.jpg"></a><p>IMG_0138</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0139.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0139.jpg"></a><p>IMG_0139</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0140.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0140.jpg"></a><p>IMG_0140</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0141.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0141.jpg"></a><p>IMG_0141</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0142.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0142.jpg"></a><p>IMG_0142</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0143.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0143.jpg"></a><p>IMG_0143</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0144.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0144.jpg"></a><p>IMG_0144</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0145.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0145.jpg"></a><p>IMG_0145</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0146.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0146.jpg"></a><p>IMG_0146</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0147.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0147.jpg"></a><p>IMG_0147</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0148.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0148.jpg"></a><p>IMG_0148</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0149.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0149.jpg"></a><p>IMG_0149</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0150.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0150.jpg"></a><p>IMG_0150</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0151.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0151.jpg"></a><p>IMG_0151</p></div>
-<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0152.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0152.jpg"></a><p>IMG_0152</p></div></section><footer><p>KALD Digital Archive Center</p></footer></body></html>
+<section class="hero"><h1>2016 Sep 21</h1><p>152 recovered photos</p></section><div class="actions"><a class="btn" href="photos.html">Back to Photos</a></div><div class="searchPanel"><input id="searchBox" type="text" placeholder="Search photo name"><span class="count" id="photoCount">Showing 152 photos</span></div><section class="gallery">
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0001.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0001.jpg" alt="Photo"></a><p>IMG_0001</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0002.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0002.jpg" alt="Photo"></a><p>IMG_0002</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0003.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0003.jpg" alt="Photo"></a><p>IMG_0003</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0004.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0004.jpg" alt="Photo"></a><p>IMG_0004</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0005.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0005.jpg" alt="Photo"></a><p>IMG_0005</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0006.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0006.jpg" alt="Photo"></a><p>IMG_0006</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0007.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0007.jpg" alt="Photo"></a><p>IMG_0007</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0008.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0008.jpg" alt="Photo"></a><p>IMG_0008</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0009.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0009.jpg" alt="Photo"></a><p>IMG_0009</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0010.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0010.jpg" alt="Photo"></a><p>IMG_0010</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0011.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0011.jpg" alt="Photo"></a><p>IMG_0011</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0012.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0012.jpg" alt="Photo"></a><p>IMG_0012</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0013.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0013.jpg" alt="Photo"></a><p>IMG_0013</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0014.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0014.jpg" alt="Photo"></a><p>IMG_0014</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0015.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0015.jpg" alt="Photo"></a><p>IMG_0015</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0016.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0016.jpg" alt="Photo"></a><p>IMG_0016</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0017.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0017.jpg" alt="Photo"></a><p>IMG_0017</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0018.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0018.jpg" alt="Photo"></a><p>IMG_0018</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0019.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0019.jpg" alt="Photo"></a><p>IMG_0019</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0020.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0020.jpg" alt="Photo"></a><p>IMG_0020</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0021.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0021.jpg" alt="Photo"></a><p>IMG_0021</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0022.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0022.jpg" alt="Photo"></a><p>IMG_0022</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0023.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0023.jpg" alt="Photo"></a><p>IMG_0023</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0024.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0024.jpg" alt="Photo"></a><p>IMG_0024</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0025.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0025.jpg" alt="Photo"></a><p>IMG_0025</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0026.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0026.jpg" alt="Photo"></a><p>IMG_0026</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0027.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0027.jpg" alt="Photo"></a><p>IMG_0027</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0028.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0028.jpg" alt="Photo"></a><p>IMG_0028</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0029.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0029.jpg" alt="Photo"></a><p>IMG_0029</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0030.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0030.jpg" alt="Photo"></a><p>IMG_0030</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0031.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0031.jpg" alt="Photo"></a><p>IMG_0031</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0032.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0032.jpg" alt="Photo"></a><p>IMG_0032</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0033.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0033.jpg" alt="Photo"></a><p>IMG_0033</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0034.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0034.jpg" alt="Photo"></a><p>IMG_0034</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0035.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0035.jpg" alt="Photo"></a><p>IMG_0035</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0036.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0036.jpg" alt="Photo"></a><p>IMG_0036</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0037.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0037.jpg" alt="Photo"></a><p>IMG_0037</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0038.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0038.jpg" alt="Photo"></a><p>IMG_0038</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0039.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0039.jpg" alt="Photo"></a><p>IMG_0039</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0040.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0040.jpg" alt="Photo"></a><p>IMG_0040</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0041.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0041.jpg" alt="Photo"></a><p>IMG_0041</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0042.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0042.jpg" alt="Photo"></a><p>IMG_0042</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0043.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0043.jpg" alt="Photo"></a><p>IMG_0043</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0044.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0044.jpg" alt="Photo"></a><p>IMG_0044</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0045.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0045.jpg" alt="Photo"></a><p>IMG_0045</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0046.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0046.jpg" alt="Photo"></a><p>IMG_0046</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0047.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0047.jpg" alt="Photo"></a><p>IMG_0047</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0048.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0048.jpg" alt="Photo"></a><p>IMG_0048</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0049.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0049.jpg" alt="Photo"></a><p>IMG_0049</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0050.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0050.jpg" alt="Photo"></a><p>IMG_0050</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0051.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0051.jpg" alt="Photo"></a><p>IMG_0051</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0052.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0052.jpg" alt="Photo"></a><p>IMG_0052</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0053.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0053.jpg" alt="Photo"></a><p>IMG_0053</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0054.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0054.jpg" alt="Photo"></a><p>IMG_0054</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0055.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0055.jpg" alt="Photo"></a><p>IMG_0055</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0056.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0056.jpg" alt="Photo"></a><p>IMG_0056</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0057.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0057.jpg" alt="Photo"></a><p>IMG_0057</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0058.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0058.jpg" alt="Photo"></a><p>IMG_0058</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0059.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0059.jpg" alt="Photo"></a><p>IMG_0059</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0060.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0060.jpg" alt="Photo"></a><p>IMG_0060</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0061.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0061.jpg" alt="Photo"></a><p>IMG_0061</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0062.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0062.jpg" alt="Photo"></a><p>IMG_0062</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0063.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0063.jpg" alt="Photo"></a><p>IMG_0063</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0064.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0064.jpg" alt="Photo"></a><p>IMG_0064</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0065.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0065.jpg" alt="Photo"></a><p>IMG_0065</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0066.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0066.jpg" alt="Photo"></a><p>IMG_0066</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0067.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0067.jpg" alt="Photo"></a><p>IMG_0067</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0068.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0068.jpg" alt="Photo"></a><p>IMG_0068</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0069.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0069.jpg" alt="Photo"></a><p>IMG_0069</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0070.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0070.jpg" alt="Photo"></a><p>IMG_0070</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0071.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0071.jpg" alt="Photo"></a><p>IMG_0071</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0072.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0072.jpg" alt="Photo"></a><p>IMG_0072</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0073.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0073.jpg" alt="Photo"></a><p>IMG_0073</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0074.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0074.jpg" alt="Photo"></a><p>IMG_0074</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0075.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0075.jpg" alt="Photo"></a><p>IMG_0075</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0076.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0076.jpg" alt="Photo"></a><p>IMG_0076</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0077.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0077.jpg" alt="Photo"></a><p>IMG_0077</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0078.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0078.jpg" alt="Photo"></a><p>IMG_0078</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0079.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0079.jpg" alt="Photo"></a><p>IMG_0079</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0080.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0080.jpg" alt="Photo"></a><p>IMG_0080</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0081.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0081.jpg" alt="Photo"></a><p>IMG_0081</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0082.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0082.jpg" alt="Photo"></a><p>IMG_0082</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0083.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0083.jpg" alt="Photo"></a><p>IMG_0083</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0084.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0084.jpg" alt="Photo"></a><p>IMG_0084</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0085.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0085.jpg" alt="Photo"></a><p>IMG_0085</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0086.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0086.jpg" alt="Photo"></a><p>IMG_0086</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0087.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0087.jpg" alt="Photo"></a><p>IMG_0087</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0088.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0088.jpg" alt="Photo"></a><p>IMG_0088</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0089.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0089.jpg" alt="Photo"></a><p>IMG_0089</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0090.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0090.jpg" alt="Photo"></a><p>IMG_0090</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0091.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0091.jpg" alt="Photo"></a><p>IMG_0091</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0092.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0092.jpg" alt="Photo"></a><p>IMG_0092</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0093.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0093.jpg" alt="Photo"></a><p>IMG_0093</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0094.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0094.jpg" alt="Photo"></a><p>IMG_0094</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0095.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0095.jpg" alt="Photo"></a><p>IMG_0095</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0096.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0096.jpg" alt="Photo"></a><p>IMG_0096</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0097.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0097.jpg" alt="Photo"></a><p>IMG_0097</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0098.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0098.jpg" alt="Photo"></a><p>IMG_0098</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0099.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0099.jpg" alt="Photo"></a><p>IMG_0099</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0100.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0100.jpg" alt="Photo"></a><p>IMG_0100</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0101.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0101.jpg" alt="Photo"></a><p>IMG_0101</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0102.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0102.jpg" alt="Photo"></a><p>IMG_0102</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0103.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0103.jpg" alt="Photo"></a><p>IMG_0103</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0104.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0104.jpg" alt="Photo"></a><p>IMG_0104</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0105.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0105.jpg" alt="Photo"></a><p>IMG_0105</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0106.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0106.jpg" alt="Photo"></a><p>IMG_0106</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0107.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0107.jpg" alt="Photo"></a><p>IMG_0107</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0108.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0108.jpg" alt="Photo"></a><p>IMG_0108</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0109.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0109.jpg" alt="Photo"></a><p>IMG_0109</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0110.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0110.jpg" alt="Photo"></a><p>IMG_0110</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0111.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0111.jpg" alt="Photo"></a><p>IMG_0111</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0112.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0112.jpg" alt="Photo"></a><p>IMG_0112</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0113.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0113.jpg" alt="Photo"></a><p>IMG_0113</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0114.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0114.jpg" alt="Photo"></a><p>IMG_0114</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0115.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0115.jpg" alt="Photo"></a><p>IMG_0115</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0116.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0116.jpg" alt="Photo"></a><p>IMG_0116</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0117.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0117.jpg" alt="Photo"></a><p>IMG_0117</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0118.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0118.jpg" alt="Photo"></a><p>IMG_0118</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0119.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0119.jpg" alt="Photo"></a><p>IMG_0119</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0120.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0120.jpg" alt="Photo"></a><p>IMG_0120</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0121.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0121.jpg" alt="Photo"></a><p>IMG_0121</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0122.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0122.jpg" alt="Photo"></a><p>IMG_0122</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0123.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0123.jpg" alt="Photo"></a><p>IMG_0123</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0124.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0124.jpg" alt="Photo"></a><p>IMG_0124</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0125.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0125.jpg" alt="Photo"></a><p>IMG_0125</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0126.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0126.jpg" alt="Photo"></a><p>IMG_0126</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0127.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0127.jpg" alt="Photo"></a><p>IMG_0127</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0128.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0128.jpg" alt="Photo"></a><p>IMG_0128</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0129.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0129.jpg" alt="Photo"></a><p>IMG_0129</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0130.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0130.jpg" alt="Photo"></a><p>IMG_0130</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0131.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0131.jpg" alt="Photo"></a><p>IMG_0131</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0132.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0132.jpg" alt="Photo"></a><p>IMG_0132</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0133.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0133.jpg" alt="Photo"></a><p>IMG_0133</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0134.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0134.jpg" alt="Photo"></a><p>IMG_0134</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0135.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0135.jpg" alt="Photo"></a><p>IMG_0135</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0136.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0136.jpg" alt="Photo"></a><p>IMG_0136</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0137.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0137.jpg" alt="Photo"></a><p>IMG_0137</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0138.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0138.jpg" alt="Photo"></a><p>IMG_0138</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0139.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0139.jpg" alt="Photo"></a><p>IMG_0139</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0140.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0140.jpg" alt="Photo"></a><p>IMG_0140</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0141.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0141.jpg" alt="Photo"></a><p>IMG_0141</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0142.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0142.jpg" alt="Photo"></a><p>IMG_0142</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0143.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0143.jpg" alt="Photo"></a><p>IMG_0143</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0144.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0144.jpg" alt="Photo"></a><p>IMG_0144</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0145.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0145.jpg" alt="Photo"></a><p>IMG_0145</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0146.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0146.jpg" alt="Photo"></a><p>IMG_0146</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0147.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0147.jpg" alt="Photo"></a><p>IMG_0147</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0148.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0148.jpg" alt="Photo"></a><p>IMG_0148</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0149.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0149.jpg" alt="Photo"></a><p>IMG_0149</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0150.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0150.jpg" alt="Photo"></a><p>IMG_0150</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0151.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0151.jpg" alt="Photo"></a><p>IMG_0151</p></div>
+<div class="photo"><a target="_blank" href="assets/event_galleries/photos-2016-sep21/medium/photos-2016-sep21_0152.jpg"><img loading="lazy" src="assets/event_galleries/photos-2016-sep21/thumbs/photos-2016-sep21_0152.jpg" alt="Photo"></a><p>IMG_0152</p></div></section>
+<div class="viewer" id="viewer">
+  <div class="topbar">
+    <span id="counter">Photo 1 of 1</span>
+    <div>
+      <button onclick="zoomIn()">Zoom +</button>
+      <button onclick="zoomOut()">Zoom -</button>
+      <button onclick="closeViewer()">X Close</button>
+    </div>
+  </div>
+  <button class="navbtn prev" onclick="prevPhoto()">&#10094;</button>
+  <img id="viewerImg" src="">
+  <button class="navbtn next" onclick="nextPhoto()">&#10095;</button>
+</div>
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
+
+<footer><p>KALD Digital Archive Center</p></footer>
+<script>
+let photos=[],visiblePhotos=[],current=0,zoom=1,touchStartX=0,touchEndX=0;
+document.addEventListener("DOMContentLoaded",()=>{
+  photos=[...document.querySelectorAll(".photo")];
+  visiblePhotos=[...photos];
+
+  photos.forEach(card=>{
+    const a=card.querySelector("a");
+    if(a){
+      a.addEventListener("click",(e)=>{
+        e.preventDefault();
+        openViewerByCard(card);
+      });
+    }
+  });
+
+  const search=document.getElementById("searchBox");
+  if(search){
+    search.addEventListener("input",function(){
+      const q=this.value.toLowerCase().trim();
+      let visible=0;
+      photos.forEach(card=>{
+        const show=card.innerText.toLowerCase().includes(q);
+        card.style.display=show?"":"none";
+        if(show)visible++;
+      });
+      visiblePhotos=photos.filter(c=>c.style.display!=="none");
+      document.getElementById("photoCount").textContent="Showing "+visible+" of "+photos.length+" photos";
+    });
+  }
+
+  window.addEventListener("scroll",()=>{
+    document.getElementById("backTop").style.display=scrollY>400?"block":"none";
+  });
+
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape")closeViewer();
+    if(e.key==="ArrowLeft")prevPhoto();
+    if(e.key==="ArrowRight")nextPhoto();
+  });
+
+  const viewerBox=document.getElementById("viewer");
+  viewerBox.addEventListener("touchstart",e=>touchStartX=e.changedTouches[0].screenX,false);
+  viewerBox.addEventListener("touchend",e=>{
+    touchEndX=e.changedTouches[0].screenX;
+    handleSwipe();
+  },false);
+});
+
+function openViewerByCard(card){
+  visiblePhotos=photos.filter(c=>c.style.display!=="none");
+  current=visiblePhotos.indexOf(card);
+  zoom=1;
+  updateViewer();
+  document.getElementById("viewer").classList.add("show");
+}
+function closeViewer(){document.getElementById("viewer").classList.remove("show")}
+function updateViewer(){
+  if(!visiblePhotos.length)return;
+  const a=visiblePhotos[current].querySelector("a");
+  const img=visiblePhotos[current].querySelector("img");
+  document.getElementById("viewerImg").src=a.href;
+  document.getElementById("viewerImg").style.transform="scale("+zoom+")";
+  document.getElementById("counter").textContent="Photo "+(current+1)+" of "+visiblePhotos.length+" - "+(img.alt || "");
+}
+function prevPhoto(){if(!visiblePhotos.length)return;current=(current-1+visiblePhotos.length)%visiblePhotos.length;zoom=1;updateViewer()}
+function nextPhoto(){if(!visiblePhotos.length)return;current=(current+1)%visiblePhotos.length;zoom=1;updateViewer()}
+function zoomIn(){zoom=Math.min(3,zoom+.25);updateViewer()}
+function zoomOut(){zoom=Math.max(.6,zoom-.25);updateViewer()}
+function handleSwipe(){
+  const diff=touchEndX-touchStartX;
+  if(Math.abs(diff)<50)return;
+  if(diff<0)nextPhoto();else prevPhoto();
+}
+</script>
+
+</body></html>
