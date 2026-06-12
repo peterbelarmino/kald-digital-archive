@@ -27,131 +27,10 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 
 
 
-<style id="pro-mobile-header">
-.menu-btn{
-  display:none;
-  background:#0b4f8a;
-  color:white;
-  border:0;
-  border-radius:10px;
-  padding:10px 14px;
-  font-weight:800;
-  cursor:pointer;
-  margin-left:auto;
-}
-@media(max-width:768px){
-  nav{
-    padding:12px 14px!important;
-    flex-direction:row!important;
-    align-items:center!important;
-    justify-content:space-between!important;
-    flex-wrap:wrap!important;
-  }
-  .brand{
-    width:auto!important;
-    max-width:78%!important;
-    font-size:16px!important;
-    line-height:1.15!important;
-  }
-  .brand img{
-    height:42px!important;
-  }
-  .menu-btn{
-    display:block!important;
-    width:auto!important;
-    margin:0!important;
-    font-size:14px!important;
-  }
-  .nav-links{
-    display:none!important;
-    width:100%!important;
-    flex-direction:column!important;
-    gap:8px!important;
-    margin-left:0!important;
-    margin-top:12px!important;
-  }
-  .nav-links.show{
-    display:flex!important;
-  }
-  .nav-links a{
-    width:100%!important;
-    box-sizing:border-box!important;
-    text-align:center!important;
-    background:#eef6fc!important;
-    padding:10px!important;
-    border-radius:10px!important;
-    font-size:14px!important;
-  }
-}
-</style>
 
 
-<style id="final-mobile-polish">
-@media(max-width:768px){
-  nav{
-    padding:12px 14px!important;
-    display:flex!important;
-    flex-direction:row!important;
-    align-items:center!important;
-    justify-content:space-between!important;
-    flex-wrap:wrap!important;
-  }
-  .brand{
-    max-width:72%!important;
-    gap:8px!important;
-    font-size:14px!important;
-    line-height:1.1!important;
-  }
-  .brand img{
-    height:38px!important;
-  }
-  .brand span{
-    white-space:normal!important;
-    font-size:18px!important;
-  }
-  .menu-btn{
-    display:block!important;
-    margin:0!important;
-    padding:10px 16px!important;
-    border-radius:12px!important;
-    background:#0b4f8a!important;
-    color:white!important;
-    font-weight:800!important;
-    border:0!important;
-  }
-  .nav-links{
-    display:none!important;
-    width:100%!important;
-    flex-direction:column!important;
-    gap:7px!important;
-    margin-top:12px!important;
-    margin-left:0!important;
-  }
-  .nav-links.show{
-    display:flex!important;
-  }
-  .nav-links a{
-    width:100%!important;
-    padding:9px!important;
-    text-align:center!important;
-    border-radius:10px!important;
-    background:#eef6fc!important;
-    box-sizing:border-box!important;
-    font-size:14px!important;
-  }
-  .hero{
-    padding:32px 18px!important;
-  }
-  .hero h1{
-    font-size:32px!important;
-    line-height:1.15!important;
-  }
-  .hero p{
-    font-size:17px!important;
-    line-height:1.35!important;
-  }
-}
-</style>
+
+
 
 
 <style id="documents-mobile-cards">
@@ -198,9 +77,43 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 }
 </style>
 
+
+<style id="clean-global-nav">
+nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}
+.brand img{height:52px}
+.nav-links{display:flex;gap:18px;margin-left:auto}
+.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
+.menu-btn{display:none;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:10px 16px;font-weight:800;cursor:pointer}
+@media(max-width:768px){
+  nav{padding:12px 14px!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important}
+  .brand{max-width:72%!important;font-size:14px!important;line-height:1.1!important}
+  .brand img{height:38px!important}
+  .brand span{font-size:18px!important}
+  .menu-btn{display:block!important}
+  .nav-links{display:none!important;width:100%!important;flex-direction:column!important;gap:7px!important;margin-top:12px!important;margin-left:0!important}
+  .nav-links.show{display:flex!important}
+  .nav-links a{width:100%!important;box-sizing:border-box!important;text-align:center!important;background:#eef6fc!important;padding:10px!important;border-radius:10px!important;font-size:14px!important}
+}
+</style>
+
 </head>
 <body>
-<nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><button class="menu-btn" onclick="toggleMenu()">MENU</button><div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a><a href="archive-status.html">Status</a></div></nav>
+
+<nav>
+  <a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a>
+  <button class="menu-btn" onclick="toggleMenu()">MENU</button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="photos.html">Photos</a>
+    <a href="videos.html">Videos</a>
+    <a href="documents.html">Documents</a>
+    <a href="reports.html">Reports</a>
+    <a href="archive-status.html">Status</a>
+  </div>
+</nav>
+
 
 <section class="hero"><h1>Document Archive</h1><p>Recovered PDF, Word, Excel, and PowerPoint documents.</p></section>
 
@@ -302,18 +215,13 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 <td>cover page كرنفال كالد الخامس.pdf</td>
 <td>PDF</td>
 <td>0.54 MB</td>
-<td><a class="btn" href="assets/documents/cover page كرنفال كالد الخامس.pdf" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/cover page كرنفال كالد الخامس.pdf" download>Download</a></td>
+<td><a class="btn" href="assets/documents/cover page كرنفال كالد الخامس.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/cover page كرنفال كالد الخامس.pdf" download>Download</a></td>
 </tr>
 
 <tr data-type="Other">
 <td>Other</td>
-<td>0.0 MB</td>
-</tr>
-
-<tr data-type="Excel">
-<td>Directors Emails.xlsx</td>
+<td>Other</td>
 <td>Excel</td>
-<td>0.01 MB</td>
 <td><span style="color:#777;font-weight:700">Preview not available</span> <a class="btn" href="assets/documents/Directors Emails.xlsx" download>Download</a></td>
 </tr>
 
@@ -342,7 +250,7 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 <td>KALD FLY TALENT 2016.pdf</td>
 <td>PDF</td>
 <td>11.96 MB</td>
-<td><a class="btn" href="assets/documents/KALD FLY TALENT 2016.pdf" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/KALD FLY TALENT 2016.pdf" download>Download</a></td>
+<td><a class="btn" href="assets/documents/KALD FLY TALENT 2016.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/KALD FLY TALENT 2016.pdf" download>Download</a></td>
 </tr>
 
 <tr data-type="Word">
@@ -363,7 +271,7 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 <td>logo.pdf</td>
 <td>PDF</td>
 <td>0.23 MB</td>
-<td><a class="btn" href="assets/documents/logo.pdf" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/logo.pdf" download>Download</a></td>
+<td><a class="btn" href="assets/documents/logo.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/logo.pdf" download>Download</a></td>
 </tr>
 
 <tr data-type="Excel">
@@ -377,7 +285,7 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 <td>Marina contract.pdf</td>
 <td>PDF</td>
 <td>0.78 MB</td>
-<td><a class="btn" href="assets/documents/Marina contract.pdf" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Marina contract.pdf" download>Download</a></td>
+<td><a class="btn" href="assets/documents/Marina contract.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/Marina contract.pdf" download>Download</a></td>
 </tr>
 
 <tr data-type="Word">
@@ -454,7 +362,7 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 <td>Yousifi -logo.pdf</td>
 <td>PDF</td>
 <td>0.07 MB</td>
-<td><a class="btn" href="assets/documents/Yousifi -logo.pdf" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Yousifi -logo.pdf" download>Download</a></td>
+<td><a class="btn" href="assets/documents/Yousifi -logo.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/Yousifi -logo.pdf" download>Download</a></td>
 </tr>
 
 <tr data-type="Excel">
@@ -657,7 +565,7 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 <td>كتاب شركة فيفا.pdf</td>
 <td>PDF</td>
 <td>0.27 MB</td>
-<td><a class="btn" href="assets/documents/كتاب شركة فيفا.pdf" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب شركة فيفا.pdf" download>Download</a></td>
+<td><a class="btn" href="assets/documents/كتاب شركة فيفا.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/كتاب شركة فيفا.pdf" download>Download</a></td>
 </tr>
 
 <tr data-type="Word">
@@ -706,7 +614,7 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 <td>نبذة عن مخيم عمان.pdf</td>
 <td>PDF</td>
 <td>0.26 MB</td>
-<td><a class="btn" href="assets/documents/نبذة عن مخيم عمان.pdf" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/نبذة عن مخيم عمان.pdf" download>Download</a></td>
+<td><a class="btn" href="assets/documents/نبذة عن مخيم عمان.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/نبذة عن مخيم عمان.pdf" download>Download</a></td>
 </tr>
 
 <tr data-type="Word">
@@ -741,14 +649,14 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
 <td>نموذج رعاية بنك بوبيان.pdf</td>
 <td>PDF</td>
 <td>0.09 MB</td>
-<td><a class="btn" href="assets/documents/نموذج رعاية بنك بوبيان.pdf" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/نموذج رعاية بنك بوبيان.pdf" download>Download</a></td>
+<td><a class="btn" href="assets/documents/نموذج رعاية بنك بوبيان.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/نموذج رعاية بنك بوبيان.pdf" download>Download</a></td>
 </tr>
 
 <tr data-type="PDF">
 <td>نموذج مؤسسة التقدم العلمي.pdf</td>
 <td>PDF</td>
 <td>0.57 MB</td>
-<td><a class="btn" href="assets/documents/نموذج مؤسسة التقدم العلمي.pdf" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/نموذج مؤسسة التقدم العلمي.pdf" download>Download</a></td>
+<td><a class="btn" href="assets/documents/نموذج مؤسسة التقدم العلمي.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/نموذج مؤسسة التقدم العلمي.pdf" download>Download</a></td>
 </tr>
 
 </tbody>
@@ -779,15 +687,13 @@ typeFilter.addEventListener('change',filterDocs);
 
 
 
-<script id="pro-menu-script">
-function toggleMenu(){
-  const nav=document.getElementById("navLinks");
-  if(nav){nav.classList.toggle("show");}
-}
-</script>
 
 
-<script id="final-mobile-menu-script">
+
+
+
+
+<script id="clean-global-menu-script">
 function toggleMenu(){
   const nav=document.getElementById("navLinks");
   if(nav){nav.classList.toggle("show");}
