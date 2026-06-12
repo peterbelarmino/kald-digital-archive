@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><title>Staff Portal</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{margin:0;font-family:Segoe UI,Arial;background:#f4f7fb;color:#1b2a3a}
-nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001}
-nav a{text-decoration:none;color:#0b4f8a;font-weight:700;margin-left:18px}
-.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:55px 25px}
-.section{max-width:900px;margin:40px auto;padding:0 25px}
-.card{background:white;border-radius:18px;padding:28px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
-footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
-</style>
+from pathlib import Path
+import re
+
+mobile_css = """
 <style id="mobile-fix">
 @media (max-width: 768px){
   nav{
@@ -104,26 +96,13 @@ footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:
   }
 }
 </style>
+"""
 
-</head>
-<body data-role="staff">
-<nav><strong>KALD Staff</strong><div><a href="index.html">Public Portal</a><a href="#" onclick="logout()">Logout</a></div></nav>
-<section class="hero"><h1>Staff Portal</h1><p>Staff access for archive review and content requests.</p></section>
-<section class="section"><div class="card"><h2>Staff Access</h2><p>Use this area to review archive sections, request updates, and prepare materials for archive submission.</p></div></section>
-<footer>KALD Digital Archive | Staff Portal</footer>
-<script>
-const requiredRole = document.body.dataset.role;
-const currentRole = localStorage.getItem("kaldRole");
+for file in Path(".").glob("*.html"):
+    text = file.read_text(encoding="utf-8", errors="ignore")
+    if 'id="mobile-fix"' not in text:
+        text = text.replace("</head>", mobile_css + "\n</head>")
+        file.write_text(text, encoding="utf-8")
+        print("Mobile fixed:", file.name)
 
-if(requiredRole && currentRole !== requiredRole){
-  alert("Please login first.");
-  window.location.href = "login.html";
-}
-
-function logout(){
-  localStorage.removeItem("kaldRole");
-  window.location.href = "login.html";
-}
-</script>
-</body></html>
-
+print("Done.")

@@ -34,6 +34,102 @@ nav{background:white;padding:14px 38px;display:flex;justify-content:space-betwee
 footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:35px}
 @media(max-width:760px){nav{padding:12px 14px;flex-wrap:wrap}.brand{width:100%;justify-content:center;margin-bottom:8px}.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:12px}.nav-links a{font-size:14px}.gallery{grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:12px;padding:12px}.photo img{height:125px}.viewer .topbar{display:block;text-align:center}.viewer button{font-size:12px;padding:9px 10px}}
 </style>
+
+<style id="mobile-fix">
+@media (max-width: 768px){
+  nav{
+    padding:12px 14px !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:10px !important;
+  }
+  .brand{
+    width:100% !important;
+    font-size:16px !important;
+  }
+  .brand img{
+    height:42px !important;
+  }
+  .nav-links{
+    width:100% !important;
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:8px !important;
+    margin-left:0 !important;
+  }
+  .nav-links a{
+    background:#eef6fc !important;
+    padding:8px 10px !important;
+    border-radius:8px !important;
+    font-size:13px !important;
+  }
+  .hero{
+    padding:34px 16px !important;
+  }
+  .hero h1{
+    font-size:26px !important;
+    line-height:1.2 !important;
+  }
+  .hero p{
+    font-size:15px !important;
+  }
+  .section,.actions,.gallery{
+    padding:14px !important;
+  }
+  .grid{
+    grid-template-columns:1fr !important;
+  }
+  .card{
+    padding:18px !important;
+  }
+  table{
+    display:block !important;
+    overflow-x:auto !important;
+    white-space:nowrap !important;
+  }
+  th,td{
+    font-size:13px !important;
+    padding:10px !important;
+  }
+  .gallery{
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:10px !important;
+  }
+  .photo img{
+    height:130px !important;
+  }
+  .viewer .topbar{
+    top:8px !important;
+    left:8px !important;
+    right:8px !important;
+    flex-direction:column !important;
+    gap:8px !important;
+    text-align:center !important;
+  }
+  .viewer button{
+    padding:8px 10px !important;
+    font-size:12px !important;
+  }
+  .viewer img{
+    max-width:96% !important;
+    max-height:68vh !important;
+  }
+  .viewer .prev{
+    left:6px !important;
+  }
+  .viewer .next{
+    right:6px !important;
+  }
+  .viewer .navbtn{
+    font-size:22px !important;
+  }
+  input,select{
+    width:100% !important;
+    box-sizing:border-box !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
