@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KALD Archive Status</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
+nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}.brand img{height:52px}
+.nav-links{display:flex;gap:18px;margin-left:auto}.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
+.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:55px 25px}
+.section{max-width:1100px;margin:35px auto;padding:0 25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:white;border-radius:18px;padding:22px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
+.card h3{color:#0b4f8a;margin-top:0}.ok{color:green;font-weight:800}.pending{color:#b36b00;font-weight:800}.skip{color:#777;font-weight:800}
+footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
+</style>
+</head>
+<body>
+<nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a><a href="archive-status.html">Status</a></div></nav>
+
+<section class="hero"><h1>Archive Status</h1><p>Current recovery, organization, duplicate, and pending archive work.</p></section>
+
+<section class="section">
+<div class="grid">
+<div class="card"><h3>Photos</h3><p class="ok">Completed</p><p>3,467 organized photos recovered and arranged by year/event.</p></div>
+<div class="card"><h3>Documents</h3><p class="ok">Completed</p><p>74 office documents recovered: Word, Excel, PDF, and PowerPoint.</p></div>
+<div class="card"><h3>Videos</h3><p class="pending">In Progress</p><p>1 video converted for web. Remaining video ISOs pending review and conversion.</p></div>
+<div class="card"><h3>Duplicates</h3><p class="skip">Identified</p><p>CD130P duplicate of CD70P. CD71V duplicate of CD122V.</p></div>
+</div>
+
+<h2>Processed Photo Events</h2>
+<div class="grid">
+<div class="card"><h3>2016</h3><p>13 Apr, 21 Sep, 01 Nov, 03 Dec events organized.</p></div>
+<div class="card"><h3>2017</h3><p>11 Mar event and 2017 International Conference organized.</p></div>
+<div class="card"><h3>2019</h3><p>27 Nov 2019 gallery organized.</p></div>
+<div class="card"><h3>2020</h3><p>15 Feb 2020 event organized.</p></div>
+<div class="card"><h3>2021</h3><p>12 Jan, 18 Jan, 25 Jan, 09 Oct, and Mrs. Amal archive organized.</p></div>
+<div class="card"><h3>Legacy</h3><p>1,300 USB legacy photos processed and added to portal.</p></div>
+</div>
+
+<h2>Next Pending Work</h2>
+<div class="grid">
+<div class="card"><h3>Gallery Pages</h3><p>Create individual gallery pages for each organized event.</p></div>
+<div class="card"><h3>Video Conversion</h3><p>Continue GPU conversion of remaining DVD ISO archives.</p></div>
+<div class="card"><h3>Document Listing</h3><p>Replace folder link with individual document table and download buttons.</p></div>
+<div class="card"><h3>Final Turnover</h3><p>Prepare administrator guide, backup plan, and archive inventory report.</p></div>
+</div>
+</section>
+
+<footer><p>KALD Digital Archive Center | Archive Status</p></footer>
+</body>
+</html>
