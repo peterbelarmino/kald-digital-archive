@@ -5,80 +5,57 @@
 <title>KALD Photo Archive</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-*{box-sizing:border-box}
 body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
-
-
-
-nav a{text-decoration:none;color:#0b4f8a;font-weight:700}
-.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:58px 25px}
-.hero h1{font-size:40px;margin:0}
-.grid{max-width:1100px;margin:40px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;padding:0 25px}
-.card{background:white;border-radius:18px;padding:28px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
-.card h2{color:#0b4f8a;margin-top:0}
-.btn{display:inline-block;background:#0b4f8a;color:white;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;margin-top:14px}
+nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}.brand img{height:52px}
+.nav-links{display:flex;gap:18px;margin-left:auto}.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
+.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:55px 25px}
+.section{max-width:1150px;margin:35px auto;padding:0 25px}.year{margin-top:35px;color:#0b4f8a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:white;border-radius:18px;padding:24px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
+.card h3{color:#0b4f8a;margin-top:0}.tag{font-weight:800;color:#526173}.btn{display:inline-block;background:#0b4f8a;color:white;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:700;margin-top:10px}
 footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
-@media(max-width:760px){}nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}
-.brand img{height:52px}
-.nav-links{display:flex;align-items:center;gap:18px;margin-left:auto}
-.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
-@media(max-width:760px){
-nav{padding:12px 14px;flex-wrap:wrap}
-.brand{width:100%;justify-content:center;margin-bottom:8px}
-.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:12px}
-.nav-links a{font-size:14px}
-}
 </style>
 </head>
 <body>
+<nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
+<section class="hero"><h1>Photo Archive</h1><p>Organized by year, event title, and recovered archive source.</p></section>
+<section class="section">
 
-<nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links">
-<a href="index.html">Home</a>
-<a href="photos.html">Photos</a>
-<a href="videos.html">Videos</a>
-<a href="documents.html">Documents</a>
-<a href="reports.html">Reports</a>
+<h2 class="year">2016</h2><div class="grid">
+<div class="card"><h3>KALD Event - 13 Apr 2016</h3><p class="tag">191 photos</p></div>
+<div class="card"><h3>KALD Event - 21 Sep 2016</h3><p class="tag">152 photos</p></div>
+<div class="card"><h3>Cultural Center Event - 01 Nov 2016</h3><p class="tag">304 photos</p></div>
+<div class="card"><h3>KALD Event - 03 Dec 2016</h3><p class="tag">264 photos</p></div>
 </div>
-</nav>
 
-<section class="hero">
-<h1>Photo Archive</h1>
-<p>Browse historical photograph collections preserved in the KALD Digital Archive.</p>
+<h2 class="year">2017</h2><div class="grid">
+<div class="card"><h3>KALD Event - 11 Mar 2017</h3><p class="tag">745 photos</p></div>
+<div class="card"><h3>2017 International Conference</h3><p class="tag">597 photos</p><a class="btn" href="photos-2017.html">Open Gallery</a></div>
+</div>
+
+<h2 class="year">2019</h2><div class="grid">
+<div class="card"><h3>KALD Event - 27 Nov 2019</h3><p class="tag">476 photos</p><a class="btn" href="photos-2019.html">Open Gallery</a></div>
+</div>
+
+<h2 class="year">2020</h2><div class="grid">
+<div class="card"><h3>KALD Event - 15 Feb 2020</h3><p class="tag">266 photos</p></div>
+</div>
+
+<h2 class="year">2021</h2><div class="grid">
+<div class="card"><h3>KALD Event - 12 Jan 2021</h3><p class="tag">127 photos</p></div>
+<div class="card"><h3>KALD Event - 18 Jan 2021</h3><p class="tag">80 photos</p></div>
+<div class="card"><h3>KALD Event - 25 Jan 2021</h3><p class="tag">110 photos</p></div>
+<div class="card"><h3>KALD Event - 09 Oct 2021</h3><p class="tag">53 photos</p></div>
+<div class="card"><h3>Mrs. Amal Archive</h3><p class="tag">26 photos</p></div>
+</div>
+
+<h2 class="year">Unsorted / Pending Final Date</h2><div class="grid">
+<div class="card"><h3>Conference Presentations and Formal Ceremony</h3><p class="tag">361 photos</p></div>
+<div class="card"><h3>Legacy Photo Collection</h3><p class="tag">1,300 photos</p><a class="btn" href="photos-legacy.html">Open Gallery</a></div>
+</div>
+
 </section>
-
-<section class="grid">
-<div class="card">
-<h2>2016 Events</h2>
-<p>191 archived photographs from KALD events and activities in 2016.</p>
-<a class="btn" href="photos-2016.html">Open Gallery</a>
-</div>
-
-<div class="card">
-<h2>2017 International Conference</h2>
-<p>597 archived photographs from the KALD International Conference collection.</p>
-<a class="btn" href="photos-2017.html">Open Gallery</a>
-</div>
-
-<div class="card">
-<h2>2019 Conference</h2>
-<p>1 archived file from the 2019 KALD conference collection.</p>
-<a class="btn" href="photos-2017.html">Open Gallery</a>
-</div>
-
-<div class="card">
-<h2>Legacy Photo Collection</h2>
-<p>1,300 recovered photos from legacy USB media, pending final event classification.</p>
-<a class="btn" href="photos-legacy.html">Open Gallery</a>
-</div>
-</section>
-<footer>
-<p>KALD Digital Archive Center | Photo Archive</p>
-</footer>
-
+<footer><p>KALD Digital Archive Center | Photo Archive</p></footer>
 </body>
 </html>
-
-
-
-

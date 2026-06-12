@@ -6,84 +6,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
-nav a{text-decoration:none;color:#0b4f8a;font-weight:700}
+nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}.brand img{height:52px}
+.nav-links{display:flex;gap:18px;margin-left:auto}.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
 .hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:55px 25px}
-.section{max-width:1100px;margin:40px auto;padding:0 25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
-.card{background:white;border-radius:18px;padding:28px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
-.card h2{color:#0b4f8a;margin-top:0}
-.tag{font-weight:800;color:#526173}
-.badge{display:inline-block;background:#e8f3fb;color:#0b4f8a;padding:7px 10px;border-radius:20px;font-weight:800;font-size:12px;margin:6px 6px 0 0}
+.section{max-width:1100px;margin:35px auto;padding:0 25px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:white;border-radius:18px;padding:22px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}.card h3{color:#0b4f8a;margin-top:0}
+.btn{display:inline-block;background:#0b4f8a;color:white;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:700;margin-top:10px}
 footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
-nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}
-.brand img{height:52px}
-.nav-links{display:flex;align-items:center;gap:18px;margin-left:auto}
-.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
-@media(max-width:760px){
-nav{padding:12px 14px;flex-wrap:wrap}
-.brand{width:100%;justify-content:center;margin-bottom:8px}
-.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:12px}
-.nav-links a{font-size:14px}
-}
 </style>
 </head>
 <body>
-<nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
-
-<section class="hero">
-<h1>Document Archive</h1>
-<p>Recovered documents, publications, educational materials, and preserved archive records.</p>
-</section>
-
+<nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><div class="nav-links"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
+<section class="hero"><h1>Document Archive</h1><p>Recovered PDF, Word, Excel, and PowerPoint documents.</p></section>
 <section class="section">
+<h2>Recovered Office Documents</h2>
+<p><b>Total:</b> 74 documents | 33 DOCX, 23 XLSX, 9 PDF, 4 PPTX, 3 DOC, 2 PPT</p>
 <div class="grid">
-
-<div class="card">
-<h2>A Look to the Future</h2>
-<p class="tag">2 PDF files | English and Arabic</p>
-<p>Recovered from CD108PDF. Includes KALD presentation documents in English and Arabic.</p>
-<span class="badge">PDF</span><span class="badge">Recovered</span>
-</div>
-
-<div class="card">
-<h2>Kuwait Martyrs Collection</h2>
-<p class="tag">14 PDF files</p>
-<p>Arabic PDF collection recovered from CD88PDF, containing parts 1 to 14.</p>
-<span class="badge">PDF</span><span class="badge">Arabic</span>
-</div>
-
-<div class="card">
-<h2>Language Skills Competition</h2>
-<p class="tag">11 Word files + 5 design files</p>
-<p>Educational competition documents and design materials recovered from CD22 WORD FILE.</p>
-<span class="badge">Word</span><span class="badge">Design</span>
-</div>
-
-<div class="card">
-<h2>Najwa Document</h2>
-<p class="tag">1 Word document</p>
-<p>Recovered from CD20 WORD FILE.</p>
-<span class="badge">DOCX</span><span class="badge">Recovered</span>
-</div>
-
-<div class="card">
-<h2>KALD Talent Show 2016</h2>
-<p class="tag">2 Word documents</p>
-<p>English and Arabic press release documents recovered from CD93 WORD FILE.</p>
-<span class="badge">DOCX</span><span class="badge">Press Release</span>
-</div>
-
-<div class="card">
-<h2>Archive Status</h2>
-<p class="tag">35+ recovered document/design files</p>
-<p>More files may be added after final ISO extraction and management approval.</p>
-<span class="badge">Pending Review</span>
-</div>
-
+<div class="card"><h3>Recovered Documents Folder</h3><p>All recovered office documents are available in the archive folder.</p><a class="btn" href="assets/documents/">Open Documents Folder</a></div>
+<div class="card"><h3>A Look to the Future</h3><p>English and Arabic PDF presentation archive.</p></div>
+<div class="card"><h3>Kuwait Martyrs Collection</h3><p>Arabic PDF collection recovered from CD88PDF.</p></div>
+<div class="card"><h3>Language Skills Competition</h3><p>Word documents and design files recovered from CD22.</p></div>
+<div class="card"><h3>KALD Talent Show 2016</h3><p>English and Arabic press release documents.</p></div>
+<div class="card"><h3>Sponsorship and Reports</h3><p>NBK reports, sponsor files, Excel sheets, and PowerPoint materials.</p></div>
 </div>
 </section>
-
-<footer><p>KALD Digital Archive Center | Document Archive</p></footer>
+<footer><p>KALD Digital Archive Center | Documents</p></footer>
 </body>
 </html>
