@@ -182,6 +182,74 @@ footer{text-align:center;background:#102a43;color:white;padding:22px;margin-top:
 }
 </style>
 
+
+<style id="final-mobile-polish">
+@media(max-width:768px){
+  nav{
+    padding:12px 14px!important;
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    flex-wrap:wrap!important;
+  }
+  .brand{
+    max-width:72%!important;
+    gap:8px!important;
+    font-size:14px!important;
+    line-height:1.1!important;
+  }
+  .brand img{
+    height:38px!important;
+  }
+  .brand span{
+    white-space:normal!important;
+    font-size:18px!important;
+  }
+  .menu-btn{
+    display:block!important;
+    margin:0!important;
+    padding:10px 16px!important;
+    border-radius:12px!important;
+    background:#0b4f8a!important;
+    color:white!important;
+    font-weight:800!important;
+    border:0!important;
+  }
+  .nav-links{
+    display:none!important;
+    width:100%!important;
+    flex-direction:column!important;
+    gap:7px!important;
+    margin-top:12px!important;
+    margin-left:0!important;
+  }
+  .nav-links.show{
+    display:flex!important;
+  }
+  .nav-links a{
+    width:100%!important;
+    padding:9px!important;
+    text-align:center!important;
+    border-radius:10px!important;
+    background:#eef6fc!important;
+    box-sizing:border-box!important;
+    font-size:14px!important;
+  }
+  .hero{
+    padding:32px 18px!important;
+  }
+  .hero h1{
+    font-size:32px!important;
+    line-height:1.15!important;
+  }
+  .hero p{
+    font-size:17px!important;
+    line-height:1.35!important;
+  }
+}
+</style>
+
 </head><body>
 <nav><a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a><button class="menu-btn" onclick="toggleMenu()">MENU</button><div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a></div></nav>
 <section class="hero"><h1>2016 Dec 03</h1><p>264 recovered photos</p></section><div class="actions"><a class="btn" href="photos.html">Back to Photos</a></div><div class="searchPanel"><input id="searchBox" type="text" placeholder="Search photo name"><span class="count" id="photoCount">Showing 264 photos</span></div><section class="gallery">
@@ -546,6 +614,14 @@ function handleSwipe(){
 
 
 <script id="pro-menu-script">
+function toggleMenu(){
+  const nav=document.getElementById("navLinks");
+  if(nav){nav.classList.toggle("show");}
+}
+</script>
+
+
+<script id="final-mobile-menu-script">
 function toggleMenu(){
   const nav=document.getElementById("navLinks");
   if(nav){nav.classList.toggle("show");}
