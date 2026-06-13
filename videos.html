@@ -43,6 +43,47 @@ nav{padding:12px 14px!important;flex-direction:row!important;align-items:center!
 }
 </style>
 
+
+<style>
+/* CD118_DIRECT_PLAYER_STYLE */
+.cd118-direct-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.cd118-play-button,
+.cd118-drive-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 11px 18px;
+  border-radius: 9px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cd118-play-button {
+  background: #0969c7;
+  color: #ffffff;
+}
+
+.cd118-drive-button {
+  background: #eef3f7;
+  color: #17324d;
+  border: 1px solid #c7d4df;
+}
+
+@media (max-width: 600px) {
+  .cd118-play-button,
+  .cd118-drive-button {
+    width: 100%;
+  }
+}
+</style>
+
 </head>
 <body>
 <nav>
@@ -129,7 +170,27 @@ nav{padding:12px 14px!important;flex-direction:row!important;align-items:center!
   <p><b>Format:</b> MP4 / 720p / H.264</p>
   <p><b>Storage:</b> Google Drive master archive / Web_Compressed</p>
   <p><b>Status:</b> Converted, enhanced, verified, and preserved.</p>
-  <p><b>Video Link:</b> Pending authorized shared-drive setup</p>
+  
+<div class="video-actions cd118-direct-actions">
+  <a class="cd118-play-button"
+     href="https://drive.google.com/file/d/1F0KG5F1-GmCGHX9vDXTIUF2cMLgPzyIM/view?usp=sharing"
+     target="_blank"
+     rel="noopener noreferrer">
+    ▶ Play CD118V Video
+  </a>
+
+  <a class="cd118-drive-button"
+     href="https://drive.google.com/file/d/1F0KG5F1-GmCGHX9vDXTIUF2cMLgPzyIM/view?usp=sharing"
+     target="_blank"
+     rel="noopener noreferrer">
+    Open in Google Drive
+  </a>
+</div>
+
+<p class="video-stream-note">
+  Video opens securely in Google Drive.
+</p>
+
 </div>
 
 <h2>Duplicate Videos</h2>
