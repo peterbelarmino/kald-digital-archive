@@ -84,6 +84,41 @@ nav{padding:12px 14px!important;flex-direction:row!important;align-items:center!
 }
 </style>
 
+
+<style>
+/* KALD_INLINE_VIDEO_STYLE */
+.kald-inline-video {
+  margin-top: 16px;
+  padding: 12px;
+  background: #101820;
+  border-radius: 12px;
+}
+
+.kald-video-ratio {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #000;
+}
+
+.kald-video-ratio iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.kald-video-caption {
+  margin: 10px 2px 2px;
+  color: #e7edf3;
+  font-size: 13px;
+  text-align: center;
+}
+</style>
+
 </head>
 <body>
 <nav>
@@ -171,25 +206,26 @@ nav{padding:12px 14px!important;flex-direction:row!important;align-items:center!
   <p><b>Storage:</b> Google Drive master archive / Web_Compressed</p>
   <p><b>Status:</b> Converted, enhanced, verified, and preserved.</p>
   
-<div class="video-actions cd118-direct-actions">
-  <a class="cd118-play-button"
-     href="https://drive.google.com/file/d/1F0KG5F1-GmCGHX9vDXTIUF2cMLgPzyIM/view?usp=sharing"
-     target="_blank"
-     rel="noopener noreferrer">
-    ▶ Play CD118V Video
-  </a>
 
-  <a class="cd118-drive-button"
-     href="https://drive.google.com/file/d/1F0KG5F1-GmCGHX9vDXTIUF2cMLgPzyIM/view?usp=sharing"
-     target="_blank"
-     rel="noopener noreferrer">
-    Open in Google Drive
-  </a>
+
+
+
+
+<div class="kald-inline-video">
+  <div class="kald-video-ratio">
+    <iframe
+      src="https://drive.google.com/file/d/1F0KG5F1-GmCGHX9vDXTIUF2cMLgPzyIM/preview"
+      title="CD118V Video Archive"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <p class="kald-video-caption">
+    Play the CD118V archive video securely inside the KALD portal.
+  </p>
 </div>
-
-<p class="video-stream-note">
-  Video opens securely in Google Drive.
-</p>
 
 </div>
 
