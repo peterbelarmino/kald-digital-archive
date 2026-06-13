@@ -198,6 +198,41 @@ nav{background:white;padding:14px 38px;display:flex;justify-content:space-betwee
 }
 </style>
 
+
+<style id="viewer-arrow-mobile-fix">
+.lbNav{
+  z-index:100005!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+.lbPrev{
+  left:10px!important;
+}
+.lbNext{
+  right:10px!important;
+}
+@media(max-width:768px){
+  .lbPrev{
+    left:8px!important;
+  }
+  .lbNext{
+    right:8px!important;
+  }
+  .lbNav{
+    top:55%!important;
+    font-size:26px!important;
+    padding:11px 15px!important;
+    background:#0b6fae!important;
+    color:#fff!important;
+    box-shadow:0 4px 14px #0008!important;
+  }
+  .lightbox img{
+    max-width:92%!important;
+    max-height:60vh!important;
+  }
+}
+</style>
+
 </head>
 <body>
 
