@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KALD Report Viewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
+nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}.brand img{height:52px}
+.nav-links{display:flex;gap:18px;margin-left:auto}.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
+.menu-btn{display:none;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:10px 16px;font-weight:800}
+.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:35px 18px}
+.section{max-width:1100px;margin:25px auto;padding:0 18px}
+pre{white-space:pre-wrap;word-wrap:break-word;background:white;border-radius:16px;padding:18px;box-shadow:0 6px 20px #0002;line-height:1.5;overflow:auto}
+.btn{display:inline-block;background:#0b4f8a;color:white;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:800;margin:5px}
+@media(max-width:768px){
+nav{padding:12px 14px!important;flex-wrap:wrap!important}.brand{max-width:72%!important}.brand img{height:38px!important}.brand span{font-size:18px!important}
+.menu-btn{display:block!important}.nav-links{display:none!important;width:100%!important;flex-direction:column!important;gap:7px!important;margin-top:12px!important;margin-left:0!important}
+.nav-links.show{display:flex!important}.nav-links a{width:100%!important;text-align:center!important;background:#eef6fc!important;padding:10px!important;border-radius:10px!important}
+}
+</style>
+</head>
+<body>
+<nav>
+<a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a>
+<button class="menu-btn" onclick="toggleMenu()">MENU</button>
+<div class="nav-links" id="navLinks">
+<a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="photos.html">Photos</a><a href="videos.html">Videos</a><a href="documents.html">Documents</a><a href="reports.html">Reports</a><a href="archive-status.html">Status</a><a href="iso-audit.html">Audit</a>
+</div>
+</nav>
+
+<section class="hero"><h1 id="title">Report Viewer</h1><p>View report inside the KALD Archive interface.</p></section>
+<section class="section">
+<a class="btn" href="reports.html">Back to Reports</a>
+<a class="btn" id="downloadBtn" href="#" download>Download</a>
+<pre id="content">Loading report...</pre>
+</section>
+
+<script>
+function toggleMenu(){document.getElementById("navLinks").classList.toggle("show");}
+
+const reports={
+ summary:{title:"Archive Summary",file:"assets/reports/ARCHIVE_SUMMARY.txt"},
+ inventory:{title:"Master Inventory",file:"assets/reports/MASTER_INVENTORY.csv"},
+ recovery:{title:"Recovery Report",file:"assets/reports/RECOVERY_REPORT.txt"}
+};
+
+const params=new URLSearchParams(location.search);
+const id=params.get("file") || "summary";
+const report=reports[id] || reports.summary;
+
+document.getElementById("title").innerText=report.title;
+document.getElementById("downloadBtn").href=report.file;
+
+fetch(report.file)
+.then(r=>r.text())
+.then(t=>{document.getElementById("content").textContent=t;})
+.catch(()=>{document.getElementById("content").textContent="Unable to load report.";});
+</script>
+</body>
+</html>
