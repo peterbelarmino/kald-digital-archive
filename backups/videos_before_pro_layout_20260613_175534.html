@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KALD Video Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
+nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}.brand img{height:52px}
+.nav-links{display:flex;gap:18px;margin-left:auto}.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
+.menu-btn{display:none;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:10px 16px;font-weight:800;cursor:pointer}
+.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:55px 25px}
+.section{max-width:1150px;margin:35px auto;padding:0 25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:white;border-radius:18px;padding:22px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
+.card h3{color:#0b4f8a;margin-top:0}
+.badge{display:inline-block;padding:6px 10px;border-radius:20px;font-weight:800;font-size:12px}
+.done{background:#d9f7df;color:#0a6b1f}.pending{background:#fff3cd;color:#8a5b00}.dup{background:#e8e8e8;color:#555}.damaged{background:#ffd6d6;color:#9b0000}
+.btn{display:inline-block;background:#0b4f8a;color:white;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:700;margin-top:10px}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+input,select{padding:12px;border:1px solid #ccd6e0;border-radius:10px;font-size:15px}
+input{flex:1;min-width:250px}
+footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
+@media(max-width:768px){
+nav{padding:12px 14px!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important}
+.brand{max-width:72%!important;font-size:14px!important;line-height:1.1!important}.brand img{height:38px!important}.brand span{font-size:18px!important}
+.menu-btn{display:block!important}
+.nav-links{display:none!important;width:100%!important;flex-direction:column!important;gap:7px!important;margin-top:12px!important;margin-left:0!important}
+.nav-links.show{display:flex!important}.nav-links a{width:100%!important;box-sizing:border-box!important;text-align:center!important;background:#eef6fc!important;color:#0b4f8a!important;padding:10px!important;border-radius:10px!important;font-size:14px!important}
+.hero{padding:32px 18px!important}.hero h1{font-size:32px!important}.section{padding:14px!important;margin:18px auto!important}.grid{grid-template-columns:1fr!important}
+}
+</style>
+
+<style id="video-thumbnail-style">
+.video-thumb{
+  width:100%;
+  max-height:210px;
+  object-fit:cover;
+  border-radius:14px;
+  margin:12px 0;
+  box-shadow:0 4px 14px #0002;
+}
+</style>
+
+
+<style>
+/* CD118_DIRECT_PLAYER_STYLE */
+.cd118-direct-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.cd118-play-button,
+.cd118-drive-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 11px 18px;
+  border-radius: 9px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cd118-play-button {
+  background: #0969c7;
+  color: #ffffff;
+}
+
+.cd118-drive-button {
+  background: #eef3f7;
+  color: #17324d;
+  border: 1px solid #c7d4df;
+}
+
+@media (max-width: 600px) {
+  .cd118-play-button,
+  .cd118-drive-button {
+    width: 100%;
+  }
+}
+</style>
+
+
+<style>
+/* KALD_INLINE_VIDEO_STYLE */
+.kald-inline-video {
+  margin-top: 16px;
+  padding: 12px;
+  background: #101820;
+  border-radius: 12px;
+}
+
+.kald-video-ratio {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #000;
+}
+
+.kald-video-ratio iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.kald-video-caption {
+  margin: 10px 2px 2px;
+  color: #e7edf3;
+  font-size: 13px;
+  text-align: center;
+}
+</style>
+
+
+<style>
+/* INLINE_VIDEO_DETAILS_STYLE */
+.inline-video-details {
+  margin-top: 16px;
+  border: 1px solid #cbd8e3;
+  border-radius: 11px;
+  overflow: hidden;
+  background: #f7fafc;
+}
+
+.inline-video-details summary {
+  padding: 13px 17px;
+  background: #0969c7;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.inline-video-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.inline-video-details[open] summary {
+  background: #0758a8;
+}
+
+.inline-video-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000000;
+}
+
+.inline-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.inline-video-note {
+  margin: 0;
+  padding: 9px 12px;
+  text-align: center;
+  font-size: 13px;
+  color: #526577;
+}
+</style>
+
+
+<style>
+/* KALD_REPAIRED_VIDEO_PLAYER_STYLE */
+.kald-inline-video {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #101820;
+}
+
+.kald-inline-player-heading {
+  padding: 2px 2px 11px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.kald-video-ratio {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #000000;
+}
+
+.kald-video-ratio iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.kald-video-caption {
+  margin: 10px 2px 2px;
+  color: #e3ebf2;
+  font-size: 13px;
+  text-align: center;
+}
+</style>
+
+</head>
+<body>
+<nav>
+<a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a>
+<button class="menu-btn" onclick="toggleMenu()">MENU</button>
+<div class="nav-links" id="navLinks">
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="photos.html">Photos</a>
+<a href="videos.html">Videos</a>
+<a href="documents.html">Documents</a>
+<a href="reports.html">Reports</a>
+<a href="archive-status.html">Status</a><a href="iso-audit.html">Audit</a>
+</div>
+</nav>
+
+<section class="hero"><h1>Video Archive</h1><p>Recovered DVD/ISO videos, converted web videos, duplicates, and pending video archive work.</p></section>
+
+<section class="section">
+
+<div class="stats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:25px">
+<div class="card"><h2>3</h2><p>Converted Videos</p></div>
+<div class="card"><h2>9</h2><p>Pending Video ISOs</p></div>
+<div class="card"><h2>1</h2><p>Duplicate Videos</p></div>
+<div class="card"><h2>1</h2><p>Damaged Media</p></div>
+</div>
+
+<div class="tools">
+<input id="searchBox" placeholder="Search video archive...">
+<select id="statusFilter">
+<option value="All">All Status</option>
+<option value="Converted">Converted</option>
+<option value="Pending">Pending</option>
+<option value="Duplicate">Duplicate</option>
+<option value="Damaged">Damaged</option>
+</select>
+</div>
+
+<h2>Converted Videos</h2>
+<div class="grid">
+
+<div class="card video-card" data-status="Converted">
+<span class="badge done">Converted</span>
+<h3>KALD 2019 Video Archive</h3>
+<img class="video-thumb" src="assets/video-thumbnails/kald2019_cd122v.jpg" alt="KALD 2019 Video Archive thumbnail">
+<p><b>Source:</b> CD122V / KALD2019.iso</p>
+<p><b>Duration:</b> 01:11:33</p>
+<p><b>Web Size:</b> 542 MB</p>
+<p><b>Format:</b> MP4 / 720p / H.264</p>
+<p><b>Storage:</b> Google Drive</p>
+<p><b>Status:</b> Converted and available for viewing.</p>
+
+</div>
+
+
+
+
+
+<div class="kald-inline-video">
+  <div class="kald-inline-player-heading">
+    ▶ KALD 2019 Video Archive
+  </div>
+
+  <div class="kald-video-ratio">
+    <iframe
+      src="https://drive.google.com/file/d/1xHpprkMk03LaI1vGkbKDOg0qMYbJ5knh/preview"
+      title="KALD 2019 Video Archive"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <p class="kald-video-caption">
+    Play the CD122V archive video inside the KALD portal.
+  </p>
+</div>
+
+</div>
+
+
+<div class="card video-card" data-status="Converted">
+<span class="badge done">Converted</span>
+<h3>CD113V Video Archive</h3>
+<img class="video-thumb" src="assets/video-thumbnails/cd113v.jpg" alt="CD113V Video Archive thumbnail">
+<p><b>Source:</b> CD113V / PP_DVD2_NTSC.iso</p>
+<p><b>Duration:</b> 00:14:59</p>
+<p><b>Web Size:</b> 391.51 MB</p>
+<p><b>Format:</b> MP4 / 720p / H.264</p>
+<p><b>Storage:</b> Google Drive master archive / Web compressed folder</p>
+<p><b>Status:</b> Converted and ready for final storage link.</p>
+
+
+
+
+
+<div class="kald-inline-video">
+  <div class="kald-inline-player-heading">
+    ▶ CD113V Video Archive
+  </div>
+
+  <div class="kald-video-ratio">
+    <iframe
+      src="https://drive.google.com/file/d/1Vwbk_XBpQz4oIN35z2yhYdXDuhsQCUwl/preview"
+      title="CD113V Video Archive"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <p class="kald-video-caption">
+    Play the CD113V archive video inside the KALD portal.
+  </p>
+</div>
+
+</div>
+
+
+
+<div class="card video-card" data-status="Converted">
+  <span class="badge done">Converted</span>
+  <h3>CD118V Video Archive</h3>
+
+  <img class="video-thumb"
+       src="assets/video-thumbnails/cd118v.jpg?v=2"
+       alt="CD118V Video Archive thumbnail">
+
+  <p><b>Source:</b> CD118V / VIDEO.iso</p>
+  <p><b>Duration:</b> 01:48:04</p>
+  <p><b>Web Size:</b> 3.51 GB</p>
+  <p><b>Format:</b> MP4 / 720p / H.264</p>
+  <p><b>Storage:</b> Google Drive master archive / Web_Compressed</p>
+  <p><b>Status:</b> Converted, enhanced, verified, and preserved.</p>
+  
+
+
+
+
+
+<div class="kald-inline-video">
+  <div class="kald-video-ratio">
+    <iframe
+      src="https://drive.google.com/file/d/1F0KG5F1-GmCGHX9vDXTIUF2cMLgPzyIM/preview"
+      title="CD118V Video Archive"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <p class="kald-video-caption">
+    Play the CD118V archive video securely inside the KALD portal.
+  </p>
+</div>
+
+</div>
+
+<h2>Duplicate Videos</h2>
+<div class="grid">
+<div class="card video-card" data-status="Duplicate">
+<span class="badge dup">Duplicate</span>
+<h3>CD71V / KALD2019.iso</h3>
+<p>Duplicate of CD122V. Same VOB structure and same file sizes.</p>
+<p><b>Action:</b> Skipped to avoid duplicate conversion.</p>
+</div>
+</div>
+
+<h2>Pending Video ISO Review</h2>
+
+<div class="card video-card" data-status="Pending">
+  <span class="badge pending">Pending</span>
+  <h3>CD06V / VIDEO.iso</h3>
+  <p>Size: 4.19 GB</p>
+</div>
+
+<div class="card video-card" data-status="Pending">
+  <span class="badge pending">Pending</span>
+  <h3>CD09V / LG_COMBI_RECORDER.iso</h3>
+  <p>Size: 1.56 GB</p>
+</div>
+
+<div class="grid">
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD119V / DVD.iso</h3><p>Size: 3.75 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD123V / VIDEO.iso</h3><p>Size: 4.16 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD124V / VIDEO.iso</h3><p>Size: 4.01 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD125V / VIDEO.iso</h3><p>Size: 3.99 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD126V / VIDEO.iso</h3><p>Size: 3.39 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD127V / VIDEO.iso</h3><p>Size: 4.16 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD136V / My Disc.iso</h3><p>Size: 2.75 GB</p></div>
+</div>
+
+<h2>Damaged / Special Review</h2>
+<div class="grid">
+<div class="card video-card" data-status="Damaged">
+<span class="badge damaged">Damaged</span>
+<h3>CD69V_dAMAGED</h3>
+<p>Marked damaged. Needs manual inspection before recovery attempt.</p>
+</div>
+</div>
+</section>
+
+<footer><p>KALD Digital Archive Center | Video Archive</p></footer>
+
+<script>
+function toggleMenu(){
+  const nav=document.getElementById("navLinks");
+  if(nav){nav.classList.toggle("show");}
+}
+
+const searchBox=document.getElementById("searchBox");
+const statusFilter=document.getElementById("statusFilter");
+const cards=[...document.querySelectorAll(".video-card")];
+
+function filterVideos(){
+ const q=searchBox.value.toLowerCase();
+ const s=statusFilter.value;
+ cards.forEach(c=>{
+   const matchText=c.innerText.toLowerCase().includes(q);
+   const matchStatus=s==="All" || c.dataset.status===s;
+   c.style.display=(matchText && matchStatus)?"":"none";
+ });
+}
+searchBox.addEventListener("input",filterVideos);
+statusFilter.addEventListener("change",filterVideos);
+</script>
+</body>
+</html>
+
