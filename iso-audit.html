@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KALD ISO Audit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
+nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}.brand img{height:52px}
+.nav-links{display:flex;gap:18px;margin-left:auto}.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
+.menu-btn{display:none;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:10px 16px;font-weight:800}
+.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:50px 20px}
+.section{max-width:1200px;margin:30px auto;padding:0 20px}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+input,select{padding:12px;border:1px solid #ccd6e0;border-radius:10px;font-size:15px}
+input{flex:1;min-width:250px}
+table{width:100%;border-collapse:collapse;background:white;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px #0002}
+th,td{padding:12px;border-bottom:1px solid #e5eaf0;text-align:left}
+th{background:#0b4f8a;color:white}
+.badge{padding:6px 10px;border-radius:20px;font-weight:800;font-size:12px}
+.recovered{background:#d9f7df;color:#0a6b1f}
+.pending-iso-review{background:#fff3cd;color:#8a5b00}
+.duplicate{background:#e8e8e8;color:#555}
+.damaged{background:#ffd6d6;color:#9b0000}
+.empty--review{background:#e7f0ff;color:#0b4f8a}
+footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
+@media(max-width:768px){
+nav{padding:12px 14px!important;flex-wrap:wrap!important}
+.brand{max-width:72%!important}.brand img{height:38px!important}.brand span{font-size:18px!important}
+.menu-btn{display:block!important}
+.nav-links{display:none!important;width:100%!important;flex-direction:column!important;gap:7px!important;margin-top:12px!important;margin-left:0!important}
+.nav-links.show{display:flex!important}
+.nav-links a{width:100%!important;text-align:center!important;background:#eef6fc!important;padding:10px!important;border-radius:10px!important}
+table{display:block;overflow-x:auto}
+.hero{padding:32px 18px!important}
+}
+</style>
+</head>
+<body>
+<nav>
+<a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a>
+<button class="menu-btn" onclick="toggleMenu()">MENU</button>
+<div class="nav-links" id="navLinks">
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="photos.html">Photos</a>
+<a href="videos.html">Videos</a>
+<a href="documents.html">Documents</a>
+<a href="reports.html">Reports</a>
+<a href="archive-status.html">Status</a>
+</div>
+</nav>
+
+<section class="hero"><h1>ISO / CD Audit</h1><p>Complete audit of recovered folders, ISO files, photos, documents, videos, duplicates, and pending review items.</p></section>
+
+<section class="section">
+<div class="tools">
+<input id="searchBox" placeholder="Search CD folder...">
+<select id="statusFilter">
+<option value="All">All Status</option>
+<option value="Recovered">Recovered</option>
+<option value="Pending ISO Review">Pending ISO Review</option>
+<option value="Duplicate">Duplicate</option>
+<option value="Damaged">Damaged</option>
+<option value="Empty / Review">Empty / Review</option>
+</select>
+</div>
+
+<table>
+<thead><tr><th>Folder</th><th>Photos</th><th>Docs</th><th>Videos</th><th>ISO</th><th>Status</th></tr></thead>
+<tbody id="auditTable">
+
+<tr data-status="Recovered">
+<td>_DUPLICATES_BY_NAME</td>
+<td>193</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+<tr data-status="Recovered">
+<td>26-1-2014_ محاضرة آمال الساير _مدرسة بيان ثنائية</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD06V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Recovered">
+<td>CD08V</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD09V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD100</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD101P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Recovered">
+<td>CD102P</td>
+<td>10</td>
+<td>73</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD103P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD104AUDIO</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD105V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD106V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD107V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD108PDF</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD109P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD10V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD110P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD111V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD112V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD113V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD114V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD115V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD116V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD117V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD118V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD119V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD11P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD120V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD121V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD122V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD123V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD124V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD125V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD126V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD127V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD128V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Recovered">
+<td>CD129</td>
+<td>597</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD12V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Duplicate">
+<td>CD130P</td>
+<td>293</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge duplicate">Duplicate</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD131V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD132 PROGRAMS</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD133V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD134V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Recovered">
+<td>CD135P</td>
+<td>191</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD136V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD137</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD138</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD139</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD13P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD140</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD14V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD15P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD16V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD17V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD18P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD19V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD20_WORD FILE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD21P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD22_WORD FILE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD23V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD24P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD25_WORD fILE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Recovered">
+<td>CD26P</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD27V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD28P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD29V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD30P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD31V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD32V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD33P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD34P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD35P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD36P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD37P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD38V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD39V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD40V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD41V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD42V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD43V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD44V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD45V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD46P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD47V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD48V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD49V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD50V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD51V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD52V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD53V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Recovered">
+<td>CD54P</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD55P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD56P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD57V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD58V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD59V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD60V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD61V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD62V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD63V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD64V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD65V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD66V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD67V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD68V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Damaged">
+<td>CD69V_dAMAGED</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge damaged">Damaged</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD70P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Duplicate">
+<td>CD71V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge duplicate">Duplicate</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD72V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD73V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD74V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD75</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD76P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD77V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD78V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Recovered">
+<td>CD79P</td>
+<td>185</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+<tr data-status="Recovered">
+<td>CD80P</td>
+<td>176</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD81P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD82V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD83P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD84P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD85P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD86P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD87P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD88PDF</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD89P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD90P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD91P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD92P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD93 WORD FILE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD94P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD95P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD96P</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD97A</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CD98V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Empty / Review">
+<td>CD99V</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge empty--review">Empty / Review</span></td>
+</tr>
+
+<tr data-status="Pending ISO Review">
+<td>CDFONT</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><span class="badge pending-iso-review">Pending ISO Review</span></td>
+</tr>
+
+<tr data-status="Recovered">
+<td>USB1</td>
+<td>1300</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+<tr data-status="Recovered">
+<td>مدرسة بيان ثنائية اللغة 26 يناير 2014</td>
+<td>66</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="badge recovered">Recovered</span></td>
+</tr>
+
+</tbody>
+</table>
+</section>
+
+<footer><p>KALD Digital Archive Center | ISO Audit</p></footer>
+
+<script>
+function toggleMenu(){document.getElementById("navLinks").classList.toggle("show");}
+const searchBox=document.getElementById("searchBox");
+const statusFilter=document.getElementById("statusFilter");
+const rows=[...document.querySelectorAll("#auditTable tr")];
+function filterRows(){
+ const q=searchBox.value.toLowerCase();
+ const s=statusFilter.value;
+ rows.forEach(r=>{
+   const matchText=r.innerText.toLowerCase().includes(q);
+   const matchStatus=s==="All" || r.dataset.status===s;
+   r.style.display=(matchText && matchStatus)?"":"none";
+ });
+}
+searchBox.addEventListener("input",filterRows);
+statusFilter.addEventListener("change",filterRows);
+</script>
+</body>
+</html>
