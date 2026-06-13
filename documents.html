@@ -7,8 +7,11 @@
 <style>
 body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
 nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}.brand img{height:52px}
-.nav-links{display:flex;gap:18px;margin-left:auto}.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}
+.brand img{height:52px}
+.nav-links{display:flex;gap:18px;margin-left:auto}
+.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
+.menu-btn{display:none;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:10px 16px;font-weight:800;cursor:pointer}
 .hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:55px 25px}
 .section{max-width:1200px;margin:35px auto;padding:0 25px}
 .tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
@@ -17,74 +20,13 @@ input{flex:1;min-width:250px}
 table{width:100%;border-collapse:collapse;background:white;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px #0002}
 th,td{padding:13px;border-bottom:1px solid #e5eaf0;text-align:left;font-size:14px}
 th{background:#0b4f8a;color:white}
-.btn{display:inline-block;color:white;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:700} .viewbtn{background:#0b4f8a;margin-right:6px} .downloadbtn{background:#198754}
+.doc-btn{display:inline-block;background:#0b4f8a!important;color:#fff!important;text-decoration:none!important;padding:10px 14px;border-radius:10px;font-weight:800;text-align:center;margin:3px}
+.download-btn{background:#083d6b!important}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:22px}
 .card{background:white;border-radius:16px;padding:18px;box-shadow:0 5px 16px #0002;border-top:5px solid #0b6fae}
 .card h2{margin:0;color:#0b4f8a}
 footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
-</style>
 
-
-
-
-
-
-
-
-
-
-<style id="documents-mobile-cards">
-@media(max-width:768px){
-  .section{padding:14px!important;margin:18px auto!important}
-  .stats{grid-template-columns:1fr 1fr!important;gap:10px!important}
-  .card{padding:14px!important}
-  .card h2{font-size:28px!important}
-  table, thead, tbody, th, td, tr{display:block!important}
-  thead{display:none!important}
-  table{box-shadow:none!important;background:transparent!important;white-space:normal!important;overflow:visible!important}
-  tbody tr{
-    background:white!important;
-    margin:12px 0!important;
-    padding:14px!important;
-    border-radius:16px!important;
-    box-shadow:0 5px 14px #0002!important;
-  }
-  tbody td{
-    border:0!important;
-    padding:6px 0!important;
-    white-space:normal!important;
-    word-break:break-word!important;
-    font-size:14px!important;
-  }
-  tbody td:nth-child(1){
-    font-weight:800!important;
-    color:#0b4f8a!important;
-    font-size:15px!important;
-  }
-  tbody td:nth-child(2)::before{content:"Type: ";font-weight:800;color:#526173}
-  tbody td:nth-child(3)::before{content:"Size: ";font-weight:800;color:#526173}
-  tbody td:nth-child(4){
-    display:flex!important;
-    gap:8px!important;
-    flex-wrap:wrap!important;
-    margin-top:8px!important;
-  }
-  tbody td:nth-child(4) .btn{
-    flex:1!important;
-    text-align:center!important;
-    min-width:110px!important;
-  }
-}
-</style>
-
-
-<style id="clean-global-nav">
-nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}
-.brand img{height:52px}
-.nav-links{display:flex;gap:18px;margin-left:auto}
-.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
-.menu-btn{display:none;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:10px 16px;font-weight:800;cursor:pointer}
 @media(max-width:768px){
   nav{padding:12px 14px!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important}
   .brand{max-width:72%!important;font-size:14px!important;line-height:1.1!important}
@@ -93,59 +35,49 @@ nav{background:white;padding:14px 38px;display:flex;justify-content:space-betwee
   .menu-btn{display:block!important}
   .nav-links{display:none!important;width:100%!important;flex-direction:column!important;gap:7px!important;margin-top:12px!important;margin-left:0!important}
   .nav-links.show{display:flex!important}
-  .nav-links a{width:100%!important;box-sizing:border-box!important;text-align:center!important;background:#eef6fc!important;padding:10px!important;border-radius:10px!important;font-size:14px!important;color:#0b4f8a!important}
+  .nav-links a{width:100%!important;box-sizing:border-box!important;text-align:center!important;background:#eef6fc!important;color:#0b4f8a!important;padding:10px!important;border-radius:10px!important;font-size:14px!important}
+  .hero{padding:32px 18px!important}
+  .hero h1{font-size:32px!important;line-height:1.15!important}
+  .hero p{font-size:17px!important;line-height:1.35!important}
+  .section{padding:14px!important;margin:18px auto!important}
+  .stats{grid-template-columns:1fr 1fr!important;gap:10px!important}
+  .card{padding:14px!important}
+  .card h2{font-size:28px!important}
+  table,thead,tbody,th,td,tr{display:block!important}
+  thead{display:none!important}
+  table{box-shadow:none!important;background:transparent!important;white-space:normal!important;overflow:visible!important}
+  tbody tr{background:white!important;margin:12px 0!important;padding:14px!important;border-radius:16px!important;box-shadow:0 5px 14px #0002!important}
+  tbody td{border:0!important;padding:6px 0!important;white-space:normal!important;word-break:break-word!important;font-size:14px!important}
+  tbody td:nth-child(1){font-weight:800!important;color:#0b4f8a!important;font-size:15px!important}
+  tbody td:nth-child(2)::before{content:"Type: ";font-weight:800;color:#526173}
+  tbody td:nth-child(3)::before{content:"Size: ";font-weight:800;color:#526173}
+  .actions-cell{background:#f1f7fc!important;padding:12px!important;border-radius:12px!important;margin-top:8px!important}
+  .actions-cell::before{content:"Action";display:block;font-weight:900;color:#0b4f8a;margin-bottom:8px}
+  .actions-cell .doc-btn{display:block!important;width:100%!important;box-sizing:border-box!important;margin:8px 0!important;padding:13px!important;font-size:15px!important;background:#0b4f8a!important;color:#fff!important;opacity:1!important;visibility:visible!important}
+  .actions-cell .download-btn{background:#083d6b!important}
 }
 </style>
-
-
-<style id="document-action-fix">
-.doc-action-label{font-weight:800;color:#526173;margin-bottom:6px;display:block}
-@media(max-width:768px){
-  tbody td:nth-child(4)::before{
-    content:"Action";
-    display:block;
-    font-weight:900;
-    color:#0b4f8a;
-    margin-bottom:8px;
-  }
-  tbody td:nth-child(4){
-    background:#f1f7fc!important;
-    padding:12px!important;
-    border-radius:12px!important;
-  }
-  tbody td:nth-child(4) .btn{
-    display:block!important;
-    width:100%!important;
-    margin:6px 0!important;
-    padding:12px!important;
-    font-size:15px!important;
-  }
-}
-</style>
-
 </head>
 <body>
-
 <nav>
-  <a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a>
-  <button class="menu-btn" onclick="toggleMenu()">MENU</button>
-  <div class="nav-links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="photos.html">Photos</a>
-    <a href="videos.html">Videos</a>
-    <a href="documents.html">Documents</a>
-    <a href="reports.html">Reports</a>
-    <a href="archive-status.html">Status</a>
-  </div>
+<a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a>
+<button class="menu-btn" onclick="toggleMenu()">MENU</button>
+<div class="nav-links" id="navLinks">
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="photos.html">Photos</a>
+<a href="videos.html">Videos</a>
+<a href="documents.html">Documents</a>
+<a href="reports.html">Reports</a>
+<a href="archive-status.html">Status</a>
+</div>
 </nav>
-
 
 <section class="hero"><h1>Document Archive</h1><p>Recovered PDF, Word, Excel, and PowerPoint documents.</p></section>
 
 <section class="section">
 <div class="stats">
-<div class="card"><h2>75</h2><p>Total Documents</p></div>
+<div class="card"><h2>74</h2><p>Total Documents</p></div>
 <div class="card"><h2>9</h2><p>PDF Files</p></div>
 <div class="card"><h2>36</h2><p>Word Files</p></div>
 <div class="card"><h2>23</h2><p>Excel Files</p></div>
@@ -171,518 +103,740 @@ nav{background:white;padding:14px 38px;display:flex;justify-content:space-betwee
 <td>(الرعاة)Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%28%D8%A7%D9%84%D8%B1%D8%B9%D8%A7%D8%A9%29Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/(الرعاة)Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%2528%25D8%25A7%25D9%2584%25D8%25B1%25D8%25B9%25D8%25A7%25D8%25A9%2529Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/(الرعاة)Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>. وفاء الياسين -ملتقى ما بعد المرحلة الثانوية  معدل يونيو 2015.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F.%2520%D9%88%D9%81%D8%A7%D8%A1%2520%D8%A7%D9%84%D9%8A%D8%A7%D8%B3%D9%8A%D9%86%2520-%D9%85%D9%84%D8%AA%D9%82%D9%89%2520%D9%85%D8%A7%2520%D8%A8%D8%B9%D8%AF%2520%D8%A7%D9%84%D9%85%D8%B1%D8%AD%D9%84%D8%A9%2520%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%88%D9%8A%D8%A9%2520%2520%D9%85%D8%B9%D8%AF%D9%84%2520%D9%8A%D9%88%D9%86%D9%8A%D9%88%25202015.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/. وفاء الياسين -ملتقى ما بعد المرحلة الثانوية  معدل يونيو 2015.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F.%2520%25D9%2588%25D9%2581%25D8%25A7%25D8%25A1%2520%25D8%25A7%25D9%2584%25D9%258A%25D8%25A7%25D8%25B3%25D9%258A%25D9%2586%2520-%25D9%2585%25D9%2584%25D8%25AA%25D9%2582%25D9%2589%2520%25D9%2585%25D8%25A7%2520%25D8%25A8%25D8%25B9%25D8%25AF%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25B1%25D8%25AD%25D9%2584%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25AB%25D8%25A7%25D9%2586%25D9%2588%25D9%258A%25D8%25A9%2520%2520%25D9%2585%25D8%25B9%25D8%25AF%25D9%2584%2520%25D9%258A%25D9%2588%25D9%2586%25D9%258A%25D9%2588%25202015.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/. وفاء الياسين -ملتقى ما بعد المرحلة الثانوية  معدل يونيو 2015.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>All Heads Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FAll%2520Heads%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/All Heads Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FAll%2520Heads%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/All Heads Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>All specialists Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FAll%2520specialists%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/All specialists Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FAll%2520specialists%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/All specialists Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>All teachers Emails.xlsx</td>
 <td>Excel</td>
 <td>0.03 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FAll%2520teachers%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/All teachers Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FAll%2520teachers%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/All teachers Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>Award ceremony plan.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FAward%2520ceremony%2520plan.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Award ceremony plan.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FAward%2520ceremony%2520plan.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Award ceremony plan.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PowerPoint">
 <td>Award sponcership 25 may 2015.pptx</td>
 <td>PowerPoint</td>
 <td>8.09 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FAward%2520sponcership%252025%2520may%25202015.pptx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Award sponcership 25 may 2015.pptx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FAward%2520sponcership%252025%2520may%25202015.pptx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Award sponcership 25 may 2015.pptx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>Carnival report.docx</td>
 <td>Word</td>
 <td>7.5 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FCarnival%2520report.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Carnival report.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FCarnival%2520report.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Carnival report.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>Consultants Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FConsultants%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Consultants Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FConsultants%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Consultants Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>Coordinator Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FCoordinator%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Coordinator Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FCoordinator%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Coordinator Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PDF">
 <td>cover page كرنفال كالد الخامس.pdf</td>
 <td>PDF</td>
 <td>0.54 MB</td>
-<td><a class="btn" href="assets/documents/cover page كرنفال كالد الخامس.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/cover page كرنفال كالد الخامس.pdf" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="assets/documents/cover page كرنفال كالد الخامس.pdf" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/cover page كرنفال كالد الخامس.pdf" download>Download</a>
+</td>
 </tr>
 
-<tr data-type="Other">
-<td>Other</td>
-<td>Other</td>
+<tr data-type="Excel">
+<td>Directors Emails.xlsx</td>
 <td>Excel</td>
-<td><a class="btn" href="assets/documents/Directors Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Directors Emails.xlsx" download>Download</a></td>
+<td>0.01 MB</td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FDirectors%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Directors Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PowerPoint">
 <td>Final Arabic ppt 7july 2015.pptx</td>
 <td>PowerPoint</td>
 <td>58.68 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FFinal%2520Arabic%2520ppt%25207july%25202015.pptx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Final Arabic ppt 7july 2015.pptx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FFinal%2520Arabic%2520ppt%25207july%25202015.pptx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Final Arabic ppt 7july 2015.pptx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PowerPoint">
 <td>Final English ppt 7July 2015.pptx</td>
 <td>PowerPoint</td>
 <td>28.96 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FFinal%2520English%2520ppt%25207July%25202015.pptx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Final English ppt 7July 2015.pptx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FFinal%2520English%2520ppt%25207July%25202015.pptx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Final English ppt 7July 2015.pptx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>Interventionists Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FInterventionists%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Interventionists Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FInterventionists%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Interventionists Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PDF">
 <td>KALD FLY TALENT 2016.pdf</td>
 <td>PDF</td>
 <td>11.96 MB</td>
-<td><a class="btn" href="assets/documents/KALD FLY TALENT 2016.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/KALD FLY TALENT 2016.pdf" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="assets/documents/KALD FLY TALENT 2016.pdf" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/KALD FLY TALENT 2016.pdf" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>KALD Proposal-ملتقى أولياء الأمور التربوي-FINAL.doc</td>
 <td>Word</td>
 <td>0.11 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FKALD%2520Proposal-%D9%85%D9%84%D8%AA%D9%82%D9%89%2520%D8%A3%D9%88%D9%84%D9%8A%D8%A7%D8%A1%2520%D8%A7%D9%84%D8%A3%D9%85%D9%88%D8%B1%2520%D8%A7%D9%84%D8%AA%D8%B1%D8%A8%D9%88%D9%8A-FINAL.doc" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/KALD Proposal-ملتقى أولياء الأمور التربوي-FINAL.doc" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FKALD%2520Proposal-%25D9%2585%25D9%2584%25D8%25AA%25D9%2582%25D9%2589%2520%25D8%25A3%25D9%2588%25D9%2584%25D9%258A%25D8%25A7%25D8%25A1%2520%25D8%25A7%25D9%2584%25D8%25A3%25D9%2585%25D9%2588%25D8%25B1%2520%25D8%25A7%25D9%2584%25D8%25AA%25D8%25B1%25D8%25A8%25D9%2588%25D9%258A-FINAL.doc" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/KALD Proposal-ملتقى أولياء الأمور التربوي-FINAL.doc" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>KALD report to NBK-Final (2).docx</td>
 <td>Word</td>
 <td>12.97 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FKALD%2520report%2520to%2520NBK-Final%2520%282%29.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/KALD report to NBK-Final (2).docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FKALD%2520report%2520to%2520NBK-Final%2520%25282%2529.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/KALD report to NBK-Final (2).docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PDF">
 <td>logo.pdf</td>
 <td>PDF</td>
 <td>0.23 MB</td>
-<td><a class="btn" href="assets/documents/logo.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/logo.pdf" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="assets/documents/logo.pdf" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/logo.pdf" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>Mandatory UPDATED Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FMandatory%2520UPDATED%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Mandatory UPDATED Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FMandatory%2520UPDATED%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Mandatory UPDATED Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PDF">
 <td>Marina contract.pdf</td>
 <td>PDF</td>
 <td>0.78 MB</td>
-<td><a class="btn" href="assets/documents/Marina contract.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/Marina contract.pdf" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="assets/documents/Marina contract.pdf" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Marina contract.pdf" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>NBK Cover reportالغلاف الخارجي (2).docx</td>
 <td>Word</td>
 <td>0.69 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FNBK%2520Cover%2520report%D8%A7%D9%84%D8%BA%D9%84%D8%A7%D9%81%2520%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%2520%282%29.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/NBK Cover reportالغلاف الخارجي (2).docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FNBK%2520Cover%2520report%25D8%25A7%25D9%2584%25D8%25BA%25D9%2584%25D8%25A7%25D9%2581%2520%25D8%25A7%25D9%2584%25D8%25AE%25D8%25A7%25D8%25B1%25D8%25AC%25D9%258A%2520%25282%2529.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/NBK Cover reportالغلاف الخارجي (2).docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>New Microsoft Word Document.docx</td>
 <td>Word</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FNew%2520Microsoft%2520Word%2520Document.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/New Microsoft Word Document.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FNew%2520Microsoft%2520Word%2520Document.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/New Microsoft Word Document.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>OT Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FOT%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/OT Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FOT%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/OT Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>Other Specialists Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FOther%2520Specialists%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Other Specialists Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FOther%2520Specialists%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Other Specialists Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>premium updated Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2Fpremium%2520updated%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/premium updated Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2Fpremium%2520updated%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/premium updated Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>Researchers and Professors  Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FResearchers%2520and%2520Professors%2520%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Researchers and Professors  Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FResearchers%2520and%2520Professors%2520%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Researchers and Professors  Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>Schools Counselors  Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FSchools%2520Counselors%2520%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Schools Counselors  Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FSchools%2520Counselors%2520%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Schools Counselors  Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>Social Workers Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FSocial%2520Workers%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Social Workers Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FSocial%2520Workers%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Social Workers Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>Speech Therapists Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FSpeech%2520Therapists%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/Speech Therapists Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FSpeech%2520Therapists%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Speech Therapists Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>VIP list updated emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FVIP%2520list%2520updated%2520emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/VIP list updated emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2FVIP%2520list%2520updated%2520emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/VIP list updated emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PDF">
 <td>Yousifi -logo.pdf</td>
 <td>PDF</td>
 <td>0.07 MB</td>
-<td><a class="btn" href="assets/documents/Yousifi -logo.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/Yousifi -logo.pdf" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="assets/documents/Yousifi -logo.pdf" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/Yousifi -logo.pdf" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>الميزانية المالية لكرنفال كالد الخامس 2014 AUK.xlsx</td>
 <td>Excel</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D8%A7%D9%84%D9%85%D9%8A%D8%B2%D8%A7%D9%86%D9%8A%D8%A9%2520%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A%D8%A9%2520%D9%84%D9%83%D8%B1%D9%86%D9%81%D8%A7%D9%84%2520%D9%83%D8%A7%D9%84%D8%AF%2520%D8%A7%D9%84%D8%AE%D8%A7%D9%85%D8%B3%25202014%2520AUK.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/الميزانية المالية لكرنفال كالد الخامس 2014 AUK.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D8%25A7%25D9%2584%25D9%2585%25D9%258A%25D8%25B2%25D8%25A7%25D9%2586%25D9%258A%25D8%25A9%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25A7%25D9%2584%25D9%258A%25D8%25A9%2520%25D9%2584%25D9%2583%25D8%25B1%25D9%2586%25D9%2581%25D8%25A7%25D9%2584%2520%25D9%2583%25D8%25A7%25D9%2584%25D8%25AF%2520%25D8%25A7%25D9%2584%25D8%25AE%25D8%25A7%25D9%2585%25D8%25B3%25202014%2520AUK.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/الميزانية المالية لكرنفال كالد الخامس 2014 AUK.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>انشطة ومشاريع من مرام.docx</td>
 <td>Word</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D8%A7%D9%86%D8%B4%D8%B7%D8%A9%2520%D9%88%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9%2520%D9%85%D9%86%2520%D9%85%D8%B1%D8%A7%D9%85.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/انشطة ومشاريع من مرام.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D8%25A7%25D9%2586%25D8%25B4%25D8%25B7%25D8%25A9%2520%25D9%2588%25D9%2585%25D8%25B4%25D8%25A7%25D8%25B1%25D9%258A%25D8%25B9%2520%25D9%2585%25D9%2586%2520%25D9%2585%25D8%25B1%25D8%25A7%25D9%2585.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/انشطة ومشاريع من مرام.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PowerPoint">
 <td>انواع الرعايات الخاصة بكالد -.ppt</td>
 <td>PowerPoint</td>
 <td>1.73 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D8%A7%D9%86%D9%88%D8%A7%D8%B9%2520%D8%A7%D9%84%D8%B1%D8%B9%D8%A7%D9%8A%D8%A7%D8%AA%2520%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D8%A9%2520%D8%A8%D9%83%D8%A7%D9%84%D8%AF%2520-.ppt" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/انواع الرعايات الخاصة بكالد -.ppt" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D8%25A7%25D9%2586%25D9%2588%25D8%25A7%25D8%25B9%2520%25D8%25A7%25D9%2584%25D8%25B1%25D8%25B9%25D8%25A7%25D9%258A%25D8%25A7%25D8%25AA%2520%25D8%25A7%25D9%2584%25D8%25AE%25D8%25A7%25D8%25B5%25D8%25A9%2520%25D8%25A8%25D9%2583%25D8%25A7%25D9%2584%25D8%25AF%2520-.ppt" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/انواع الرعايات الخاصة بكالد -.ppt" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PowerPoint">
 <td>انواع الشراكات الخاصة بكالد.ppt</td>
 <td>PowerPoint</td>
 <td>1.69 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D8%A7%D9%86%D9%88%D8%A7%D8%B9%2520%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D9%83%D8%A7%D8%AA%2520%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D8%A9%2520%D8%A8%D9%83%D8%A7%D9%84%D8%AF.ppt" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/انواع الشراكات الخاصة بكالد.ppt" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D8%25A7%25D9%2586%25D9%2588%25D8%25A7%25D8%25B9%2520%25D8%25A7%25D9%2584%25D8%25B4%25D8%25B1%25D8%25A7%25D9%2583%25D8%25A7%25D8%25AA%2520%25D8%25A7%25D9%2584%25D8%25AE%25D8%25A7%25D8%25B5%25D8%25A9%2520%25D8%25A8%25D9%2583%25D8%25A7%25D9%2584%25D8%25AF.ppt" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/انواع الشراكات الخاصة بكالد.ppt" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>تقرير مخيم نهاري.docx</td>
 <td>Word</td>
 <td>0.21 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D8%AA%D9%82%D8%B1%D9%8A%D8%B1%2520%D9%85%D8%AE%D9%8A%D9%85%2520%D9%86%D9%87%D8%A7%D8%B1%D9%8A.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/تقرير مخيم نهاري.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D8%25AA%25D9%2582%25D8%25B1%25D9%258A%25D8%25B1%2520%25D9%2585%25D8%25AE%25D9%258A%25D9%2585%2520%25D9%2586%25D9%2587%25D8%25A7%25D8%25B1%25D9%258A.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/تقرير مخيم نهاري.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>تقرير مسرح  كالد للمواهب 2015.docx</td>
 <td>Word</td>
 <td>1.34 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D8%AA%D9%82%D8%B1%D9%8A%D8%B1%2520%D9%85%D8%B3%D8%B1%D8%AD%2520%2520%D9%83%D8%A7%D9%84%D8%AF%2520%D9%84%D9%84%D9%85%D9%88%D8%A7%D9%87%D8%A8%25202015.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/تقرير مسرح  كالد للمواهب 2015.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D8%25AA%25D9%2582%25D8%25B1%25D9%258A%25D8%25B1%2520%25D9%2585%25D8%25B3%25D8%25B1%25D8%25AD%2520%2520%25D9%2583%25D8%25A7%25D9%2584%25D8%25AF%2520%25D9%2584%25D9%2584%25D9%2585%25D9%2588%25D8%25A7%25D9%2587%25D8%25A8%25202015.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/تقرير مسرح  كالد للمواهب 2015.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>تقــــــــــريــــــــر عمان.docx</td>
 <td>Word</td>
 <td>2.7 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D8%AA%D9%82%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D8%B1%D9%8A%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D8%B1%2520%D8%B9%D9%85%D8%A7%D9%86.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/تقــــــــــريــــــــر عمان.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D8%25AA%25D9%2582%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D8%25B1%25D9%258A%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D8%25B1%2520%25D8%25B9%25D9%2585%25D8%25A7%25D9%2586.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/تقــــــــــريــــــــر عمان.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>تقــــــــــريــــــــر فيلكا.docx</td>
 <td>Word</td>
 <td>0.66 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D8%AA%D9%82%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D8%B1%D9%8A%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D8%B1%2520%D9%81%D9%8A%D9%84%D9%83%D8%A7.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/تقــــــــــريــــــــر فيلكا.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D8%25AA%25D9%2582%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D8%25B1%25D9%258A%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D9%2580%25D8%25B1%2520%25D9%2581%25D9%258A%25D9%2584%25D9%2583%25D8%25A7.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/تقــــــــــريــــــــر فيلكا.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>خطة عمل كرنفال السابع.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D8%AE%D8%B7%D8%A9%2520%D8%B9%D9%85%D9%84%2520%D9%83%D8%B1%D9%86%D9%81%D8%A7%D9%84%2520%D8%A7%D9%84%D8%B3%D8%A7%D8%A8%D8%B9.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/خطة عمل كرنفال السابع.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D8%25AE%25D8%25B7%25D8%25A9%2520%25D8%25B9%25D9%2585%25D9%2584%2520%25D9%2583%25D8%25B1%25D9%2586%25D9%2581%25D8%25A7%25D9%2584%2520%25D8%25A7%25D9%2584%25D8%25B3%25D8%25A7%25D8%25A8%25D8%25B9.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/خطة عمل كرنفال السابع.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>شركات طلب الدعم.xlsx</td>
 <td>Excel</td>
 <td>0.03 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D8%B4%D8%B1%D9%83%D8%A7%D8%AA%2520%D8%B7%D9%84%D8%A8%2520%D8%A7%D9%84%D8%AF%D8%B9%D9%85.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/شركات طلب الدعم.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D8%25B4%25D8%25B1%25D9%2583%25D8%25A7%25D8%25AA%2520%25D8%25B7%25D9%2584%25D8%25A8%2520%25D8%25A7%25D9%2584%25D8%25AF%25D8%25B9%25D9%2585.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/شركات طلب الدعم.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كالدا- النظام الداخلي-مرسل من المحامية.doc</td>
 <td>Word</td>
 <td>0.11 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%A7%D9%84%D8%AF%D8%A7-%2520%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85%2520%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A-%D9%85%D8%B1%D8%B3%D9%84%2520%D9%85%D9%86%2520%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D9%85%D9%8A%D8%A9.doc" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كالدا- النظام الداخلي-مرسل من المحامية.doc" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25A7%25D9%2584%25D8%25AF%25D8%25A7-%2520%25D8%25A7%25D9%2584%25D9%2586%25D8%25B8%25D8%25A7%25D9%2585%2520%25D8%25A7%25D9%2584%25D8%25AF%25D8%25A7%25D8%25AE%25D9%2584%25D9%258A-%25D9%2585%25D8%25B1%25D8%25B3%25D9%2584%2520%25D9%2585%25D9%2586%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25AD%25D8%25A7%25D9%2585%25D9%258A%25D8%25A9.doc" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كالدا- النظام الداخلي-مرسل من المحامية.doc" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب  مؤسسة التقدم العلمي.docx</td>
 <td>Word</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%2520%D9%85%D8%A4%D8%B3%D8%B3%D8%A9%2520%D8%A7%D9%84%D8%AA%D9%82%D8%AF%D9%85%2520%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب  مؤسسة التقدم العلمي.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%2520%25D9%2585%25D8%25A4%25D8%25B3%25D8%25B3%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25AA%25D9%2582%25D8%25AF%25D9%2585%2520%25D8%25A7%25D9%2584%25D8%25B9%25D9%2584%25D9%2585%25D9%258A.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب  مؤسسة التقدم العلمي.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب الأهلية للكهرباء.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%A7%D9%84%D8%A3%D9%87%D9%84%D9%8A%D8%A9%2520%D9%84%D9%84%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A1.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب الأهلية للكهرباء.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25A7%25D9%2584%25D8%25A3%25D9%2587%25D9%2584%25D9%258A%25D8%25A9%2520%25D9%2584%25D9%2584%25D9%2583%25D9%2587%25D8%25B1%25D8%25A8%25D8%25A7%25D8%25A1.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب الأهلية للكهرباء.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب المؤسسة العامة لتأمينات الاجتماعية.docx</td>
 <td>Word</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%A7%D9%84%D9%85%D8%A4%D8%B3%D8%B3%D8%A9%2520%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9%2520%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86%D8%A7%D8%AA%2520%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب المؤسسة العامة لتأمينات الاجتماعية.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25A4%25D8%25B3%25D8%25B3%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25B9%25D8%25A7%25D9%2585%25D8%25A9%2520%25D9%2584%25D8%25AA%25D8%25A3%25D9%2585%25D9%258A%25D9%2586%25D8%25A7%25D8%25AA%2520%25D8%25A7%25D9%2584%25D8%25A7%25D8%25AC%25D8%25AA%25D9%2585%25D8%25A7%25D8%25B9%25D9%258A%25D8%25A9.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب المؤسسة العامة لتأمينات الاجتماعية.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب بنك الخليج.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%A8%D9%86%D9%83%2520%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8%AC.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب بنك الخليج.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25A8%25D9%2586%25D9%2583%2520%25D8%25A7%25D9%2584%25D8%25AE%25D9%2584%25D9%258A%25D8%25AC.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب بنك الخليج.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب بنك الكويت الوطني- منال المطر.docx</td>
 <td>Word</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%A8%D9%86%D9%83%2520%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%2520%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A-%2520%D9%85%D9%86%D8%A7%D9%84%2520%D8%A7%D9%84%D9%85%D8%B7%D8%B1.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب بنك الكويت الوطني- منال المطر.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25A8%25D9%2586%25D9%2583%2520%25D8%25A7%25D9%2584%25D9%2583%25D9%2588%25D9%258A%25D8%25AA%2520%25D8%25A7%25D9%2584%25D9%2588%25D8%25B7%25D9%2586%25D9%258A-%2520%25D9%2585%25D9%2586%25D8%25A7%25D9%2584%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25B7%25D8%25B1.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب بنك الكويت الوطني- منال المطر.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب بنك بوبيان -أحمد فرج.docx</td>
 <td>Word</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%A8%D9%86%D9%83%2520%D8%A8%D9%88%D8%A8%D9%8A%D8%A7%D9%86%2520-%D8%A3%D8%AD%D9%85%D8%AF%2520%D9%81%D8%B1%D8%AC.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب بنك بوبيان -أحمد فرج.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25A8%25D9%2586%25D9%2583%2520%25D8%25A8%25D9%2588%25D8%25A8%25D9%258A%25D8%25A7%25D9%2586%2520-%25D8%25A3%25D8%25AD%25D9%2585%25D8%25AF%2520%25D9%2581%25D8%25B1%25D8%25AC.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب بنك بوبيان -أحمد فرج.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب بيت التمويل الكويتي.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%A8%D9%8A%D8%AA%2520%D8%A7%D9%84%D8%AA%D9%85%D9%88%D9%8A%D9%84%2520%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%D9%8A.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب بيت التمويل الكويتي.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25A8%25D9%258A%25D8%25AA%2520%25D8%25A7%25D9%2584%25D8%25AA%25D9%2585%25D9%2588%25D9%258A%25D9%2584%2520%25D8%25A7%25D9%2584%25D9%2583%25D9%2588%25D9%258A%25D8%25AA%25D9%258A.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب بيت التمويل الكويتي.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب خاص لعدنان شهاب الدين بطلب الحصور على دعم.docx</td>
 <td>Word</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%AE%D8%A7%D8%B5%2520%D9%84%D8%B9%D8%AF%D9%86%D8%A7%D9%86%2520%D8%B4%D9%87%D8%A7%D8%A8%2520%D8%A7%D9%84%D8%AF%D9%8A%D9%86%2520%D8%A8%D8%B7%D9%84%D8%A8%2520%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D8%B1%2520%D8%B9%D9%84%D9%89%2520%D8%AF%D8%B9%D9%85.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب خاص لعدنان شهاب الدين بطلب الحصور على دعم.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25AE%25D8%25A7%25D8%25B5%2520%25D9%2584%25D8%25B9%25D8%25AF%25D9%2586%25D8%25A7%25D9%2586%2520%25D8%25B4%25D9%2587%25D8%25A7%25D8%25A8%2520%25D8%25A7%25D9%2584%25D8%25AF%25D9%258A%25D9%2586%2520%25D8%25A8%25D8%25B7%25D9%2584%25D8%25A8%2520%25D8%25A7%25D9%2584%25D8%25AD%25D8%25B5%25D9%2588%25D8%25B1%2520%25D8%25B9%25D9%2584%25D9%2589%2520%25D8%25AF%25D8%25B9%25D9%2585.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب خاص لعدنان شهاب الدين بطلب الحصور على دعم.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب رئيس الهيئة الخيرية الاسلامية العالمية لطباعة اصدارات.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%B1%D8%A6%D9%8A%D8%B3%2520%D8%A7%D9%84%D9%87%D9%8A%D8%A6%D8%A9%2520%D8%A7%D9%84%D8%AE%D9%8A%D8%B1%D9%8A%D8%A9%2520%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9%2520%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D8%A9%2520%D9%84%D8%B7%D8%A8%D8%A7%D8%B9%D8%A9%2520%D8%A7%D8%B5%D8%AF%D8%A7%D8%B1%D8%A7%D8%AA.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب رئيس الهيئة الخيرية الاسلامية العالمية لطباعة اصدارات.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25B1%25D8%25A6%25D9%258A%25D8%25B3%2520%25D8%25A7%25D9%2584%25D9%2587%25D9%258A%25D8%25A6%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25AE%25D9%258A%25D8%25B1%25D9%258A%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25A7%25D8%25B3%25D9%2584%25D8%25A7%25D9%2585%25D9%258A%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25B9%25D8%25A7%25D9%2584%25D9%2585%25D9%258A%25D8%25A9%2520%25D9%2584%25D8%25B7%25D8%25A8%25D8%25A7%25D8%25B9%25D8%25A9%2520%25D8%25A7%25D8%25B5%25D8%25AF%25D8%25A7%25D8%25B1%25D8%25A7%25D8%25AA.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب رئيس الهيئة الخيرية الاسلامية العالمية لطباعة اصدارات.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب شركة Ooredoo الكويت للاتصالات المتنقلة - مدير التواصل الاجتماعي والمسؤولية الاجتماعية والرعايات.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%B4%D8%B1%D9%83%D8%A9%2520Ooredoo%2520%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%2520%D9%84%D9%84%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%D8%A7%D8%AA%2520%D8%A7%D9%84%D9%85%D8%AA%D9%86%D9%82%D9%84%D8%A9%2520-%2520%D9%85%D8%AF%D9%8A%D8%B1%2520%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%2520%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%2520%D9%88%D8%A7%D9%84%D9%85%D8%B3%D8%A4%D9%88%D9%84%D9%8A%D8%A9%2520%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9%2520%D9%88%D8%A7%D9%84%D8%B1%D8%B9%D8%A7%D9%8A%D8%A7%D8%AA.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب شركة Ooredoo الكويت للاتصالات المتنقلة - مدير التواصل الاجتماعي والمسؤولية الاجتماعية والرعايات.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25B4%25D8%25B1%25D9%2583%25D8%25A9%2520Ooredoo%2520%25D8%25A7%25D9%2584%25D9%2583%25D9%2588%25D9%258A%25D8%25AA%2520%25D9%2584%25D9%2584%25D8%25A7%25D8%25AA%25D8%25B5%25D8%25A7%25D9%2584%25D8%25A7%25D8%25AA%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25AA%25D9%2586%25D9%2582%25D9%2584%25D8%25A9%2520-%2520%25D9%2585%25D8%25AF%25D9%258A%25D8%25B1%2520%25D8%25A7%25D9%2584%25D8%25AA%25D9%2588%25D8%25A7%25D8%25B5%25D9%2584%2520%25D8%25A7%25D9%2584%25D8%25A7%25D8%25AC%25D8%25AA%25D9%2585%25D8%25A7%25D8%25B9%25D9%258A%2520%25D9%2588%25D8%25A7%25D9%2584%25D9%2585%25D8%25B3%25D8%25A4%25D9%2588%25D9%2584%25D9%258A%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25A7%25D8%25AC%25D8%25AA%25D9%2585%25D8%25A7%25D8%25B9%25D9%258A%25D8%25A9%2520%25D9%2588%25D8%25A7%25D9%2584%25D8%25B1%25D8%25B9%25D8%25A7%25D9%258A%25D8%25A7%25D8%25AA.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب شركة Ooredoo الكويت للاتصالات المتنقلة - مدير التواصل الاجتماعي والمسؤولية الاجتماعية والرعايات.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب شركة Ooredoo الكويت للاتصالات المتنقلة الرئيس التنفيذي.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%B4%D8%B1%D9%83%D8%A9%2520Ooredoo%2520%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%2520%D9%84%D9%84%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%D8%A7%D8%AA%2520%D8%A7%D9%84%D9%85%D8%AA%D9%86%D9%82%D9%84%D8%A9%2520%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%2520%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب شركة Ooredoo الكويت للاتصالات المتنقلة الرئيس التنفيذي.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25B4%25D8%25B1%25D9%2583%25D8%25A9%2520Ooredoo%2520%25D8%25A7%25D9%2584%25D9%2583%25D9%2588%25D9%258A%25D8%25AA%2520%25D9%2584%25D9%2584%25D8%25A7%25D8%25AA%25D8%25B5%25D8%25A7%25D9%2584%25D8%25A7%25D8%25AA%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25AA%25D9%2586%25D9%2582%25D9%2584%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25B1%25D8%25A6%25D9%258A%25D8%25B3%2520%25D8%25A7%25D9%2584%25D8%25AA%25D9%2586%25D9%2581%25D9%258A%25D8%25B0%25D9%258A.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب شركة Ooredoo الكويت للاتصالات المتنقلة الرئيس التنفيذي.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب شركة البترول الوطنية الكويتية.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%B4%D8%B1%D9%83%D8%A9%2520%D8%A7%D9%84%D8%A8%D8%AA%D8%B1%D9%88%D9%84%2520%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9%2520%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب شركة البترول الوطنية الكويتية.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25B4%25D8%25B1%25D9%2583%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25A8%25D8%25AA%25D8%25B1%25D9%2588%25D9%2584%2520%25D8%25A7%25D9%2584%25D9%2588%25D8%25B7%25D9%2586%25D9%258A%25D8%25A9%2520%25D8%25A7%25D9%2584%25D9%2583%25D9%2588%25D9%258A%25D8%25AA%25D9%258A%25D8%25A9.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب شركة البترول الوطنية الكويتية.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب شركة الحمرا الكويت - Copy.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%B4%D8%B1%D9%83%D8%A9%2520%D8%A7%D9%84%D8%AD%D9%85%D8%B1%D8%A7%2520%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%2520-%2520Copy.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب شركة الحمرا الكويت - Copy.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25B4%25D8%25B1%25D9%2583%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25AD%25D9%2585%25D8%25B1%25D8%25A7%2520%25D8%25A7%25D9%2584%25D9%2583%25D9%2588%25D9%258A%25D8%25AA%2520-%2520Copy.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب شركة الحمرا الكويت - Copy.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب شركة الغانم.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%B4%D8%B1%D9%83%D8%A9%2520%D8%A7%D9%84%D8%BA%D8%A7%D9%86%D9%85.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب شركة الغانم.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25B4%25D8%25B1%25D9%2583%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25BA%25D8%25A7%25D9%2586%25D9%2585.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب شركة الغانم.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب شركة المجموعة العملية القابضة.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%B4%D8%B1%D9%83%D8%A9%2520%D8%A7%D9%84%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9%2520%D8%A7%D9%84%D8%B9%D9%85%D9%84%D9%8A%D8%A9%2520%D8%A7%D9%84%D9%82%D8%A7%D8%A8%D8%B6%D8%A9.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب شركة المجموعة العملية القابضة.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25B4%25D8%25B1%25D9%2583%25D8%25A9%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25AC%25D9%2585%25D9%2588%25D8%25B9%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25B9%25D9%2585%25D9%2584%25D9%258A%25D8%25A9%2520%25D8%25A7%25D9%2584%25D9%2582%25D8%25A7%25D8%25A8%25D8%25B6%25D8%25A9.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب شركة المجموعة العملية القابضة.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب شركة اليوسفي (2).docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%B4%D8%B1%D9%83%D8%A9%2520%D8%A7%D9%84%D9%8A%D9%88%D8%B3%D9%81%D9%8A%2520%282%29.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب شركة اليوسفي (2).docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25B4%25D8%25B1%25D9%2583%25D8%25A9%2520%25D8%25A7%25D9%2584%25D9%258A%25D9%2588%25D8%25B3%25D9%2581%25D9%258A%2520%25282%2529.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب شركة اليوسفي (2).docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب شركة اليوسفي.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%B4%D8%B1%D9%83%D8%A9%2520%D8%A7%D9%84%D9%8A%D9%88%D8%B3%D9%81%D9%8A.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب شركة اليوسفي.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25B4%25D8%25B1%25D9%2583%25D8%25A9%2520%25D8%25A7%25D9%2584%25D9%258A%25D9%2588%25D8%25B3%25D9%2581%25D9%258A.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب شركة اليوسفي.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PDF">
 <td>كتاب شركة فيفا.pdf</td>
 <td>PDF</td>
 <td>0.27 MB</td>
-<td><a class="btn" href="assets/documents/كتاب شركة فيفا.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/كتاب شركة فيفا.pdf" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="assets/documents/كتاب شركة فيفا.pdf" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب شركة فيفا.pdf" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب شكر للسيد فيصل السريع - بيت التمويل الكويتي.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D8%B4%D9%83%D8%B1%2520%D9%84%D9%84%D8%B3%D9%8A%D8%AF%2520%D9%81%D9%8A%D8%B5%D9%84%2520%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%B9%2520-%2520%D8%A8%D9%8A%D8%AA%2520%D8%A7%D9%84%D8%AA%D9%85%D9%88%D9%8A%D9%84%2520%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%D9%8A.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب شكر للسيد فيصل السريع - بيت التمويل الكويتي.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D8%25B4%25D9%2583%25D8%25B1%2520%25D9%2584%25D9%2584%25D8%25B3%25D9%258A%25D8%25AF%2520%25D9%2581%25D9%258A%25D8%25B5%25D9%2584%2520%25D8%25A7%25D9%2584%25D8%25B3%25D8%25B1%25D9%258A%25D8%25B9%2520-%2520%25D8%25A8%25D9%258A%25D8%25AA%2520%25D8%25A7%25D9%2584%25D8%25AA%25D9%2585%25D9%2588%25D9%258A%25D9%2584%2520%25D8%25A7%25D9%2584%25D9%2583%25D9%2588%25D9%258A%25D8%25AA%25D9%258A.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب شكر للسيد فيصل السريع - بيت التمويل الكويتي.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كتاب للشيخ مبارك جابر الأحمد.docx</td>
 <td>Word</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%AA%D8%A7%D8%A8%2520%D9%84%D9%84%D8%B4%D9%8A%D8%AE%2520%D9%85%D8%A8%D8%A7%D8%B1%D9%83%2520%D8%AC%D8%A7%D8%A8%D8%B1%2520%D8%A7%D9%84%D8%A3%D8%AD%D9%85%D8%AF.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كتاب للشيخ مبارك جابر الأحمد.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25AA%25D8%25A7%25D8%25A8%2520%25D9%2584%25D9%2584%25D8%25B4%25D9%258A%25D8%25AE%2520%25D9%2585%25D8%25A8%25D8%25A7%25D8%25B1%25D9%2583%2520%25D8%25AC%25D8%25A7%25D8%25A8%25D8%25B1%2520%25D8%25A7%25D9%2584%25D8%25A3%25D8%25AD%25D9%2585%25D8%25AF.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كتاب للشيخ مبارك جابر الأحمد.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>كرنفال كالد السابع.docx</td>
 <td>Word</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%83%D8%B1%D9%86%D9%81%D8%A7%D9%84%2520%D9%83%D8%A7%D9%84%D8%AF%2520%D8%A7%D9%84%D8%B3%D8%A7%D8%A8%D8%B9.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/كرنفال كالد السابع.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2583%25D8%25B1%25D9%2586%25D9%2581%25D8%25A7%25D9%2584%2520%25D9%2583%25D8%25A7%25D9%2584%25D8%25AF%2520%25D8%25A7%25D9%2584%25D8%25B3%25D8%25A7%25D8%25A8%25D8%25B9.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/كرنفال كالد السابع.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>محمد أل بن علي.docx_تعديل.docx</td>
 <td>Word</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%85%D8%AD%D9%85%D8%AF%2520%D8%A3%D9%84%2520%D8%A8%D9%86%2520%D8%B9%D9%84%D9%8A.docx_%D8%AA%D8%B9%D8%AF%D9%8A%D9%84.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/محمد أل بن علي.docx_تعديل.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2585%25D8%25AD%25D9%2585%25D8%25AF%2520%25D8%25A3%25D9%2584%2520%25D8%25A8%25D9%2586%2520%25D8%25B9%25D9%2584%25D9%258A.docx_%25D8%25AA%25D8%25B9%25D8%25AF%25D9%258A%25D9%2584.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/محمد أل بن علي.docx_تعديل.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>موجهي وزارة التربية  Emails.xlsx</td>
 <td>Excel</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%85%D9%88%D8%AC%D9%87%D9%8A%2520%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%2520%D8%A7%D9%84%D8%AA%D8%B1%D8%A8%D9%8A%D8%A9%2520%2520Emails.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/موجهي وزارة التربية  Emails.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2585%25D9%2588%25D8%25AC%25D9%2587%25D9%258A%2520%25D9%2588%25D8%25B2%25D8%25A7%25D8%25B1%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25AA%25D8%25B1%25D8%25A8%25D9%258A%25D8%25A9%2520%2520Emails.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/موجهي وزارة التربية  Emails.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>نبذة عن كالد.docx</td>
 <td>Word</td>
 <td>0.01 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%86%D8%A8%D8%B0%D8%A9%2520%D8%B9%D9%86%2520%D9%83%D8%A7%D9%84%D8%AF.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/نبذة عن كالد.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2586%25D8%25A8%25D8%25B0%25D8%25A9%2520%25D8%25B9%25D9%2586%2520%25D9%2583%25D8%25A7%25D9%2584%25D8%25AF.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/نبذة عن كالد.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PDF">
 <td>نبذة عن مخيم عمان.pdf</td>
 <td>PDF</td>
 <td>0.26 MB</td>
-<td><a class="btn" href="assets/documents/نبذة عن مخيم عمان.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/نبذة عن مخيم عمان.pdf" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="assets/documents/نبذة عن مخيم عمان.pdf" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/نبذة عن مخيم عمان.pdf" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>نبذة عن مخيم فيلكا للبنات.docx</td>
 <td>Word</td>
 <td>0.37 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%86%D8%A8%D8%B0%D8%A9%2520%D8%B9%D9%86%2520%D9%85%D8%AE%D9%8A%D9%85%2520%D9%81%D9%8A%D9%84%D9%83%D8%A7%2520%D9%84%D9%84%D8%A8%D9%86%D8%A7%D8%AA.docx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/نبذة عن مخيم فيلكا للبنات.docx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2586%25D8%25A8%25D8%25B0%25D8%25A9%2520%25D8%25B9%25D9%2586%2520%25D9%2585%25D8%25AE%25D9%258A%25D9%2585%2520%25D9%2581%25D9%258A%25D9%2584%25D9%2583%25D8%25A7%2520%25D9%2584%25D9%2584%25D8%25A8%25D9%2586%25D8%25A7%25D8%25AA.docx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/نبذة عن مخيم فيلكا للبنات.docx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Excel">
 <td>نتائج طلب الدعم.xlsx</td>
 <td>Excel</td>
 <td>0.02 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%86%D8%AA%D8%A7%D8%A6%D8%AC%2520%D8%B7%D9%84%D8%A8%2520%D8%A7%D9%84%D8%AF%D8%B9%D9%85.xlsx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/نتائج طلب الدعم.xlsx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2586%25D8%25AA%25D8%25A7%25D8%25A6%25D8%25AC%2520%25D8%25B7%25D9%2584%25D8%25A8%2520%25D8%25A7%25D9%2584%25D8%25AF%25D8%25B9%25D9%2585.xlsx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/نتائج طلب الدعم.xlsx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PowerPoint">
 <td>نظرة الى المستقبل.pptx</td>
 <td>PowerPoint</td>
 <td>58.68 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%86%D8%B8%D8%B1%D8%A9%2520%D8%A7%D9%84%D9%89%2520%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%82%D8%A8%D9%84.pptx" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/نظرة الى المستقبل.pptx" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2586%25D8%25B8%25D8%25B1%25D8%25A9%2520%25D8%25A7%25D9%2584%25D9%2589%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25B3%25D8%25AA%25D9%2582%25D8%25A8%25D9%2584.pptx" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/نظرة الى المستقبل.pptx" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="Word">
 <td>نموذج رعاية بنك بوبيان.doc</td>
 <td>Word</td>
 <td>0.08 MB</td>
-<td><a class="btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%D9%86%D9%85%D9%88%D8%B0%D8%AC%2520%D8%B1%D8%B9%D8%A7%D9%8A%D8%A9%2520%D8%A8%D9%86%D9%83%2520%D8%A8%D9%88%D8%A8%D9%8A%D8%A7%D9%86.doc" target="_blank" rel="noopener">View</a> <a class="btn" href="assets/documents/نموذج رعاية بنك بوبيان.doc" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fpeterbelarmino.github.io%2Fkald-digital-archive%2Fassets%2Fdocuments%2F%25D9%2586%25D9%2585%25D9%2588%25D8%25B0%25D8%25AC%2520%25D8%25B1%25D8%25B9%25D8%25A7%25D9%258A%25D8%25A9%2520%25D8%25A8%25D9%2586%25D9%2583%2520%25D8%25A8%25D9%2588%25D8%25A8%25D9%258A%25D8%25A7%25D9%2586.doc" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/نموذج رعاية بنك بوبيان.doc" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PDF">
 <td>نموذج رعاية بنك بوبيان.pdf</td>
 <td>PDF</td>
 <td>0.09 MB</td>
-<td><a class="btn" href="assets/documents/نموذج رعاية بنك بوبيان.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/نموذج رعاية بنك بوبيان.pdf" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="assets/documents/نموذج رعاية بنك بوبيان.pdf" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/نموذج رعاية بنك بوبيان.pdf" download>Download</a>
+</td>
 </tr>
 
 <tr data-type="PDF">
 <td>نموذج مؤسسة التقدم العلمي.pdf</td>
 <td>PDF</td>
 <td>0.57 MB</td>
-<td><a class="btn" href="assets/documents/نموذج مؤسسة التقدم العلمي.pdf" target="_blank" rel="noopener">View PDF</a> <a class="btn" href="assets/documents/نموذج مؤسسة التقدم العلمي.pdf" download>Download</a></td>
+<td class="actions-cell">
+<a class="doc-btn view-btn" href="assets/documents/نموذج مؤسسة التقدم العلمي.pdf" target="_blank" rel="noopener">View</a>
+<a class="doc-btn download-btn" href="assets/documents/نموذج مؤسسة التقدم العلمي.pdf" download>Download</a>
+</td>
 </tr>
 
 </tbody>
@@ -692,6 +846,11 @@ nav{background:white;padding:14px 38px;display:flex;justify-content:space-betwee
 <footer><p>KALD Digital Archive Center | Documents</p></footer>
 
 <script>
+function toggleMenu(){
+  const nav=document.getElementById("navLinks");
+  if(nav){nav.classList.toggle("show");}
+}
+
 const searchBox=document.getElementById('searchBox');
 const typeFilter=document.getElementById('typeFilter');
 const rows=[...document.querySelectorAll('#docTable tr')];
@@ -709,45 +868,5 @@ function filterDocs(){
 searchBox.addEventListener('input',filterDocs);
 typeFilter.addEventListener('change',filterDocs);
 </script>
-
-
-
-
-
-
-
-
-
-
-<script id="clean-global-menu-script">
-function toggleMenu(){
-  const nav=document.getElementById("navLinks");
-  if(nav){nav.classList.toggle("show");}
-}
-</script>
-
 </body>
 </html>
-
-<style id="force-document-buttons">
-tbody td:nth-child(4) .btn{
-    display:block !important;
-    width:100% !important;
-    margin:8px 0 !important;
-    background:#0b4f8a !important;
-    color:#ffffff !important;
-    font-weight:700 !important;
-    text-align:center !important;
-    padding:12px !important;
-    border-radius:10px !important;
-    text-decoration:none !important;
-    opacity:1 !important;
-    visibility:visible !important;
-}
-
-tbody td:nth-child(4) .btn:hover{
-    background:#083d6b !important;
-    color:#ffffff !important;
-}
-</style>
-
