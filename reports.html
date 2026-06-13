@@ -193,6 +193,29 @@ function toggleMenu(){
 }
 </script>
 
+
+<style id="reports-action-style">
+.reports-actions a, .report-card a, .card a{
+  display:inline-block;
+  background:#0b4f8a!important;
+  color:#fff!important;
+  padding:10px 14px!important;
+  border-radius:10px!important;
+  text-decoration:none!important;
+  font-weight:800!important;
+  margin:4px!important;
+}
+@media(max-width:768px){
+  .reports-actions a, .report-card a, .card a{
+    display:block!important;
+    width:100%!important;
+    box-sizing:border-box!important;
+    text-align:center!important;
+    margin:8px 0!important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -209,13 +232,14 @@ function toggleMenu(){
 <a href="videos.html">Videos</a>
 <a href="documents.html">Documents</a>
 <a href="reports.html">Reports</a>
-<a href="archive-status.html">Status</a>
+<a href="archive-status.html">Status</a><a href="iso-audit.html">Audit</a>
 </div>
 </nav>
 
 
 
 
+<p style="max-width:1100px;margin:18px auto;background:#fff3cd;color:#5c4700;padding:12px;border-radius:10px;font-weight:700">Report files open in a new tab. Download is optional and only happens when you press Download.</p>
 <section class="hero">
 <h1>KALD Reports Center</h1>
 <p>Archive reports, recovery records, inventory files, and website backup documentation.</p>
@@ -227,19 +251,19 @@ function toggleMenu(){
 <div class="card">
 <h2>Archive Summary</h2>
 <p>Summary report for the KALD Digital Archive project, including file totals and project status.</p>
-<a href="assets/reports/ARCHIVE_SUMMARY.txt" target="_blank">Open Archive Summary</a>
+<a href="assets/reports/ARCHIVE_SUMMARY.txt" target="_blank" rel="noopener">View</a> <a href="assets/reports/ARCHIVE_SUMMARY.txt" download>Download</a>
 </div>
 
 <div class="card">
 <h2>Master Inventory</h2>
 <p>CSV inventory record listing archive items and recovered digital materials.</p>
-<a href="assets/reports/MASTER_INVENTORY.csv" target="_blank">Open Master Inventory</a>
+<a href="assets/reports/MASTER_INVENTORY.csv" target="_blank" rel="noopener">View</a> <a href="assets/reports/MASTER_INVENTORY.csv" download>Download</a>
 </div>
 
 <div class="card">
 <h2>Recovery Report</h2>
 <p>Documentation of the archive recovery and conversion process.</p>
-<a href="assets/reports/RECOVERY_REPORT.txt" target="_blank">Open Recovery Report</a>
+<a href="assets/reports/RECOVERY_REPORT.txt" target="_blank" rel="noopener">View</a> <a href="assets/reports/RECOVERY_REPORT.txt" download>Download</a>
 </div>
 
 <div class="card">
