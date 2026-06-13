@@ -2,254 +2,136 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>KALD Video Library</title>
+<title>KALD Video Archive</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#1b2a3a}
-
-
-nav a{text-decoration:none;color:#0b4f8a;font-weight:700}
-.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:55px 25px}
-.grid{max-width:1150px;margin:40px auto;padding:0 25px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{background:white;border-radius:18px;padding:24px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
-.card h3{color:#0b4f8a;margin-top:0}.tag{font-weight:700;color:#526173}
-footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
-@media(max-width:760px){}nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}
-.brand img{height:52px}
-.nav-links{display:flex;align-items:center;gap:18px;margin-left:auto}
-.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
-@media(max-width:760px){
-nav{padding:12px 14px;flex-wrap:wrap}
-.brand{width:100%;justify-content:center;margin-bottom:8px}
-.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:12px}
-.nav-links a{font-size:14px}
-}
-
-.searchPanel{max-width:1150px;margin:28px auto 0;padding:0 25px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.searchPanel input{flex:1;min-width:240px;padding:14px;border:1px solid #ccd6e0;border-radius:12px;font-size:16px}
-.searchPanel .count{font-weight:800;color:#0b4f8a}
-.badge{display:inline-block;background:#e8f3fb;color:#0b4f8a;padding:7px 10px;border-radius:20px;font-weight:800;font-size:12px;margin-top:8px}
-.card button{margin-top:12px;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;align-items:center;justify-content:center;padding:20px}
-.modal.show{display:flex}
-.modalBox{background:white;max-width:520px;width:100%;border-radius:18px;padding:28px;box-shadow:0 10px 35px #0005}
-.modalBox h2{color:#0b4f8a;margin-top:0}
-.modalBox button{background:#0b4f8a;color:white;border:0;border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer}
-</style>
-
-<style id="mobile-fix">
-@media (max-width: 768px){
-  nav{
-    padding:12px 14px !important;
-    flex-direction:column !important;
-    align-items:flex-start !important;
-    gap:10px !important;
-  }
-  .brand{
-    width:100% !important;
-    font-size:16px !important;
-  }
-  .brand img{
-    height:42px !important;
-  }
-  .nav-links{
-    width:100% !important;
-    display:flex !important;
-    flex-wrap:wrap !important;
-    gap:8px !important;
-    margin-left:0 !important;
-  }
-  .nav-links a{
-    background:#eef6fc !important;
-    padding:8px 10px !important;
-    border-radius:8px !important;
-    font-size:13px !important;
-  }
-  .hero{
-    padding:34px 16px !important;
-  }
-  .hero h1{
-    font-size:26px !important;
-    line-height:1.2 !important;
-  }
-  .hero p{
-    font-size:15px !important;
-  }
-  .section,.actions,.gallery{
-    padding:14px !important;
-  }
-  .grid{
-    grid-template-columns:1fr !important;
-  }
-  .card{
-    padding:18px !important;
-  }
-  table{
-    display:block !important;
-    overflow-x:auto !important;
-    white-space:nowrap !important;
-  }
-  th,td{
-    font-size:13px !important;
-    padding:10px !important;
-  }
-  .gallery{
-    grid-template-columns:repeat(2,1fr) !important;
-    gap:10px !important;
-  }
-  .photo img{
-    height:130px !important;
-  }
-  .viewer .topbar{
-    top:8px !important;
-    left:8px !important;
-    right:8px !important;
-    flex-direction:column !important;
-    gap:8px !important;
-    text-align:center !important;
-  }
-  .viewer button{
-    padding:8px 10px !important;
-    font-size:12px !important;
-  }
-  .viewer img{
-    max-width:96% !important;
-    max-height:68vh !important;
-  }
-  .viewer .prev{
-    left:6px !important;
-  }
-  .viewer .next{
-    right:6px !important;
-  }
-  .viewer .navbtn{
-    font-size:22px !important;
-  }
-  input,select{
-    width:100% !important;
-    box-sizing:border-box !important;
-  }
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-<style id="clean-global-nav">
 nav{background:white;padding:14px 38px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:999}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}
-.brand img{height:52px}
-.nav-links{display:flex;gap:18px;margin-left:auto}
-.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#0b4f8a;text-decoration:none}.brand img{height:52px}
+.nav-links{display:flex;gap:18px;margin-left:auto}.nav-links a{text-decoration:none;color:#0b4f8a;font-weight:700}
 .menu-btn{display:none;background:#0b4f8a;color:white;border:0;border-radius:10px;padding:10px 16px;font-weight:800;cursor:pointer}
+.hero{background:linear-gradient(135deg,#083d6b,#0b6fae);color:white;text-align:center;padding:55px 25px}
+.section{max-width:1150px;margin:35px auto;padding:0 25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:white;border-radius:18px;padding:22px;box-shadow:0 6px 20px #0002;border-top:5px solid #0b6fae}
+.card h3{color:#0b4f8a;margin-top:0}
+.badge{display:inline-block;padding:6px 10px;border-radius:20px;font-weight:800;font-size:12px}
+.done{background:#d9f7df;color:#0a6b1f}.pending{background:#fff3cd;color:#8a5b00}.dup{background:#e8e8e8;color:#555}.damaged{background:#ffd6d6;color:#9b0000}
+.btn{display:inline-block;background:#0b4f8a;color:white;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:700;margin-top:10px}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+input,select{padding:12px;border:1px solid #ccd6e0;border-radius:10px;font-size:15px}
+input{flex:1;min-width:250px}
+footer{text-align:center;background:#102a43;color:white;padding:25px;margin-top:45px}
 @media(max-width:768px){
-  nav{padding:12px 14px!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important}
-  .brand{max-width:72%!important;font-size:14px!important;line-height:1.1!important}
-  .brand img{height:38px!important}
-  .brand span{font-size:18px!important}
-  .menu-btn{display:block!important}
-  .nav-links{display:none!important;width:100%!important;flex-direction:column!important;gap:7px!important;margin-top:12px!important;margin-left:0!important}
-  .nav-links.show{display:flex!important}
-  .nav-links a{width:100%!important;box-sizing:border-box!important;text-align:center!important;background:#eef6fc!important;padding:10px!important;border-radius:10px!important;font-size:14px!important}
+nav{padding:12px 14px!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important}
+.brand{max-width:72%!important;font-size:14px!important;line-height:1.1!important}.brand img{height:38px!important}.brand span{font-size:18px!important}
+.menu-btn{display:block!important}
+.nav-links{display:none!important;width:100%!important;flex-direction:column!important;gap:7px!important;margin-top:12px!important;margin-left:0!important}
+.nav-links.show{display:flex!important}.nav-links a{width:100%!important;box-sizing:border-box!important;text-align:center!important;background:#eef6fc!important;color:#0b4f8a!important;padding:10px!important;border-radius:10px!important;font-size:14px!important}
+.hero{padding:32px 18px!important}.hero h1{font-size:32px!important}.section{padding:14px!important;margin:18px auto!important}.grid{grid-template-columns:1fr!important}
 }
 </style>
-
 </head>
 <body>
-
 <nav>
-  <a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a>
-  <button class="menu-btn" onclick="toggleMenu()">MENU</button>
-  <div class="nav-links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="photos.html">Photos</a>
-    <a href="videos.html">Videos</a>
-    <a href="documents.html">Documents</a>
-    <a href="reports.html">Reports</a>
-    <a href="archive-status.html">Status</a>
-  </div>
+<a class="brand" href="index.html"><img src="assets/logo.jpg"><span>KALD Digital Archive</span></a>
+<button class="menu-btn" onclick="toggleMenu()">MENU</button>
+<div class="nav-links" id="navLinks">
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="photos.html">Photos</a>
+<a href="videos.html">Videos</a>
+<a href="documents.html">Documents</a>
+<a href="reports.html">Reports</a>
+<a href="archive-status.html">Status</a>
+</div>
 </nav>
 
-<section class="hero"><h1>Video Library</h1><p>Internal catalog of 11 verified archived video records. Full media is preserved in secure archive storage.</p></section>
-<div class="searchPanel"><input id="videoSearch" type="text" placeholder="Search video title, example: 2014 or CD118V"><span class="count" id="videoCount">Showing 11 videos</span></div><section class="grid">
-<div class="card"><h3>KALD 2008 Event</h3><p class="tag">8.06 GB</p><p>Preserved historical event video record.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
-<div class="card"><h3>KALD 2014 Event</h3><p class="tag">3.35 GB</p><p>Archived lecture or event video material.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
-<div class="card"><h3>KALD CD113V</h3><p class="tag">26.4 MB</p><p>Converted video archive item.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
-<div class="card"><h3>KALD CD118V</h3><p class="tag">9.24 GB</p><p>Large preserved video archive record.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
-<div class="card"><h3>KALD CD119V</h3><p class="tag">1.47 GB</p><p>Converted archive video item.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
-<div class="card"><h3>KALD CD122V 2019</h3><p class="tag">4.02 GB</p><p>2019-related video archive record.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
-<div class="card"><h3>KALD CD123V</h3><p class="tag">3.98 GB</p><p>Converted video archive item.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
-<div class="card"><h3>KALD CD124V</h3><p class="tag">4.21 GB</p><p>Converted video archive item.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
-<div class="card"><h3>KALD CD125V</h3><p class="tag">4.73 GB</p><p>Converted video archive item.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
-<div class="card"><h3>KALD CD136V Version 2</h3><p class="tag">1.58 GB</p><p>Final cleaned video version.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
-<div class="card"><h3>KALD CD139 2014</h3><p class="tag">7.60 GB</p><p>2014 archived video record.</p><span class="badge">Preserved in Secure Archive</span><br><button onclick="openVideoInfo(this)">View Details</button></div>
-</section>
-<footer><p>KALD Digital Archive Center | Video Library</p></footer>
-<div class="modal" id="videoModal">
-  <div class="modalBox">
-    <h2 id="modalTitle">Video Details</h2>
-    <p id="modalText">This archived video record is preserved in secure storage. Online streaming will be enabled after compressed viewing copies are prepared.</p>
-    <p><strong>Status:</strong> Catalog available. Full video preserved offline / secure archive.</p>
-    <button onclick="closeVideoInfo()">Close</button>
-  </div>
+<section class="hero"><h1>Video Archive</h1><p>Recovered DVD/ISO videos, converted web videos, duplicates, and pending video archive work.</p></section>
+
+<section class="section">
+<div class="tools">
+<input id="searchBox" placeholder="Search video archive...">
+<select id="statusFilter">
+<option value="All">All Status</option>
+<option value="Converted">Converted</option>
+<option value="Pending">Pending</option>
+<option value="Duplicate">Duplicate</option>
+<option value="Damaged">Damaged</option>
+</select>
 </div>
 
+<h2>Converted Videos</h2>
+<div class="grid">
+<div class="card video-card" data-status="Converted">
+<span class="badge done">Converted</span>
+<h3>KALD 2019 Video Archive</h3>
+<p><b>Source:</b> CD122V / KALD2019.iso</p>
+<p><b>Duration:</b> 01:11:33</p>
+<p><b>Web Size:</b> 542 MB</p>
+<p><b>Format:</b> MP4 / 720p / H.264</p>
+<p><b>Note:</b> Converted using NVIDIA GPU encoder.</p>
+</div>
+</div>
+
+<h2>Duplicate Videos</h2>
+<div class="grid">
+<div class="card video-card" data-status="Duplicate">
+<span class="badge dup">Duplicate</span>
+<h3>CD71V / KALD2019.iso</h3>
+<p>Duplicate of CD122V. Same VOB structure and same file sizes.</p>
+<p><b>Action:</b> Skipped to avoid duplicate conversion.</p>
+</div>
+</div>
+
+<h2>Pending Video ISO Review</h2>
+<div class="grid">
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD06V / VIDEO.iso</h3><p>Size: 4.19 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD09V / LG_COMBI_RECORDER.iso</h3><p>Size: 1.56 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD113V / PP_DVD2_NTSC.iso</h3><p>Size: 4.11 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD118V / VIDEO.iso</h3><p>Size: 4.15 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD119V / DVD.iso</h3><p>Size: 3.75 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD123V / VIDEO.iso</h3><p>Size: 4.16 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD124V / VIDEO.iso</h3><p>Size: 4.01 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD125V / VIDEO.iso</h3><p>Size: 3.99 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD126V / VIDEO.iso</h3><p>Size: 3.39 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD127V / VIDEO.iso</h3><p>Size: 4.16 GB</p></div>
+<div class="card video-card" data-status="Pending"><span class="badge pending">Pending</span><h3>CD136V / My Disc.iso</h3><p>Size: 2.75 GB</p></div>
+</div>
+
+<h2>Damaged / Special Review</h2>
+<div class="grid">
+<div class="card video-card" data-status="Damaged">
+<span class="badge damaged">Damaged</span>
+<h3>CD69V_dAMAGED</h3>
+<p>Marked damaged. Needs manual inspection before recovery attempt.</p>
+</div>
+</div>
+</section>
+
+<footer><p>KALD Digital Archive Center | Video Archive</p></footer>
+
 <script>
-const cards=[...document.querySelectorAll(".card")];
-const videoSearch=document.getElementById("videoSearch");
-const videoCount=document.getElementById("videoCount");
-
-if(videoSearch){
-  videoSearch.addEventListener("input",function(){
-    const q=this.value.toLowerCase().trim();
-    let visible=0;
-    cards.forEach(card=>{
-      const show=card.innerText.toLowerCase().includes(q);
-      card.style.display=show?"":"none";
-      if(show)visible++;
-    });
-    videoCount.textContent="Showing "+visible+" of "+cards.length+" videos";
-  });
-}
-
-function openVideoInfo(btn){
-  const card=btn.closest(".card");
-  document.getElementById("modalTitle").textContent=card.querySelector("h3").textContent;
-  document.getElementById("modalText").textContent=card.querySelector("p").textContent + " - Preserved video record. No automatic download.";
-  document.getElementById("videoModal").classList.add("show");
-}
-function closeVideoInfo(){
-  document.getElementById("videoModal").classList.remove("show");
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-<script id="clean-global-menu-script">
 function toggleMenu(){
   const nav=document.getElementById("navLinks");
   if(nav){nav.classList.toggle("show");}
 }
-</script>
 
+const searchBox=document.getElementById("searchBox");
+const statusFilter=document.getElementById("statusFilter");
+const cards=[...document.querySelectorAll(".video-card")];
+
+function filterVideos(){
+ const q=searchBox.value.toLowerCase();
+ const s=statusFilter.value;
+ cards.forEach(c=>{
+   const matchText=c.innerText.toLowerCase().includes(q);
+   const matchStatus=s==="All" || c.dataset.status===s;
+   c.style.display=(matchText && matchStatus)?"":"none";
+ });
+}
+searchBox.addEventListener("input",filterVideos);
+statusFilter.addEventListener("change",filterVideos);
+</script>
 </body>
 </html>
-
-
-
