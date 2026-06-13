@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+page = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -184,3 +186,7 @@ statusFilter.addEventListener("change",filterVideos);
 
 </body>
 </html>
+'''
+
+Path("videos.html").write_text(page, encoding="utf-8")
+print("videos.html rebuilt clean and presentation-ready.")
