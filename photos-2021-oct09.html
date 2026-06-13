@@ -367,7 +367,7 @@ function toggleMenu(){
     <div class="lbBtns">
       <button onclick="zoomIn()">Zoom +</button>
       <button onclick="zoomOut()">Zoom -</button>
-      <a id="lbDownload" href="#" download>Download</a>
+      <button onclick="sharePhoto()">Share</button><button id="slideBtn" onclick="toggleSlideshow()">Play</button><a id="lbDownload" href="#" download>Download</a>
       <button onclick="closeLightbox()">Close</button>
     </div>
   </div>
@@ -457,6 +457,44 @@ window.addEventListener("scroll",function(){
   const b=document.getElementById("backTop");
   if(b){b.style.display=window.scrollY>400?"block":"none";}
 });
+</script>
+
+
+<script id="gallery-share-slideshow-js">
+let slideTimer=null;
+
+function sharePhoto(){
+  const a=document.getElementById("lbDownload");
+  const title=document.getElementById("lbTitle") ? document.getElementById("lbTitle").innerText : "KALD Archive Photo";
+  if(!a)return;
+  const url=a.href;
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(()=>{});
+  }else{
+    navigator.clipboard.writeText(url);
+    alert("Photo link copied.");
+  }
+}
+
+function toggleSlideshow(){
+  const btn=document.getElementById("slideBtn");
+  if(slideTimer){
+    clearInterval(slideTimer);
+    slideTimer=null;
+    if(btn)btn.innerText="Play";
+  }else{
+    slideTimer=setInterval(()=>{ nextPhoto(); },3000);
+    if(btn)btn.innerText="Pause";
+  }
+}
+
+const oldClose=window.closeLightbox;
+window.closeLightbox=function(){
+  if(slideTimer){clearInterval(slideTimer);slideTimer=null;}
+  const btn=document.getElementById("slideBtn");
+  if(btn)btn.innerText="Play";
+  if(oldClose)oldClose();
+}
 </script>
 
 </body></html>
